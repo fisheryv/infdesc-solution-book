@@ -13,52 +13,38 @@ Prove that the set of all positive integers is countably infinite.
 Prove that the set of all even natural numbers is countably infinite, and that the set of all odd natural numbers is countably infinite.
 \end{exercise}
 
-
 \begin{exercise}
 Prove that the function $p : \mathbb{N} \times \mathbb{N} \to \mathbb{N}$ defined by $p(x,y) = 2^x(2y+1)-1$ is a bijection. Deduce that $\mathbb{N} \times \mathbb{N}$ is countable.
-\hintlabel{exNCrossNIsCountable}{%
-The fundamental theorem of arithmetic (\Cref{thmFTA}) implies that, for all $n \in \mathbb{N}$, we can express $n+1$ uniquely as a power of $2$ multiplied by an odd number. 
-}
 \end{exercise}
+
 
 \begin{exercise}
 Prove if $X$ and $Y$ are countably infinite sets, then $X \times Y$ is countably infinite.
-\hintlabel{exProductOfTwoCountableSetsIsCountable}{%
-Use \Cref{exCartesianProductOfBijections}, together with the definition of countably infinite sets, to construct a bijection $\mathbb{N} \times \mathbb{N} \to X \times Y$. Then apply \Cref{exNCrossNIsCountable} and \Cref{propCountablyInfiniteFromBijection}.
-}
 \end{exercise}
 
 
+\begin{exercise}
+Let $X$ be a countably infinite set. In the proof of $\text{(iii)} \Rightarrow \text{(i)}$ in \Cref{thmCountableFromInjSurj}, we gave an explicit construction of a bijection $f : \mathbb{N} \to X$ using a surjection $h : \mathbb{N} \to X$. Prove $\text{(ii)} \Rightarrow \text{(i)}$ the same way---that is, explain how to construct a bijection $f : \mathbb{N} \to X$ using an injection $g : X \to \mathbb{N}$.
+\end{exercise}
 
 \begin{exercise}
 \label{exCountabilityFromInjectionsAndSurjections}
 Let $X$ be an inhabited set. The following are equivalent:
 \begin{enumerate}[(i)]
 \item \label{itmInjectionSurjectionCountableSets} $X$ is countable;
-\item \label{itmInjectionIntoCountableSet} There exists an injection $f : X \to C$ for some countable set $C$;
-\item \label{itmSurjectionFromCountableSet} There exists a surjection $f : C \to X$ for some countable set $C$.
+\item \label{itmInjectionIntoCountableSet} There exists an injection $g : X \to C$ for some countable set $C$;
+\item \label{itmSurjectionFromCountableSet} There exists a surjection $h : C \to X$ for some countable set $C$.
 \end{enumerate}
-\hintlabel{exCountableFromInjSurjC}{%
-For \ref{itmInjectionIntoCountableSet}$\Rightarrow$\ref{itmInjectionSurjectionCountableSets}, use the fact that the composite of two injections is injective. Likewise for \ref{itmSurjectionFromCountableSet}$\Rightarrow$\ref{itmInjectionSurjectionCountableSets}.
-}
 \end{exercise}
-
-
 
 \begin{exercise} \label{exFiniteSubsetsCountableFixedSize}
 Let $X$ be a countable set. Prove that $\binom{X}{k}$ is countable for each $k \in \mathbb{N}$.
-\begin{backhint}
-\hintref{exFiniteSubsetsCountableFixedSize}
-Suppose $X=\mathbb{N}$. By \Cref{propFiniteProductOfCountableSetsIsCountable}, the set $\mathbb{N}^k$ is countable. By \Cref{thmCountableFromInjSurj}(c), it suffices to find an injection $\binom{\mathbb{N}}{k} \to \mathbb{N}^k$.
-\end{backhint}
 \end{exercise}
-
 
 
 \begin{exercise}
 Use Cantor's diagonal argument to prove that the set $\mathbb{N}^{\mathbb{N}}$ of all functions $\mathbb{N} \to \mathbb{N}$ is uncountable.
 \end{exercise}
-
 
 \begin{exercise}
 Prove that if a set $X$ has an uncountable subset, then $X$ is uncountable.
@@ -67,28 +53,16 @@ Prove that if a set $X$ has an uncountable subset, then $X$ is uncountable.
 \begin{exercise}
 \label{exPowerSetFiniteOrUncountable}
 Let $X$ be a set. Prove that $\mathcal{P}(X)$ is either finite or uncountable.
-\begin{backhint}
-\hintref{exPowerSetFiniteOrUncountable}
-We have already proved this when $X$ is finite. When $X$ is countably infinite, use \Cref{thmCantorForN}. When $X$ is uncountably infinite, find an injection $X \to \mathcal{P}(X)$ and find a way to apply \Cref{exCountableFromInjSurjC}.
-\end{backhint}
 \end{exercise}
 
 
 \begin{exercise}
 Let $\Sigma = \{ 0,1,2,3,4,5,6,7,8,9,{\div},{-} \}$. Describe which words over $\Sigma$ immediately represent rational numbers (in the sense of treating the digit symbols as numbers and the symbols $\div$ and $-$ as arithmetic operations). Find some examples of elements of $\Sigma^*$ that do not represent rational numbers.
-\hintlabel{exWordsRepresentingRationalNumbers}{%
-How many `$\div$' symbols can a string from $\Sigma^*$ have if the string is to represent a rational number? Where in a word over $\Sigma$ can a $\div$ symbol appear?
-}
 \end{exercise}
 
 \begin{exercise}
 Let $\Sigma$ be an alphabet. Prove that if $\Sigma$ is countable, then $\Sigma^*$ is countable.
-\hintlabel{exIfAlphabetCountableThenSetOfWordsCountable}{%
-Prove by induction that $\Sigma^n$ is countable for all $n \in \mathbb{N}$, and then apply \Cref{thmCountableUnionOfCountableSetIsCountable}.
-}
 \end{exercise}
-
-
 
 \begin{exercise}
 \label{exFiniteDescriptionOfQ}
@@ -108,7 +82,7 @@ Prove that the set of all polynomials with rational coefficients is countable.
 \end{exercise}
 
 \begin{exercise}
-Consider the following argument that claims to be a proof that $\mathcal{P}(\mathbb{N})$ is countable. (It isn't.)
+Consider the following erroneous argument that claims to be a proof that $\mathcal{P}(\mathbb{N})$ is countable.
 \begin{quote}
 Let $\Sigma = \left\{ \mathbb{N},x,U,V,\boxed{\mid},\boxed{\in},\boxed{\{},\boxed{\}} \right\}$---again, we have boxed some symbols to emphasise that they are elements of $\Sigma$.
 
@@ -118,7 +92,7 @@ for all $U, V \subseteq \mathbb{N}$. Then $\Sigma$ is finite, and $D$ is injecti
 \[ D(U) = D(V) ~ \Rightarrow ~ \{ x \in \mathbb{N} \mid x \in U \} = \{ x \in \mathbb{N} \mid x \in V \} ~ \Rightarrow ~ U = V \]
 Since $D$ is a finite description of the subsets of $\mathbb{N}$ over a finite alphabet, it follows from \Cref{thmCountableIffFiniteDescription} that $\mathcal{P}(\mathbb{N})$ is countable. \hfill $\Box$
 \end{quote}
-This proof cannot be valid, since we know that $\mathcal{P}(\mathbb{N})$ is uncountable. Where in the proof did we go wrong?
+This proof cannot be valid, since we already proved in \Cref{thmCantorForN} that $\mathcal{P}(\mathbb{N})$ is uncountable. Where in the proof did we go wrong?
 \hintlabel{exBadProofThatPowerSetOfNIsCountable}{%
 Is $\Sigma$ \textit{really} finite? Is $D$ \textit{really} well-defined?
 }

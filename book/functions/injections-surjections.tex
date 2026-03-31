@@ -1,6 +1,9 @@
 % !TeX root = ../../infdesc.tex
 \section{Injections and surjections}
 \secbegin{secInjectionsSurjections}
+\index{injection|(}
+\index{surjection|(}
+\index{bijection|(}
 
 
 \begin{exercise}
@@ -25,7 +28,6 @@ For each of the following functions, determine whether it is injective or not in
 Let $a,b \in \mathbb{R}$ with $b \ne 0$, and define $f : \mathbb{R} \to \mathbb{R}$ by $f(t) = a+bt$ for all $t \in \mathbb{R}$. Prove that $f$ is injective.
 \end{exercise}
 
-
 \begin{exercise}
 For each of the following pairs of sets $(X,Y)$, determine whether the function $f : X \to Y$ defined by $f(x)=2x+1$ is surjective.
 \begin{enumerate}[(a)]
@@ -38,9 +40,6 @@ For each of the following pairs of sets $(X,Y)$, determine whether the function 
 
 \begin{exercise}
 Let $f : X \to Y$ be a function. Find a subset $V \subseteq Y$ and a surjection $g : X \to V$ agreeing with $f$ (that is, such that $g(x)=f(x)$ for all $x \in X$).
-\hintlabel{exSurjectiveCorestriction}{%
-Recall \Cref{defImage}.
-}
 \end{exercise}
 
 \begin{exercise}
@@ -52,37 +51,35 @@ Let $f : X \to Y$ be a function. Prove that $f$ is surjective if and only if $Y=
 Let $f : X \to Y$ be a function. Prove that there is a set $Z$ and functions
 \[ p : X \to Z \quad \text{and} \quad i : Z \to Y \]
 such that $p$ is surjective, $i$ is injective, and $f = i \circ p$.
-\begin{backhint}
-\hintref{exEpiMonoFactorisation}
-If $Z$ were a subset of $Y$, then we could easily define an injection $i : Z \to Y$ by $i(z)=z$ for all $z \in Z$. Are there any subsets of $Y$ that are associated with a function whose codomain is $Y$?
-\end{backhint}
 \end{exercise}
 
 \begin{exercise}
 Let $f : X \to \mathcal{P}(X)$ be a function. By considering the set $B = \{ x \in X \mid x \not\in f(x) \}$, prove that $f$ is not surjective.
-\hintlabel{exRussellSubset}{%
-Note that $B \in \mathcal{P}(X)$. Prove that there does not exist $a \in X$ such that $B = f(a)$.
-}
 \end{exercise}
 
 
 \begin{exercise}
-\label{exIdentityBijection}
 Let $X$ be a set. Prove that the identity function $\mathrm{id}_X : X \to X$ is a bijection.
 \end{exercise}
+
+\begin{solutions*}
+\fixlistskip%
+\begin{itemize}
+\item (\textbf{Injectivity}) Let $a,b \in X$ and assume that $\mathrm{id}_X(a) = \mathrm{id}_X(b)$. Then $a=b$ by definition of $\mathrm{id}_X$, as required.
+\item (\textbf{Surjectivity}) Let $x \in X$. Then $x=\mathrm{id}_X(x)$ by definition of $\mathrm{id}_X$, as required.
+\end{itemize}
+Since $\mathrm{id}_X$ is both injective and surjective, it is bijective. \qed
+\end{solutions*}
 
 \begin{exercise}
 \label{exCompositeOfBijectionsIsBijection}
 Let $f : X \to Y$ and $g : Y \to Z$ be bijections. Prove that $g \circ f$ is a bijection.
 \end{exercise}
 
-
 \begin{exercise}
 Let $f : X \to Y$ be a function. Prove that $f$ is injective if and only if
 \[ \forall y \in f[X],\, \exists ! x \in X,\, y=f(x) \]
 \end{exercise}
-
-
 
 \begin{exercise}
 \label{exEncodingPairs}
@@ -107,9 +104,6 @@ This can be proved in a single sentence; if you find yourself writing a long pro
 
 \begin{exercise}
 Let $f : X \to Y$ be a function. Prove that if $f$ has a right inverse, then $f$ is surjective.
-\hintlabel{exIfHasRightInverseThenSurjective}{%
-The proof is almost identical to \Cref{exLeftInversesAreSurjective}.
-}
 \end{exercise}
 
 
@@ -117,32 +111,21 @@ The proof is almost identical to \Cref{exLeftInversesAreSurjective}.
 \label{exFindTwoSidedInverses}
 The following functions have two-sided inverses. For each, find its inverse and prove that it is indeed an inverse.
 \begin{enumerate}[(a)]
-\item $f : \mathbb{R} \to \mathbb{R}$ defined by $f(x)=\frac{2x+1}{3}$.
-\item $g : \mathcal{P}(\mathbb{N}) \to \mathcal{P}(\mathbb{N})$ defined by $g(X) = \mathbb{N} \setminus X$.
+\item $f : \mathbb{R} \to \mathbb{R}$ defined by $f(x)=\dfrac{2x+1}{3}$ for all $x \in \mathbb{R}$;
+\item $g : \mathcal{P}(\mathbb{N}) \to \mathcal{P}(\mathbb{N})$ defined by $g(X) = \mathbb{N} \setminus X$ for all $X \in \mathcal{P}(\mathbb{N}$);
 \item $h : \mathbb{N} \times \mathbb{N} \to \mathbb{N}$ defined by $h(m,n) = 2^m(2n+1)-1$ for all $m,n \in \mathbb{N}$.
 \end{enumerate}
-\begin{backhint}
-\hintref{exFindTwoSidedInverses}
-For part (c), don't try to write a formula for the inverse of $h$; instead, use the fundamental theorem of arithmetic.
-\end{backhint}
 \end{exercise}
 
-In light of the correspondences between injections and left inverses, and surjections and right inverses, it may be unsurprising that there is a correspondence between \textit{bijections} and \textit{two-sided inverses}.
 
 \begin{exercise}
 \label{exBijectiveIffHasInverse}
 Let $f : X \to Y$ be a function. Then $f$ is bijective if and only if $f$ has an inverse.
 \end{exercise}
 
-
-
 \begin{exercise}
 \label{exInverseBijection}
 Let $f : X \to Y$ be a bijection. Prove that $f^{-1} : Y \to X$ is a bijection.
-\begin{backhint}
-\hintref{exInverseBijection}
-Use \Cref{exBijectiveIffHasInverse}.
-\end{backhint}
 \end{exercise}
 
 \begin{exercise}
@@ -152,8 +135,7 @@ Let $f : X \to Y$ and $g : Y \to Z$ be bijections. Prove that $g \circ f : X \to
 
 \begin{exercise}
 Let $f : X \to A$ and $g : Y \to B$ be bijections. Prove that there is a bijection $X \times Y \to A \times B$, and describe its inverse.
-\hintlabel{exCartesianProductOfBijections}{%
-Define $h : X \times Y \to A \times B$ by $h(x,y) = (f(x), g(y))$ for all $x \in X$ and all $y \in Y$; find an inverse for $h$ in terms of the inverses of $f$ and $g$.
-}
 \end{exercise}
-
+\index{injection|)}
+\index{surjection|)}
+\index{bijection|)}

@@ -13,11 +13,7 @@ for all $x \in \mathbb{R}$. Prove that $f$ is a bijection, and deduce that $|(-1
 \begin{exercise}
 \label{exRealsHaveSameCardinalityAsIntervals}
 Let $a,b \in \mathbb{R}$ with $a<b$. Prove that each of the sets $(a,b)$, $[a,b)$, $(a,b]$ and $[a,b]$ has cardinality $\mathfrak{c}$.
-\hintlabel{exAllOpenInvervalsHaveCardinalityOfContinuum}{%
-Start by finding a bijection $(-1,1) \to (a,b)$ and apply \Cref{exIntervalFromMinusOneToOneHasCardinalityOfContinuum}.
-}
 \end{exercise}
-
 
 \begin{exercise}
 Prove that $n < \aleph_0$ for all $n \in \mathbb{N}$.
@@ -31,34 +27,9 @@ Prove that $\le$ is a reflexive, transitive relation on $\mathsf{Card}$. That is
 \end{enumerate}
 \end{exercise}
 
-
 \begin{exercise}
 Prove that $\sim$ is an equivalence relation on $[\kappa]$.
 \end{exercise}
-
-% We prove that $\sim$ is an equivalence relation:
-% \begin{itemize}
-% \item (\textbf{Reflexivity}) For all $a \in [\kappa]$, we have $a = (g \circ f)^0(a)$, and so $a \sim a$.
-% \item (\textbf{Symmetry}) Let $a, b \in [\kappa]$ and suppose that $a \sim b$. Then for some $n \in \mathbb{N}$ we have either $(g \circ f)^n(a) = b$ or $(g \circ f)^n(b) = a$. But this is also what it means for $b \sim a$ to be true!
-% \item (\textbf{Transitivity}) Let $a,b,c \in [\kappa]$ and suppose that $a \sim b$ and $b \sim c$. Then there exist $m,n \in \mathbb{N}$ such that one of the following cases holds:
-% \begin{itemize}
-% \item $(g \circ f)^m(a) = b$ and $(g \circ f)^n(b) = c$. In this case, we have
-% \[ (g \circ f)^{m+n}(a) ~=~ (g \circ f)^n( (g \circ f)^m (a) ) ~=~ (g \circ f)^n(b) ~=~ c \]
-% and so $a \sim c$.
-% \item $(g \circ f)^m(a) = b$ and $(g \circ f)^n(c) = b$. Then $(g \circ f)^m(a) = (g \circ f)^n(c)$. Since $g \circ f$ is an injection, we may cancel it from both sides of the equation as many times as we can, meaning that either
-% \[ (g \circ f)^{m-n}(a) = c \quad \text{or} \quad (g \circ f)^{n-m}(c) = a \]
-% But both of these imply that $a \sim c$.
-% \item $(g \circ f)^m(b) = a$ and $(g \circ f)^n(b) = c$. In this case we either have
-% \[ (g \circ f)^{n-m}(a) = (g \circ f)^n(b) = c \quad \text{or} \quad (g \circ f)^{m-n}(c) = (g \circ f)^m(b) = a \]
-% But both of these imply that $a \sim c$.
-% \item $(g \circ f)^m(b)=a$ and $(g \circ f)^n(c) = b$. In this case, we have
-% \[ (g \circ f)^{m+n}(c) = (g \circ f)^m( (g \circ f)^n(c) ) = (g \circ f)^m(b) = a \]
-% and so $a \sim c$.
-% \end{itemize}
-% In all four cases, we have $a \sim c$, as required.
-% \end{itemize}
-
-
 
 \begin{exercise}
 Prove that $p$ and $q$ are well-defined, and that $q$ is an inverse for $p$.

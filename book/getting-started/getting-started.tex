@@ -1,221 +1,227 @@
 % !TeX root = ../../infdesc.tex
-\hintsection{\Cref*{chGettingStarted}}
 
 \begin{exercise}
-Think of an example of a true proposition, a false proposition, a proposition whose truth value you don't know, and a statement that is not a proposition.
+\label{exExamplesOfPropositions}
+Think of an example of (a) a true proposition; (b) a false proposition; and (c) a proposition whose truth value you don't know.
 \end{exercise}
 
-\begin{solution}
-The following are propositions as required：
-\begin{itemize}
-\item \textbf{True proposition}: Abraham Lincoln was the 16th President of the United States;
-\item \textbf{False proposition}: The sum of the interior angles of a triangle on the plane is greater than 180$\degree$;
-\item \textbf{Unknown proposition}: The earth will be destroyed in 2299;
-\item \textbf{Not a proposition}: Happy birthday to you.
-\end{itemize}
-\end{solution}
+\begin{solutions*}
+  \fixlistskip
+  \begin{enumerate}[(a)]
+  \item $2$ is an even number.
+  \item $2$ is an odd number.
+  \item Every even integer greater than two can be expressed as the sum of two positive prime numbers. [This is \textit{Goldbach's conjecture}, proposed in 1742 by Christian Goldbach. It a famous example of an extant \textit{open problem} in mathematics. Will you be the one to solve it?]
+  \end{enumerate}
+\end{solutions*}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercise}
+\label{exFloorCeilingOfNonInteger}
+Suppose that $x$ is a real number that is not an integer. Prove that $\ceil{x} = \floor{x} + 1$.
+\end{exercise}
+
+\begin{solutions*}
+Set $n = \floor{x}$. Then $n \le x < n+1$ by definition of floor. Since $x$ is not an integer and $n$ is, we have $n < x$; but then $n<x<n+1$, and so $(n+1)-1 < x \le n+1$. This inequality demonstrates that $n+1$ is the ceiling of $x$, and so $\ceil{x} = n+1 = \floor{x} + 1$, as required.
+\end{solutions*}
+
+\begin{exercise}
+Suppose that $x$ is a real number. Prove that $\floor{-x} = -\ceil{x}$ and $\ceil{-x} = -\floor{x}$.
+\end{exercise}
+
+\begin{solutions*}
+Set $n = \floor{-x}$. By definition of floor we have $n \le -x < n+1$. Multiplying through by $-1$ gives $-n \ge x > -(n+1)$, or equivalently $-n-1 < x \le -n$. Thus $-n$ satisfies the definition of being the ceiling of $x$, so that $\ceil{x} = -n = -\floor{-x}$. Hence $\floor{-x} = -\ceil{x}$, as required.
+
+Now set $m = \ceil{-x}$. By definition of ceiling we have $m-1 < -x \le m$. Multiplying through by $-1$ and rearranging gives $-m \le x < -m+1$. Thus $\floor{x} = -m = -\ceil{-x}$, and so $\ceil{-x} = -\floor{x}$, as required.
+\end{solutions*}
+
+\begin{exercise}
+\label{exRationalNumbersAreAField}
+Complete the proof of \Cref{thmRationalNumbersAreAField}.
+\end{exercise}
+
+\begin{solutions*}
+Let $a,b,c,d$ be integers, with $b \ne 0$ and $d \ne 0$, such that $x=\dfrac{a}{b}$ and $y=\dfrac{c}{d}$; we know $a,b,c,d$ exist by the definition of what it means for $x$ and $y$ to be rational. Then:
+\begin{itemize}
+\item $x-y = \dfrac{a}{b} - \dfrac{c}{d} = \frac{ad-bc}{bd}$;
+\item $xy = \dfrac{a}{b} \times \dfrac{c}{d} = \dfrac{ac}{bd}$; and
+\item If $y \ne 0$, then $c \ne 0$ (since if $c=0$ then $y=\dfrac{c}{d}=\dfrac{0}{d}=0$), and so $\dfrac{x}{y} = \dfrac{a/b}{c/d} = \dfrac{ad}{bc}$.
+\end{itemize}
+The expressions on the right-hand side of each of the above chains of equations is a fraction of two integers, with a nonzero integer in the denominator, and so the numbers $x+y$, $x-y$, $xy$ and $\dfrac{x}{y}$ are all rational.%
+\end{solutions*}
+
+\begin{exercise}
+\label{exElementsOfNumberSets}
+Determine the truth values of the following propositions.
+\begin{multicols}{3}
+\begin{enumerate}[(a)]
+\item $2 \in \Nat$
+\item $-2 \in \Nat$
+\item $-2 \in \Rat$
+\item $\dfrac{2}{5} \in \Int$
+\item $\dfrac{\sqrt{8}+\sqrt{2}}{\sqrt{8}-\sqrt{2}} \in \Rat$
+\item $\pi^{\pi} \in \Rat$
+\item $\sqrt{-7} \in \Real$
+%\item $\sqrt{-7} \in \Cplx$
+\item\label{itmNElementOfZ} $\Nat \in \Int$
+\end{enumerate}
+\end{multicols}
+\end{exercise}
+
+\begin{solutions*}
+  \fixlistskip
+\begin{enumerate}[(a)]
+\item $2 \in \Nat$ is true, since it is a nonnegative whole number and can be used for counting (for example, I have $2$ eyes).
+\item $-2 \in \Nat$ is false, since $-2 < 0$ but all natural numbers are nonnegative.
+\item $-2 \in \Rat$ is true, since $-2 = \dfrac{-2}{1}$, which is an integer divided by a nonzero integer.
+\item $\dfrac{2}{5} \in \Int$ is false, since $0<\dfrac{2}{5}<1$, meaning that $\dfrac{2}{5}$ is strictly between two consecutive integers.
+\item $\dfrac{\sqrt{8}+\sqrt{2}}{\sqrt{8}-\sqrt{2}} \in \Rat$ is true: note that $\sqrt{8} = 2\sqrt{2}$, so cancelling the common factor of $\sqrt{2}$ from the numerator and denominator reveals that this number is equal to $\dfrac{2+1}{2-1} = \dfrac{3}{1}$, which is an integer divided by a nonzero integer.
+\item $\pi^{\pi} \in \Rat$\dots{} OK, sorry, this is (kind of) a trick question. Whether or not $\pi^{\pi}$ is rational is an open problem.
+\item $\sqrt{-7} \in \Real$ is false: the square of every real number is nonnegative, but whatever $\sqrt{-7}$ actually \textit{is},\footnote{$\sqrt{-7}$ is an example of a \textit{complex number}, which is a topic for another time.} it presumably satisfies $\sqrt{-7}^2=-7$, which is negative.
+%\item $\sqrt{-7} \in \Cplx$ is true, with a caveat: $-7$ actually has two complex square roots, namely $\sqrt{7}i$ and $-\sqrt{7}i$, and it is not immediately obvious which of these the expression `$\sqrt{-7}$' refers to. But both $\sqrt{7}i$ and $-\sqrt{7}i$ are indeed complex numbers.
+\item $\Nat \in \Int$ might appear true at first sight, since every natural number is indeed an integer. However, $\Nat$ is \textit{the set of all natural numbers}, which is a set, not an integer, and so the proposition $\Nat \in \Int$ is false.
+\end{enumerate}
+\end{solutions*}
+
+
+\begin{exercise}
+\label{exNotationsInvolvingBrackteN}
+Let $A = \setb{x \in [10]}{x \text{ is a power of } 2}$, let $B = \setb{2^x}{x \in [10]}$ and let $C = \{ {-99}, {-97}, \dots{}, 95, 97, 99 \}$.
+\begin{enumerate}[(a)]
+\item Find a list notation expression for $A$.
+\item Find a list notation expression for $B$.
+\item Find a set-builder notation expression for $C$ that involves a set of the form $[n]$ for some $n \in \mathbb{N}$.
+\end{enumerate}
+\end{exercise}
+
+\begin{solutions*}
+\fixlistskip
+\begin{enumerate}[(a)]
+\item The elements of $[10]$ are the natural numbers that are less than $10$, and those that are also powers of $2$ are $2^0=1$, $2^1=2$, $2^2=4$ and $2^3=8$; therefore $A = \{ 1, 2, 4, 8 \}$.
+\item $B$ is obtained by raising $2$ to the powers given by the elements of $[10]$; thus
+\[ B = \{ 2^0, 2^1, \dots, 2^9 \} = \{ 1, 2, 4, 8, 16, 32, 64, 128, 256, 512 \} \]
+\item An integer is an element of $C$ precisely if its absolute value is odd and less than $100$; thus
+\[ C = \Bigsetb{n \in \mathbb{Z}}{|n| \in [100] \text{ and } n \text{ is odd}} \]
+Another perspective is that by adding $99$ to the elements of $C$ and then dividing by $2$ we obtain the numbers $0, 1, 2, \dots, 99$, which are the elements of $[100]$; thus we obtain the element of $C$ by reversing these operations, i.e.\ taking the elements of $[100]$, multiplying them by $2$ and then subtracting $99$. Thus
+\[ C = \setb{2x-99}{x \in [100]} \]
+\end{enumerate}
+\end{solutions*}
+
+
+\begin{exercise}
+\label{exIntervalDiagrams}
+Express each of the sets illustrated below using the most appropriate notation. A filled circle $\bullet$ indicates that a point is included in the set, whereas a hollow circle $\circ$ indicates that an end-point is not included in the interval.
+
+\begin{enumerate}[(a)]
+\item
+\begin{tikzpicture}
+\draw[latex-latex] (-5.5,0) -- (5.5,0);
+\draw[line width=1.5pt, color=blue] (-3,0) -- (3,0);
+\filldraw[blue](-3,0)circle[radius=2.5pt];
+\filldraw[white](3,0)circle[radius=2.5pt];
+\draw[blue](3,0)circle[radius=2.5pt];
+\node[at={(-3,3pt)},above]{$-2$};
+\node[at={(3,3pt)},above]{$4$};
+\end{tikzpicture}
+
+\item
+\begin{tikzpicture}
+\draw[latex-latex] (-5.5,0) -- (5.5,0);
+\draw[line width=1.5pt, color=blue] (-3,0) -- (3,0);
+\filldraw[blue](-3,0)circle[radius=2.5pt];
+\filldraw[blue](3,0)circle[radius=2.5pt];
+\node[at={(-3,3pt)},above]{$-2$};
+\node[at={(3,3pt)},above]{$4$};
+\end{tikzpicture}
+
+\item
+\begin{tikzpicture}
+\draw[latex-latex] (-5.5,0) -- (5.5,0);
+\filldraw[blue](-3,0)circle[radius=2.5pt];
+\filldraw[blue](-2,0)circle[radius=2.5pt];
+\filldraw[blue](-1,0)circle[radius=2.5pt];
+\filldraw[blue](0,0)circle[radius=2.5pt];
+\filldraw[blue](1,0)circle[radius=2.5pt];
+\filldraw[blue](2,0)circle[radius=2.5pt];
+\filldraw[blue](3,0)circle[radius=2.5pt];
+\node[at={(-3,3pt)},above]{$-2$};
+\node[at={(-2,3pt)},above]{$-1$};
+\node[at={(-1,3pt)},above]{$0$};
+\node[at={(0,3pt)},above]{$1$};
+\node[at={(1,3pt)},above]{$2$};
+\node[at={(2,3pt)},above]{$3$};
+\node[at={(3,3pt)},above]{$4$};
+\end{tikzpicture}
+
+
+\item
+\begin{tikzpicture}
+\draw[latex-latex] (-5.5,0) -- (5.5,0);
+\draw[latex-, line width=1.5pt, color=blue] (-5.5,0) -- (3,0);
+\filldraw[white](3,0)circle[radius=2.5pt];
+\draw[blue](3,0)circle[radius=2.5pt];
+\node[at={(3,3pt)},above]{$4$};
+\end{tikzpicture}
+
+\item 
+\begin{tikzpicture}
+\draw[latex-latex] (-5.5,0) -- (5.5,0);
+\draw[-latex, line width=1.5pt, color=blue] (-3,0) -- (5.5,0);
+\filldraw[blue](-3,0)circle[radius=2.5pt];
+\node[at={(-3,3pt)},above]{$-2$};
+\end{tikzpicture}
+
+\item 
+\begin{tikzpicture}
+\draw[latex-latex] (-5.5,0) -- (5.5,0);
+\draw[latex-latex, line width=1.5pt, color=blue] (-5.5,0) -- (5.5,0);
+\end{tikzpicture}
+\end{enumerate}%
+\end{exercise}
+
+\begin{solutions*}
+\fixlistskip%
+\begin{enumerate}[(a)]
+\item $[{-2},4)$
+\item $[{-2},4]$
+\item $\{ {-2}, {-1}, 0, 1, 2, 3, 4 \}$ --- note that interval notation $[{-2},4]$ is \textit{not} appropriate in this case, since the non-integer real numbers between $-2$ and $5$ are not elements of the set.
+\item $({-\infty},4)$
+\item $[{-2},\infty)$
+\item You might be tepmted to write $({-\infty},\infty)$ for this one, and that is generally considered acceptable, but it can even more concisely be expressed simply as $\Real$.
+\end{enumerate}
+\end{solutions*}
+
 
 \begin{exercise}
 Find the binary, ternary, octal, decimal, hexadecimal and base-$36$ expansions of the number $21127$, using the letters $\mathrm{A}$--$\mathrm{F}$ as additional digits for the hexadecimal expansion (representing the numbers $10$--$15$, respectively), and the letters $\mathrm{A}$--$\mathrm{Z}$ as additional digits for the base-$36$ expansion.
 \end{exercise}
 
-\begin{solution}
-\begin{align*}
-21127 &= 101001010000111_{(2)} \\
-&= 1001222111_{(3)} \\
-&= 51207_{(8)}\\
-&= 21127_{(10)}\\
-&= 5287_{(16)}\\
-&= \mathrm{KK}7_{(36)}
-\end{align*}
-\end{solution}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{exercise}
 \label{exOneDividesEveryIntegerDividesZero}
 Prove that $1$ divides every integer, and that every integer divides $0$.
 \end{exercise}
 
-\begin{solution}
-According to the definition of divisibility, we say $a$ divides $b$, if $b=qa$. We know $b=b\times1$, so that $1$ divides every integer; 
-
-For all $a \in \mathbb{Z}$, we have $0=0\times a$, so that every integer divides $0$. 
-\end{solution}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{exercise}
 \label{exDivisibilityIsLinear}
-Let $a,b,d \in \mathbb{Z}$. Suppose that $d$ divides $a$ and $d$ divides $b$. Given integers $u$ and $v$, prove that $d$ divides $au+bv$.
+Let $a,b,d \in \Int$. Suppose that $d$ divides $a$ and $d$ divides $b$. Given integers $u$ and $v$, prove that $d$ divides $au+bv$.
 \end{exercise}
 
-\begin{solution}
-According to the definition of divisibility, 
-\begin{align*}
-&\because d \text{ divides } a\\
-&\therefore a=pd \quad(p \in \mathbb{Z})\\
-&\because d \,\text{ divides }\, b\\
-&\therefore b=qd \quad(q \in \mathbb{Z})\\
-&\therefore au+bv = upd + vqd = (up+vq)d\\ 
-\end{align*}
-so that $d$ divides $au+bv$.
-\end{solution}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{exercise}
 Prove that if an integer $a$ leaves a remainder of $r$ when divided by an integer $b$, then $a$ leaves a remainder of $r$ when divided by $-b$.
 \end{exercise}
 
-\begin{solution}
-According to the division theorem, an integer $a$ divided by an integer $b$ leaves a remainder of $r$，so there is some $q \in \mathbb{Z}$ such that \\
-\[a = qb+r \quad 0 \le r < b \tag{1}.\] 
-
-Suppose $a$ divided by $-b$ leaves $m$, so there is some $p \in \mathbb{Z}$ such that \\
-\[a=p(-b)+m \quad 0 \le m < b \tag{2}.\]
-
-$(1)-(2)=qb+r+pb-m=0$, rearranged formula is
-\[(p+q)b=m-r\]
-\begin{align*}
-&\because 0 \le m < b \text{ and } 0 \le r < b \\
-&\therefore -b < (p+q)b=m-r < b \\
-&\therefore -1 < p+q < 1 \\
-&\because (p+q) \in \mathbb{Z} \\
-&\therefore p+q=0 \\
-&\therefore (p+q)b=m-r=0 \\
-&\therefore m=r \\
-\end{align*}
-so $a$ leaves a remainder of $r$ when divided by $-b$.
-\end{solution}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{exercise}
 Find the base-$17$ expansion of $408\,735\,787$ and the base-$36$ expansion of $1\,442\,151\,747$.
 \end{exercise}
 
-\begin{solution}
-\[408\,735\,787 = GFEDCBA_{(17)}\]
-\[1\,442\,151\,747 = 2DV152_{(36)}\]
-\end{solution}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{exercise}
-Interpret the operations of subtraction and division as geometric transformations of the real number line.
-\end{exercise}
-
-\begin{solution}
-Interpret \textbf{subtraction} as geometric transformations of the real number line.
-
-If we consider addition as moving to right, subtraction can be considered as moving to left. Concretely, take two copies of the number line, one above the other, with the same choice of unit length; move the $b$ of the lower number line beneath the point $a$ of the upper number line. Then $a-b$ is the point on the upper number line lying above the point $0$ of the lower number line. For example, $5-3=2$, here is an illustration of the fact that $5-3=2$:
-\begin{center}
-\fitwidthc{0.9}{\begin{tikzpicture}
-\draw[latex-latex] (-0.5,0) -- (10.5,0) ; 
-\foreach \x in  {0,1,2,3,4,5,6,7,8,9,10}
-\draw[shift={(\x,0)}] (0pt,3pt) -- (0pt,-3pt);
-\foreach \x in {0,1,2,3,4,5,6,7,8,9,10}
-\draw[shift={(\x,0)}] (0pt,0pt) -- (0pt,3pt) node[above] {$\x$};
-\draw[*-*] (1.92,0) -- (5.08,0);
-\draw[very thick] (2,0) -- (5,0);
-
-\draw[latex-latex] (-0.5,-1) -- (10.5,-1) ; 
-\foreach \x in  {-2,-1,0,1,2,3,4,5,6,7,8}
-\draw[shift={(\x+2,-1)},color=black] (0pt,3pt) -- (0pt,-3pt);
-\foreach \x in {-2,-1,0,1,2,3,4,5,6,7,8}
-\draw[shift={(\x+2,-1)},color=black] (0pt,0pt) -- (0pt,-3pt) node[below] {$\x$};
-\draw[->] (2,-0.8) -- (2,-0.2) ;
-\draw[dashed] (5,-1) -- (5,0) ;
-\end{tikzpicture}}
-\end{center}
-
-Interpret \textbf{division} as geometric transformations of the real number line.
-
-If we consider multiplication as zoom in, division can be considered as zoom out. Concretely, take two copies of the number line, one above the other; align the $0$ points on both number lines, and compress the lower number line evenly until the point $b$ on the lower number line is below the point $1$ on the upper number line, Then $a/b$ is the point on the upper number line lying above $a$ on the lower number line. For example, $20/5=4$, here is an illustration of the fact that $20/5=4$:
-\begin{center}
-\fitwidthc{0.9}{\begin{tikzpicture}
-\draw[latex-latex] (-5.5,0) -- (8.5,0) ; 
-\foreach \x in  {0,1,2,3,4}
-\draw[shift={(2.5*\x-4,0)},color=black] (0pt,3pt) -- (0pt,-3pt);
-\foreach \x in {0,1,2,3,4}
-\draw[shift={(2.5*\x-4,0.2)},color=black] node[above] {$\x$};
-\draw[*-*] (-1.58,0) -- (6.08,0);
-\draw[very thick] (-1.5,0) -- (6,0);
-
-\draw[latex-latex] (-5.5,-1) -- (8.5,-1) ; 
-\foreach \x in  {-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24}
-\draw[shift={(0.5*\x-4,-1)}] (0pt,3pt) -- (0pt,-3pt);
-\foreach \x in {-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24}
-\draw[shift={(0.5*\x-4,-1.2)}] node[below] {$\text{\footnotesize\x}$};
-\draw[dashed] (-4,-1) -- (-4,0) ;
-\draw[dashed] (-1.5,-1) -- (-1.5,0) ;
-\draw[->] (6,-0.8) -- (6,-0.2) ;
-\end{tikzpicture}}
-\end{center}
-\end{solution}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{exercise}
 Let $r$ be a rational number and let $a$ be an irrational number. Prove that it is possible that $ra$ be rational, and it is possible that $ra$ be irrational.
 \end{exercise}
 
-\begin{solution}
-We can prove it by example,
-
-$r$ is a rational number and $a$ is an irrational number, let $r = 0$, so that $ra=0$ is a rational number. 
-
-Again let $r = 1$, so that $ra=a$ is an irrational number.
-\end{solution}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{exercise}
-Write down a polynomial of degree $4$ over $\mathbb{R}$ which is not a polynomial over $\mathbb{Q}$.
+Interpret the operations of subtraction and division as geometric transformations of the real number line.
 \end{exercise}
-
-\begin{solution}
-\[p(x) = ax^4+bx^3+cx^2+dx+e \quad x \in \mathbb{R} \setminus \mathbb{Q}\]
-\end{solution}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{exercise}
-\label{exComplexNumberAsRootOfQuadraticOverR}
-Let $\alpha = a+bi$ be a complex number, where $a,b \in \mathbb{R}$. Prove that $\alpha$ is the root of a quadratic polynomial over $\mathbb{R}$, and find the other root of this polynomial.
-\end{exercise}
-
-\begin{solution}
-According to the quadratic formula, a quadratic polynomial $p(x) = x^2+mx+n$ has 2 roots over $\mathbb{C}$, which are
-\[ \frac{-m+\sqrt{m^2-4n}}{2} \quad \text{and} \quad \frac{-m-\sqrt{m^2-4n}}{2} \]
-rearrange the root formula, that
-\[ \frac{-m}{2}+\frac{\sqrt{4n-m^2}}{2}i \quad \text{and} \quad \frac{-m}{2}-\frac{\sqrt{4n-m^2}}{2}i \]
-Because $m,n$ are coefficients, let $\frac{-m}{2} = a$ and $\frac{\sqrt{4n-m^2}}{2} = b$, then we have $a+bi$ and $a-bi$ as two roots of a quadratic polynomial.
-
-Now, let’s construct a polynomial $p(x)$ such that $P(\alpha) = 0$. We can multiply the factors $(x - (a+bi))$ and $(x - (a-bi))$ to obtain:
-\[p(x) = (x - (a + bi))(x - (a - bi)).\]
-Expanding the product, we get:
-\[p(x) = (x - a - bi)(x - a + bi) = ((x - a) - bi)((x - a) + bi) = (x - a)^2 - (bi)^2=(x-a)^2+b^2.\]
-Since $a,b \in \mathbb{R}$, $(x - a)^2$ and $b^2$ are also real numbers. Thus, the coefficients of $p(x)$ are real numbers, which means $p(x)$ is a quadratic polynomial over $\mathbb{R}$. The other root is $a-bi$.
-\end{solution}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{exercise}
-\label{exDiscriminantRealRoots}
-\index{discriminant}
-Let $a,b \in \mathbb{C}$ and let $p(x)=x^2+ax+b$. The value $\Delta=a^2-4b$ is called the \textbf{discriminant} of $p$. Prove that $p$ has two roots if $\Delta \ne 0$ and one root if $\Delta = 0$. Moreover, if $a,b \in \mathbb{R}$, prove that $p$ has no real roots if $\Delta < 0$, one real root if $\Delta = 0$, and two real roots if $\Delta > 0$.
-\end{exercise}
-
-\begin{solution}
-According to the quadratic formula, a quadratic polynomial $p(x) = x^2+ax+b$ has 2 roots over $\mathbb{C}$, which are
-\[ \frac{-a+\sqrt{a^2-4b}}{2} \quad \text{and} \quad \frac{-a-\sqrt{a^2-4b}}{2} \]
-\begin{itemize}
-\item if $\Delta=a^2-4b=0$, then $ \frac{-a+\sqrt{a^2-4b}}{2} = \frac{-a-\sqrt{a^2-4b}}{2}$, so that there is one root.
-\item if $\Delta=a^2-4b \ne 0$, then $ \frac{-a+\sqrt{a^2-4b}}{2} \ne \frac{-a-\sqrt{a^2-4b}}{2}$, so that there are two roots.
-\end{itemize}
-if $a,b \in \mathbb{R}$ and $\Delta < 0$, $\sqrt{a^2-4b}$ does not be defined in $\mathbb{R}$, so that there is no real root.
-\end{solution}

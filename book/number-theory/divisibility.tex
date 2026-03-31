@@ -12,29 +12,29 @@ Show that if $a \in \mathbb{Z}$ then $1 \mid a$, $-1 \mid a$ and $a \mid 0$. For
 \begin{exercise}
 \label{exGCDofSixAndFifteen}
 There are two greatest common divisors of $6$ and $15$; find both.
-\begin{backhint}
-\hintref{exGCDofSixAndFifteen}
-Remember that negative integers can be greatest common divisors too.
-\end{backhint}
 \end{exercise}
-
 
 
 \begin{exercise}
 \label{exGCDUnique}
-Let $a,b \in \mathbb{Z}$. If $d$ and $d'$ are two greatest common divisors of $a$ and $b$, then either $d=d'$ or $d=-d'$.
-\begin{backhint}
-\hintref{exGCDUnique}
-Start by proving that $d$ and $d'$ must divide each other.
-\end{backhint}
+Let $a,b \in \mathbb{Z}$. If $d_1$ and $d_2$ are two greatest common divisors of $a$ and $b$, then either $d_1=d_2$ or $d_1=-d_2$.
 \end{exercise}
-
 
 
 \begin{exercise}
 For each $n \in \mathbb{Z}$, let $D_n \subseteq \mathbb{Z}$ be the set of divisors of $n$. Prove that $D_a \cap D_b = D_{\mathrm{gcd}(a,b)}$ for all $a,b \in \mathbb{Z}$.
 \end{exercise}
 
+\begin{exercise}
+\label{exFactsAboutGCDs}
+Prove the following facts about greatest common divisors:
+\begin{enumerate}[(a)]
+\item\label{itmFactsAboutGCDsAbsoluteValue} $\mathrm{gcd}(a,b) = \mathrm{gcd}(|a|,|b|)$ for all $a,b \in \mathbb{Z}$.
+\item\label{itmFactsAboutGCDsSwapOrder} $\mathrm{gcd}(a,b) = \mathrm{gcd}(b,a)$ for all $a,b \in \mathbb{Z}$.
+\item\label{itmFactsAboutGCDsZero} $\mathrm{gcd}(a,0) = |a|$ for all $a \in \mathbb{Z}$.
+\end{enumerate}
+\vspace{-20pt}
+\end{exercise}
 
 
 \begin{exercise}
@@ -48,10 +48,6 @@ Which of the following equations have solutions?
 \item $1010u + 101010v = 1010101010101010$
 \item $14u - 4v = 12$
 \end{enumerate}
-\begin{backhint}
-\hintref{exSolutionsToLDEs}
-\Cref{exGCDsofPairs} would be a good starting point.
-\end{backhint}
 \end{exercise}
 
 
@@ -59,7 +55,6 @@ Which of the following equations have solutions?
 \label{exCoprimeTo15}
 Which integers in the set $[15]$ are coprime to $15$?
 \end{exercise}
-
 
 
 \begin{exercise}
@@ -73,29 +68,18 @@ Find a solution $(x,y) \in \mathbb{Z} \times \mathbb{Z}$ to the equation $630x +
 \end{exercise}
 
 
-
 \begin{exercise}
 Find all integers $x,y$ such that
 \[ 630x + 385y = 4340 \]
 \end{exercise}
 
-
-
 \begin{exercise}
 \label{exLCMExistsUnique}
 Let $a,b \in \mathbb{Z}$. Prove that $a$ and $b$ have a least common multiple. Furthermore, prove that least common multiples are unique up to sign, in the sense that if $m,m'$ are two least common multiples of $a$ and $b$, then $m=m'$ or $m=-m'$.
-\begin{backhint}
-\hintref{exLCMExistsUnique}
-This is essentially the same as \Cref{exGCDUnique}.
-\end{backhint}
 \end{exercise}
 
 
 \begin{exercise}
 \label{exProductOfIntegersIsProductOfGCDAndLCM}
 Let $a,b \in \mathbb{Z}$. Prove that $\mathrm{gcd}(a,b) \cdot \mathrm{lcm}(a,b) = |ab|$.
-\begin{backhint}
-\hintref{exProductOfIntegersIsProductOfGCDAndLCM}
-Define $m = \dfrac{ab}{\mathrm{gcd}(a,b)}$ and prove that $m$ satisfies the definition of being a least common multiple of $a$ and $b$ (\Cref{defLCM}). Then apply \Cref{exLCMExistsUnique}.
-\end{backhint}
 \end{exercise}

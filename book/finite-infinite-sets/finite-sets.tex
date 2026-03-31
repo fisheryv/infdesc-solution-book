@@ -2,47 +2,47 @@
 \section{Finite sets}
 \secbegin{secFiniteSets}
 
+
 \begin{exercise}
 \label{exBracketNIsFinite}
 Prove that $[n]$ is finite for each $n \in \mathbb{N}$.
 \end{exercise}
 
+\begin{solutions*}
+Let $n \in \mathbb{N}$. The identity function $\mathrm{id}_{[n]} : [n] \to [n]$ is a bijection by \Cref{exIdentityBijection}, so is an enumeration of $[n]$.
+\end{solutions*}
+
 
 \begin{exercise}
 Prove parts (b) and (c) of \Cref{thmJectionsAndSizeOfNaturalNumbers}.
-\hintlabel{exFinishProofOfJectionsAndSizeOfNaturalNumbers}{%
-Part (b) has a proof by induction that looks much like the one in part (a). In the induction step, given a surjection $g : [m+1] \to [n]$, observe that we must have $n \ge 1$, and construct a surjection $g^- : [m+1] \setminus \{ a \} \to [n-1]$ for some suitable $a \in [m+1]$. Then invoke \Cref{lemRemoveElementFromSet}, now using the fact that $[m] = [m+1] \setminus \{m+1\}$.
-}
 \end{exercise}
 
 
 \begin{exercise}
 \label{exAddRemoveElementsOfFiniteSets}
-Let $X$ be a finite set with $|X| = n > 1$. Let $a \in X$ and let $b \not \in X$. Prove that
+Let $X$ be a finite set.
 \begin{enumerate}[(a)]
-\item $X \setminus \{ a \}$ is finite and $|X \setminus \{ a \}| = n-1$; and
-\item $X \cup \{ b \}$ is finite and $|X \cup \{ b \}| = n+1$.
+\item Prove that for all $a \in X$, the set $X \setminus \{ a \}$ is finite and $|X \setminus \{ a \}| = |X|-1$; and
+\item Prove that for all $b \not\in X$, the set $X \cup \{ b \}$ is finite and $|X \cup \{ b \}| = |X|+1$.
 \end{enumerate}
-Identify where in your proofs you make use the hypotheses that $a \in X$ and $b \not \in X$.
+What happens in part (a) if we do not require $a \in X$? What happens in part (b) if we do not require $b \not\in X$?
 \end{exercise}
+
 
 \begin{exercise}
 Prove parts (b) and (c) of \Cref{thmFiniteSetsAndJections}.
 \end{exercise}
 
-
 \begin{exercise}
-Let $X$ be a finite set. Prove that every subset $U \subseteq X$ is finite and $|U| \le |X|$.
-\hintlabel{exSubsetOfFiniteSetIsFinite}{%
-Given $U \subseteq X$, find an injection $U \to X$ and apply \Cref{thmFiniteSetsAndJections}(a).
-}
+Let $X$ be a finite set. Prove that every subset $A \subseteq X$ is finite and $|A| \le |X|$.
 \end{exercise}
+
+\begin{solutions*}
+Let $i : A \to X$ be the \textit{inclusion function}, defined by $i(x)=x$ for all $x \in A$. For all $a,b \in A$, if $i(a)=i(b)$, then $a=b$ by definition of $i$, so that $i$ is injective. Since $X$ is finite and $i : A \to X$ is an injection, it follows from \Cref{thmFiniteSetsAndJections}\ref{itmFiniteSetFromInjection}.
+\end{solutions*}
 
 \begin{exercise}
 Let $X$ and $Y$ be finite sets. Prove that $X \cap Y$ is finite.
-\hintlabel{exIntersectionOfFiniteSetsIsFinite}{%
-Recall that $X \cap Y \subseteq X$ for all sets $X$ and $Y$.
-}
 \end{exercise}
 
 \begin{exercise}
@@ -60,16 +60,10 @@ The following steps complete the proof of \Cref{propUnionOfFiniteSetsIsFinite}:
 \end{exercise}
 
 \begin{exercise}
-Let $X$ be a finite set and let $U \subseteq X$. Prove that $X \setminus U$ is finite, and moreover $|X \setminus U| = |X| - |U|$.
-\hintlabel{exSizeOfRelativeComplement}{%
-Apply \Cref{propUnionOfFiniteSetsIsFinite} with $Y=U$.
-}
+Let $X$ be a finite set and let $U \subseteq X$. Prove that $X \setminus U$ is finite, and moreover $|X \setminus U| = |X| - |U|$. How does this result change if $U$ is not required to be a subset of $X$?
 \end{exercise}
 
 \begin{exercise}
 \label{exSizeOfCartesianProduct}
 Let $m,n \in \mathbb{N}$. Prove that $|[m] \times [n]| = mn$.
-\hintlabel{exBijectionBetweenProductOfBracketSets}{%
-Prove by induction on $n \in \mathbb{N}$ that, for all $m,n \in \mathbb{N}$, there is a bijection $[mn] \to [m] \times [n]$.
-}
 \end{exercise}

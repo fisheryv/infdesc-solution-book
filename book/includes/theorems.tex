@@ -6,6 +6,9 @@
 
 % Styles
 
+% Width of border around shaded theorem boxes
+\newcommand{\thmboxborderwidth}{0.25pt}
+
 \declaretheoremstyle[
     spaceabove=6pt,
     spacebelow=6pt,
@@ -24,7 +27,7 @@
     notefont={\mdseries},
     notebraces={(}{)},
     bodyfont={\fixthmbox\normalfont},
-    shaded={bgcolor=thmbgcol, rulecolor=thmbdcol, rulewidth=0.25pt}
+    shaded={bgcolor=thmbgcol, rulecolor=thmbdcol, rulewidth=\thmboxborderwidth}
 ]{infdescimptthm}
 
 \declaretheoremstyle[
@@ -45,7 +48,7 @@
     notefont={\mdseries},
     notebraces={(}{)},
     bodyfont={\fixthmbox\normalfont},
-    shaded={bgcolor=defbgcol, rulecolor=defbdcol, rulewidth=0.25pt}
+    shaded={bgcolor=defbgcol, rulecolor=defbdcol, rulewidth=\thmboxborderwidth}
 ]{infdescimptdef}
 
 \declaretheoremstyle[
@@ -61,24 +64,13 @@
 
 \declaretheoremstyle[
     spaceabove=6pt,
-    spacebelow=16pt,
-    headfont={\color{excol}\fontfamily{bch}\bfseries\hspace{-\exsymbolwidth}\exintrosymbol},
-    headpunct={{\par\nobreak}\\},
-    notefont={\mdseries},
-    notebraces={(}{)},
-    bodyfont=\normalfont,
-    qed={\color{pfcol}$\Box$}
-]{infdescso}
-
-\declaretheoremstyle[
-    spaceabove=6pt,
     spacebelow=6pt,
     headfont={\color{excol}\fontfamily{bch}\bfseries\hspace{-\exsymbolwidth}\exintrosymbol},
     headpunct={{\par\nobreak}\\},
     notefont={\mdseries},
     notebraces={(}{)},
     bodyfont={\fixthmbox\normalfont},
-    shaded={bgcolor=exbgcol, rulecolor=exbdcol, rulewidth=0.25pt}
+    shaded={bgcolor=exbgcol, rulecolor=exbdcol, rulewidth=\thmboxborderwidth}
 ]{infdescimptex}
 
 \declaretheoremstyle[
@@ -111,7 +103,7 @@
     notefont={\mdseries},
     notebraces={(}{)},
     bodyfont={\fixthmbox\normalfont},
-    shaded={bgcolor=prbgcol, rulecolor=prbdcol, rulewidth=0.25pt}
+    shaded={bgcolor=prbgcol, rulecolor=prbdcol, rulewidth=\thmboxborderwidth}
 ]{infdescimptpr}
 
 \declaretheoremstyle[
@@ -143,7 +135,7 @@
     notefont={\mdseries},
     notebraces={(}{)},
     bodyfont={\fixthmbox\normalfont},
-    shaded={bgcolor=tipbgcol, rulecolor=tipbdcol, rulewidth=0.25pt}
+    shaded={bgcolor=tipbgcol, rulecolor=tipbdcol, rulewidth=\thmboxborderwidth}
 ]{infdescimpttip}
 
 \declaretheoremstyle[
@@ -170,6 +162,13 @@
 
 
 % Results
+
+\declaretheorem[style=infdescimptthm, numberwithin=section, Refname={Solution,Solutions}, name=Solution]{solutions}
+% \declaretheorem[style=infdescimptthm, sibling=theorem, Refname={Solution,Solutions}, name={Solution\assumesAC{thmcolac}}]{solutionac}
+% \declaretheorem[style=infdescimptthm, numberwithin=chapter, Refname={Solution,Solutions}, name=Solution]{chsolution}
+% \declaretheorem[style=infdescimptthm, sibling=theorem, refname={solution,solutions}, Refname={Solution,Solutions}, name=Solution]{isolution}
+\declaretheorem[style=infdescimptthm, numbered=no, refname={solution,solutions}, Refname={Solution,Solutions}, name=Solution]{solutions*}
+% \declaretheorem[style=infdescimptthm, sibling=theorem, refname={solution,solutions}, Refname={Solution,Solutions}, name={\optmark{Solution}}]{osolution}
 
 \declaretheorem[style=infdescimptthm, numberwithin=section, Refname={Theorem,Theorems}, name=Theorem]{theorem}
 \declaretheorem[style=infdescimptthm, sibling=theorem, Refname={Theorem,Theorems}, name={Theorem\assumesAC{thmcolac}}]{theoremac}
@@ -235,11 +234,11 @@
 \declaretheorem[style=infdescimptdef, numbered=no, refname={definition,definitions}, Refname={Definition,Definitions}, name=Definition]{predefinition*}
 \declaretheorem[style=infdescimptdef, sibling=theorem, refname={definition,definitions}, Refname={Definition,Definitions}, name={\optmark{Definition}}]{opredefinition}
 
-\declaretheorem[style=infdescdef, sibling=theorem, refname={notation,notations}, Refname={Notation,Notations}, name=Notation]{notation}
-\declaretheorem[style=infdescdef, sibling=chtheorem, refname={notation,notations}, Refname={Notation,Notations}, name=Notation]{chnotation}
+\declaretheorem[style=infdescimptdef, sibling=theorem, refname={notation,notations}, Refname={Notation,Notations}, name=Notation]{notation}
+\declaretheorem[style=infdescimptdef, sibling=chtheorem, refname={notation,notations}, Refname={Notation,Notations}, name=Notation]{chnotation}
 \declaretheorem[style=infdescimptdef, sibling=theorem, refname={notation,notations}, Refname={Notation,Notations}, name=Notation]{inotation}
-\declaretheorem[style=infdescdef, numbered=no, refname={notation,notations}, Refname={Notation,Notations}, name=Notation]{notation*}
-\declaretheorem[style=infdescdef, sibling=theorem, refname={notation,notations}, Refname={Notation,Notations}, name={\optmark{Notation}}]{onotation}
+\declaretheorem[style=infdescimptdef, numbered=no, refname={notation,notations}, Refname={Notation,Notations}, name=Notation]{notation*}
+\declaretheorem[style=infdescimptdef, sibling=theorem, refname={notation,notations}, Refname={Notation,Notations}, name={\optmark{Notation}}]{onotation}
 
 \declaretheorem[style=infdescimptdef, sibling=theorem, refname={vocabulary,vocabulary}, Refname={Vocabulary,Vocabulary}, name={Vocabulary}]{vocabulary}
 \declaretheorem[style=infdescimptdef, sibling=chtheorem, refname={vocabulary,vocabulary}, Refname={Vocabulary,Vocabulary}, name={Vocabulary}]{chvocabulary}
@@ -256,8 +255,6 @@
 
 
 % Exercises and examples
-
-\declaretheorem[style=infdescso, sibling=theorem, numbered=no, refname={solution,solutions}, Refname={Solution,Solutions}, name=Solution]{solution}
 
 \declaretheorem[style=infdescex, sibling=theorem, refname={example,examples}, Refname={Example,Examples}, name=Example]{example}
 \declaretheorem[style=infdescex, sibling=theorem, refname={example,examples}, Refname={Example,Examples}, name={Example\assumesAC{excolac}}]{exampleac}
@@ -293,7 +290,7 @@
 
 % End-of-chapter exercises
 
-\declaretheorem[style=infdescchapex, numberwithin=chapter, refname={question, questions}, Refname={Question, Questions}, name={}]{chapex}
+\declaretheorem[style=infdescchapex, numberwithin=section, refname={question, questions}, Refname={Question, Questions}, name={}]{chapex}
 
 % Command for referring to exercises in other chapters
 \newcommand{\CrefCQ}[2]{%
@@ -357,34 +354,69 @@
 % https://tex.stackexchange.com/a/415986 (user31729)
 
 \newcommand{\hintref}[1]{{\color{excol}\fontfamily{bch}\bfseries Hint for \Cref{#1}}\\}
+\newcommand{\solutionref}[1]{{\color{excol}\fontfamily{bch}\bfseries Solution to \Cref{#1}}\\}
 
-\newwrite\collectedcontentfile
+\newwrite\hintsfile
+\newwrite\solutionsfile
 \AtBeginDocument{%
   % Automatically open the file at the beginning of the document
-  \immediate\openout\collectedcontentfile=\jobname.cll
+  \immediate\openout\hintsfile=\jobname-hints.cll
+  \immediate\openout\solutionsfile=\jobname-solutions.cll
 }
 
 \NewEnviron{backhint}{
-  \immediate\write\collectedcontentfile{%
-    \expandafter\unexpanded\expandafter{\BODY}^^J
+  \immediate\write\hintsfile{%
+    \expandafter\unexpanded\expandafter{\BODY}^^J%
+  }%
+}
+
+\NewEnviron{backsolution}{
+  \immediate\write\solutionsfile{%
+    \expandafter\unexpanded\expandafter{\BODY}^^J%
   }%
 }
 
 \newcommand{\printhints}{%
   % Closing the file
-  \immediate\closeout\collectedcontentfile% 
-  \InputIfFileExists{\jobname.cll}{}{}
+  \immediate\closeout\hintsfile% 
+  \InputIfFileExists{\jobname-hints.cll}{}{}
+}
+
+\newcommand{\printsolutions}{%
+  % Closing the file
+  \immediate\closeout\solutionsfile% 
+  \InputIfFileExists{\jobname-solutions.cll}{}{}
+}
+
+\newcommand{\hint}[2]{\label{#1:hint}
+\begin{backhint}
+\hintref{#1:hint}%
+#2%
+\end{backhint}%
 }
 
 \newcommand{\hintlabel}[2]{\label{#1}
 \begin{backhint}
-\hintref{#1}
-#2
+\hintref{#1}%
+#2%
 \end{backhint}%
+}
+
+\newcommand{\solution}[2]{\label{#1:solution}
+\begin{backsolution}
+\solutionref{#1:solution}%
+#2%
+\end{backsolution}%
 }
 
 \newcommand{\hintsection}[1]{%
 \begin{backhint}
 \subsection*{#1}
 \end{backhint}%
+}
+
+\newcommand{\solutionsection}[1]{%
+\begin{backsolution}
+\subsection*{#1}
+\end{backsolution}%
 }

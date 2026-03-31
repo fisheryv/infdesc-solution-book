@@ -13,8 +13,25 @@ Recall the definition of von Neumann natural numbers from \Cref{defVonNeumannNat
 \end{exercise}
 
 
+\begin{exercise}[Zermelo natural numbers]
+\label{exZermeloNaturalNumbers}
+\index{natural number!Zermelo}
+Set $0_{\mathsf{Z}} = \varnothing$, and for all objects $x$ define $s_{\mathsf{Z}}(x) = \{ x \}$. Let
+\[ \mathbb{N}_{\mathsf{Z}} = \{ 0_{\mathsf{Z}},~ s_{\mathsf{Z}}(0_{\mathsf{Z}}),~ s_{\mathsf{Z}}(s_{\mathsf{Z}}(0_{\mathsf{Z}})),~ s_{\mathsf{Z}}(s_{\mathsf{Z}}(s_{\mathsf{Z}}(0_{\mathsf{Z}}))) ,~ \dots \} \]
+Prove that $(\mathbb{N}_{\mathsf{Z}}, 0_{\mathsf{Z}}, s_{\mathsf{Z}})$ is a notion of natural numbers; this construction of the natural numbers is called the \textbf{Zermelo construction}.
+\end{exercise}
+
+\begin{exercise}[Natural numbers with an arbitrary base]
+\label{exNaturalNumbersArbitraryBase}
+Let $b \in \mathbb{Z}$, and define $\mathbb{Z}_{\ge b} = \{ n \in \mathbb{Z} \mid n \ge b \}$; for example, $\mathbb{Z}_{\ge 1} = \{ 1, 2, 3, 4, 5, \dots \}$. Let $s_b : \mathbb{Z}_{\ge b} \to \mathbb{Z}_{\ge b}$ be the function defined by $s_b(n) = n+1$ for all $n \in \mathbb{Z}_{\ge b}$.
+
+Prove that $(\mathbb{Z}_{\ge b}, b, s_b)$ is a notion of natural numbers, and find an explicit description of the unique bijection $f : \mathbb{N}_{\mathsf{vN}} \to \mathbb{Z}$ described in the statement of \Cref{thmNNNUnique}.
+\end{exercise}
+
+
+
 \begin{exercise}
-Prove that the recursive definition of $\le$ is equivalent to the definition of `$m \le n$' as `$\exists k \in \mathbb{N},\, m+k=n$'.
+Prove that the recursive definition of $\le$ is equivalent to the definition of `$m \le n$' as `$\exists k \in \mathbb{N},\, m+k=n$', provided we use the convention that $\mathbb{N} = \{ 0, 1, 2, 3, \dots \}$.
 \hintlabel{exTwoDefinitionsOfLeqOnN}{%
 Define two relations $\le$ and $\le'$ on $\mathbb{N}$, one using the recursive definition and the other using the definition as a logical formula; then use induction to prove that $m \le n \Leftrightarrow m \le' n$ for all $m,n \in \mathbb{N}$.
 }
@@ -27,11 +44,9 @@ Prove that every element of $\mathbb{Z}$, as defined in \Cref{cnsIntegersFromNat
 \end{exercise}
 
 
-
 \begin{exercise}
 Prove that the function $i : \mathbb{Z} \to \mathbb{Q}$ defined by $i(a) = \dfrac{a}{1}$ is an injection, and for all $a,b \in \mathbb{Z}$ we have $i(a+b) = i(a)+i(b)$, $i(ab) = i(a)i(b)$, $i(-a) = -i(a)$ and $i(a-b) = i(a)-i(b)$.
 \end{exercise}
-
 
 
 \begin{exercise}
@@ -39,14 +54,9 @@ Let $n > 0$ be composite. Prove that $\mathbb{Z}/n\mathbb{Z}$ is not a field, wh
 \end{exercise}
 
 
-
 \begin{exercise}
 \label{exInverseIsInvolution}
 Let $(X, 0, 1, +, {\cdot})$ be a field. Prove that $-(-x)=x$ for all $x \in X$, and that $(x^{-1})^{-1} = x$ for all nonzero $x \in X$.
-\begin{backhint}
-\hintref{exInverseIsInvolution}
-Prove that $x$ is an additive inverse for $-x$ (in the sense of \Cref{axField}(F4)) and use uniqueness of additive inverses. Likewise for $x^{-1}$.
-\end{backhint}
 \end{exercise}
 
 
@@ -54,7 +64,6 @@ Prove that $x$ is an additive inverse for $-x$ (in the sense of \Cref{axField}(F
 \label{exMinusOneSquaredIsOne}
 Let $(X,0,1,+,{\cdot})$ be a field. Prove that $(-1) \cdot x = -x$ for all $x \in X$, and that $(-x)^{-1} = -(x^{-1})$ for all nonzero $x \in X$.
 \end{exercise}
-
 
 
 \begin{exercise}

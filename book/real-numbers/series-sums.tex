@@ -5,9 +5,6 @@
 
 \begin{exercise}
 Prove that the series $\displaystyle \sum_{n \ge 3} \dbinom{n}{3}^{-1}$ converges, and find its sum.
-\hintlabel{exSumOfReciprocalsOfNChoose3}{%
-Begin by observing that $\displaystyle \dbinom{n}{3}^{-1} = \dfrac{3}{n-2} - \dfrac{6}{n-1} + \dfrac{3}{n}$.
-}
 \end{exercise}
 
 
@@ -31,11 +28,6 @@ Prove part (b) of \Cref{thmLinearityOfSummation}, and deduce that if $\displayst
 Prove the `uniqueness' part of \Cref{thmBaseBExpansionsOfReals}---that is, prove that for all $x \in [0,\infty)$, if
 \[ \sum_{i \ge 0} \dfrac{u_i}{b^i} \quad \text{and} \quad \sum_{i \ge 0} \dfrac{v_i}{b^i} \]
 are two series satisfying conditions (i)--(iii) of \Cref{thmBaseBExpansionsOfReals}, then $u_i=v_i$ for all $i \in \mathbb{N}$.
-\hintlabel{exUniquenessOfBaseBExpansion}{%
-Proceed by contraposition: suppose $j \in \mathbb{N}$ is least such that $u_j \ne v_j$---without loss of generality $u_j < v_j$---then
-\[ 0 ~=~ \sum_{i \ge 0} \dfrac{v_i}{b^i} - \sum_{i \ge 0} \dfrac{u_i}{b^i} ~=~ \dfrac{v_j-u_j}{b^j} + \sum_{i > j} \dfrac{v_i-u_i}{b^i} \]
-Prove that this is nonsense. You will use condition (iii) in \Cref{thmBaseBExpansionsOfReals} somewhere in your proof.
-}
 \end{exercise}
 
 
@@ -51,21 +43,17 @@ Use \Cref{strFindingBaseBExpansions} to find the \textit{binary} expansion of $\
 Prove that between any two distinct real numbers, there is a rational number.
 \end{exercise}
 
-
 \begin{exercise}
 Let $a \in \mathbb{R}$. Prove that the series $\sum_{n \ge 0} a$ converges if and only if $a=0$.
 \end{exercise}
-
 
 \begin{exercise}
 Prove part (b) of \Cref{thmComparisonTest}.
 \end{exercise}
 
-
 \begin{exercise}
 Prove that $\displaystyle \sum_{n \ge 1} n^{-r}$ diverges for all real $r \ge 1$.
 \end{exercise}
-
 
 
 \begin{exercise}
@@ -74,24 +62,16 @@ Prove that if $(a_n)$ is a sequence such that $(a_n) \to 0$ and $a_n \le 0$ for 
 
 \begin{exercise}
 Find a decreasing sequence $(a_n)$ of non-negative real numbers such that $\displaystyle \sum_{n \ge 0} (-1)^n a_n$ diverges.
-\hintlabel{exAlmostContradictionToAlternatingSeriesTest}{%
-Read the hypotheses of \Cref{thmAlternatingSeriesTest} very carefully.
-}
 \end{exercise}
-
 
 
 \begin{exercise}
 Find a series that converges, but does not converge absolutely.
-\hintlabel{exConvergentNotAbsolutelyConvergentSeries}{%
-We've already proved that such a series exists---go find it!
-}
 \end{exercise}
 
 \begin{exercise}
 Prove \Cref{thmLinearityOfSummation} with `convergent' replaced by `absolutely convergent' throughout.
 \end{exercise}
-
 
 \begin{exercise}
 Prove part (b) of \Cref{thmRatioTest}.
@@ -106,22 +86,14 @@ Use the ratio test to prove that the series $\sum_{n \ge 0} \dfrac{x^n}{n!}$ con
 
 \begin{exercise}
 Let $J = \{ j_n \mid n \in \mathbb{N} \}$ be a set such that, for all $m,n \in \mathbb{N}$, we have $j_m \ne j_n$. Let $(a_j)_{j \in J}$ be a $J$-indexed sequence such that either (i) $\sum_{j \in J} a_j$ is absolutely convergent, or (ii) $a_j \ge 0$ for all $j \in J$. Prove that if there is a bijection $\sigma : I \to J$, then $\sum_{i \in I} a_{\sigma(i)} = \sum_{j \in J} a_j$.
-\hintlabel{exIndexedSumIndependentOfEnumeration}{%
-This exercise looks harder than it is. Write out the definitions of $\sum_{i \in I} a_{f(i)}$ and $\sum_{j \in J} a_j$ and apply \Cref{thmIndependenceOfOrdering}.
-}
 \end{exercise}
 
 
 \begin{exercise}
 Let $x \in (-1,1)$. Prove that $\displaystyle \sum_{n \ge 1} nx^{n-1} = \frac{1}{(1-x)^2}$.
-\hintlabel{exDerivativeOfGeometricSeries}{%
-We know that $\dfrac{1}{(1-x)^2} = \left( \dfrac{1}{1-x} \right)^2 = \left( \displaystyle\sum_{n \ge 0} x^n \right)^2$ by \Cref{thmGeometricSeries}. Multiply out this sum and see what happens.
-}
 \end{exercise}
-
 
 
 \begin{exercise}
 Prove that $\mathrm{exp}(x) = e^x$ for all $x \in \mathbb{Q}$.
 \end{exercise}
-

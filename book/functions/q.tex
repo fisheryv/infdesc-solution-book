@@ -18,6 +18,7 @@ Let $X$ be a set. Prove that
 \[ \forall a \in X,\, \exists ! U \in \mathcal{P}(X), (a \in U \wedge \exists ! x \in X,\, x \in U) \]
 Give an explicit description of the function $X \to \mathcal{P}(X)$ that is suggested by this logical formula.
 \hintlabel{cqSingletonSubsetFunction}{%
+The function $X \to \mathcal{P}(X)$ must send each $a \in X$ to the (unique) $U \in \mathcal{P}(X)$ satisfying $a \in U \wedge \exists ! x \in X,\, x \in U$. Think about what the latter logical formula tells you about what elements $U$ has, and doesn't have. This will help with the proof of existence and uniqueness.
 }
 \end{chapex}
 
@@ -44,7 +45,7 @@ Prove that there is a unique function $f : \mathbb{R} \to \mathbb{R}$ that is bo
 \end{chapex}
 
 \begin{chapex}
-Let $U \subseteq \mathbb{R}$, and let $\chi_U : \mathbb{R} \to \{0,1\}$ be the indicator function of $U$.
+Let $U \subseteq \mathbb{R}$, and let $\chi_U : \mathbb{R} \to [2]$ be the indicator function of $U$.
 \begin{enumerate}[(a)]
 \item Prove that $\chi_U$ is an even function if and only if $U = \{ -u \mid u \in U \}$;
 \item Prove that $\chi_U$ is an odd function if and only if $\mathbb{R} \setminus U = \{ -u \mid u \in U \}$.
@@ -160,6 +161,15 @@ Let $f : X \to Y$ and $g : Y \to Z$ be functions.
 \item Prove that $(g \circ f)[U] = g[f[U]]$ for all $U \subseteq X$;
 \item Prove that $(g \circ f)^{-1}[W] = f^{-1}[g^{-1}[W]]$ for all $W \subseteq Z$.
 \end{enumerate}
+\end{chapex}
+
+\begin{chapex}
+Let $f : X \to Y$ and $g : Y \to Z$ be functions. Define
+\[ S = \{ (x,y,z) \in X \times Y \times Z \mid y=f(x) \text{ and } z=g(y) \} \]
+and let $p : S \to X \times Z$ be the function defined by $p(x,y,z) = (x,z)$ for all $(x,y,z) \in S$. Prove that $p[S]=\mathrm{Gr}(g \circ f)$.
+\hintlabel{cqGraphOfComposite}{%
+Prove it by double containment, and carefully unpack the definitions of what it means to be an element of $p[S]$ and what it means to be an element of $\mathrm{Gr}(g \circ f)$.
+}
 \end{chapex}
 
 \subsection*{Injections, surjections and bijections}

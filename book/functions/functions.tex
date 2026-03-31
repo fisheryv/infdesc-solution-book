@@ -1,6 +1,7 @@
 % !TeX root = ../../infdesc.tex
 \section{Functions}
 \secbegin{secFunctions}
+\index{function|(}
 
 
 \begin{exercise}
@@ -18,11 +19,12 @@ For each of the following specifications of sets $X$, $Y$, $G$, determine whethe
 \begin{enumerate}[(a)]
 \item $X = \mathbb{R}$, $Y = \mathbb{R}$, $G = \{ (a, a^2) \mid a \in \mathbb{R} \}$;
 \item $X = \mathbb{R}$, $Y = \mathbb{R}$, $G = \{ (a^2, a) \mid a \in \mathbb{R} \}$;
-\item $X = \mathbb{R}^{\ge 0}$, $Y = \mathbb{R}^{\ge 0}$, $G = \{ (a^2, a) \mid a \in \mathbb{R}^{\ge 0} \}$, where $\mathbb{R}^{\ge 0} = \{ x \in \mathbb{R} \mid x \ge 0 \}$;
+\item $X = [0, \infty)$, $Y = [0, \infty)$, $G = \{ (a^2, a) \mid a \in [0, \infty) \}$;
 \item $X = \mathbb{Q}$, $Y = \mathbb{Q}$, $G = \{ (x, y) \in \mathbb{Q} \times \mathbb{Q} \mid xy = 1 \}$.
 \item $X = \mathbb{Q}$, $Y = \mathbb{Q}$, $G = \{ (a, a) \mid a \in \mathbb{Z} \}$;
 \end{enumerate}
 \end{exercise}
+
 
 \begin{exercise}
 Which of the following specifications of functions are well-defined?
@@ -39,10 +41,6 @@ Which of the following specifications of functions are well-defined?
 Find a condition on sets $X$ and $Y$ such that the specification of a function $i : X \cup Y \to \{ 0, 1 \}$ given by
 \[ i(z) = \begin{cases} 0 & \text{if } z \in X \\ 1 & \text{if } z \in Y \end{cases} \]
 to be well-defined.
-\begin{backhint}
-\hintref{exWellDefinednessOfFunctionOnUnion}
-What is the value of $i(z)$ if $z \in X \cap Y$?
-\end{backhint}
 \end{exercise}
 
 
@@ -58,7 +56,6 @@ Let $f,g,h,k : \mathbb{Q} \to \mathbb{Q}$ be as in \Cref{exDecompositionOfFuncti
 \end{exercise}
 
 
-
 \begin{exercise}
 \label{exCompositionIsAssociative}
 Prove that composition of functions is \textit{associative}, that is, if $f : X \to Y$, $g : Y \to Z$ and $h : Z \to W$ are functions, then
@@ -69,10 +66,6 @@ As a consequence of associativity, when we want to compose more than two functio
 \begin{exercise}
 \label{exCompositionWithoutMatchingCodomains}
 Let $f : X \to Y$ and $g : Z \to W$ be functions, and suppose that $Y \subsetneqq Z$. Note that there is a function $h : X \to W$ defined by $h(x)=g(f(x))$ for all $x \in X$. Write $h$ as a composite of functions involving $f$ and $g$.
-\begin{backhint}
-\hintref{exCompositionWithoutMatchingCodomains}
-Look closely at \Cref{defComposition}.
-\end{backhint}
 \end{exercise}
 
 
@@ -80,9 +73,11 @@ Look closely at \Cref{defComposition}.
 Prove parts (b) and (c) of \Cref{thmSetIdentitiesFromCharacteristicFunctions}.
 \end{exercise}
 
+
 \begin{exercise}
 Use characteristic functions to prove de Morgan's laws for pairwise unions and intersections (\Cref{thmDeMorganForSets}).
 \end{exercise}
+
 
 \begin{exercise}
 For each of the following functions $f$ and subsets $U$ of their domain, describe the image $f[U]$.
@@ -107,7 +102,6 @@ Let $f : X \to Y$ be a function and let $U, V \subseteq X$. We saw in \Cref{exIm
 \end{enumerate}
 \end{exercise}
 
-
 \begin{exercise}
 Let $f : X \to Y$ be a function. Prove that $f^{-1}[\varnothing] = \varnothing$ and $f^{-1}[Y]=X$.
 \end{exercise}
@@ -116,3 +110,4 @@ Let $f : X \to Y$ be a function. Prove that $f^{-1}[\varnothing] = \varnothing$ 
 \label{exCharacteristicFunctionsCorrespondWithSubsets}
 Let $X$ be a set. Prove that every function $f : X \to \{0,1\}$ is the characteristic function of the subset $f^{-1}[\{1\}] \subseteq X$.
 \end{exercise}
+\index{function|)}

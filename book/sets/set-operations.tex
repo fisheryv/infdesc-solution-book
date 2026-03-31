@@ -2,28 +2,40 @@
 \section{Set operations}
 \secbegin{secSetOperations}
 
+
 \begin{exercise}
 Prove that $[0,\infty) \cap \mathbb{Z} = \mathbb{N}$.
 \end{exercise}
 
 \begin{exercise}
-Write down the elements of the set
-\[ \{ 0, 1, 4, 7 \} \cap \{ 1, 2, 3, 4, 5 \} \]
+Write down the elements of the set $\{ 0, 1, 4, 7 \} \cap \{ 1, 2, 3, 4, 5 \}$.
 \end{exercise}
 
 \begin{exercise}
 Express $[-2,5) \cap [4,7)$ as a single interval.
 \end{exercise}
 
+\begin{exercise}
+Let $A \subseteq \mathbb{R}$. Find expressions using the intersection operation for (a) the set of all positive elements of $A$, and (b) the set of all integer elements of $A$.
+\end{exercise}
 
 \begin{exercise}
-Let $X$ be a set. Prove that $X \cap \varnothing = \varnothing$.
+Let $X$ be a set. Prove that $X \cap \varnothing = \varnothing$ and that $X \cap X = X$.
 \end{exercise}
 
 
+\begin{exercise}
+Let $a,b,c,d \in \mathbb{R}$ with $a<b$ and $c<d$. Prove that the open intervals $(a,b)$ and $(c,d)$ are disjoint if and only if $b \le c$ or $d \le a$.
+\end{exercise}
+
 
 \begin{exercise}
-Let $a,b,c,d \in \mathbb{R}$ with $a<b$ and $c<d$. Prove that the open intervals $(a,b)$ and $(c,d)$ are disjoint if and only if $b<c$ or $d<a$.
+Let $A \subseteq \mathbb{R}$. Find an expression involving the intersection operation for the set of all non-negative rational elements of $A$.
+\end{exercise}
+
+
+\begin{exercise}
+For each $n \in \mathbb{Z}$, let $A_n = \{ x \in \mathbb{R} \mid x \ne n \}$. Describe the set $\displaystyle \bigcap_{n \in \mathbb{Z}} A_n$ in plain terms.p
 \end{exercise}
 
 
@@ -36,46 +48,39 @@ Write down the elements of the set
 Express $[-2,5) \cup [4,7)$ as a single interval.
 \end{exercise}
 
+The union operation allows us to define the following class of sets that will be particularly useful for us when studying counting principles in \Cref{secCountingPrinciples}.
 
 \begin{exercise}
 Let $X$ and $Y$ be sets. Prove that $X \subseteq Y$ if and only if $X \cup Y = Y$.
 \end{exercise}
 
 
-
-\begin{exercise}
+\begin{exercise}[Distributivity of union over intersection]
 \label{exUnionDistributesOverIntersection}
 Let $X,Y,Z$ be sets. Prove that $X \cup (Y \cap Z) = (X \cup Y) \cap (X \cup Z)$.
 \end{exercise}
 
 
 \begin{exercise}
-Express $\displaystyle\bigcup_{n \ge 1} [0,1-\frac{1}{n}]$ as an interval.
+Define $X = \{ x \in \mathbb{R} \mid x^4-5x^2+4 > 0 \}$. Find an expression for $X$ as a union of intervals.
 \end{exercise}
 
 \begin{exercise}
-Prove that $\displaystyle\bigcap_{n \in \mathbb{N}} [n] = \varnothing$ and $\displaystyle\bigcup_{n \in \mathbb{N}} [n] = \{ k \in \mathbb{N} \mid k \ge 1 \}$.
+State and prove distributivity laws for general finitary unions and intersections of sets, generalising \Cref{exIntersectionDistributesOverUnion} and \Cref{exUnionDistributesOverIntersection}.
 \end{exercise}
 
 
 \begin{exercise}
-\label{exIndexedIntersectionUnionGeneralisePairwise}
-Let $X_1$ and $X_2$ be sets. Prove that
-\[ X_1 \cap X_2 = \bigcap_{k \in [2]} X_k \quad \text{and} \quad X_1 \cup X_2 = \bigcup_{k \in [2]} X_k \]
+Express $\displaystyle\bigcup_{n \ge 1} \textstyle[0,1-\frac{1}{n}]$ as an interval.
+\end{exercise}
+
+\begin{exercise}
+Prove that $\displaystyle\bigcap_{n \in \mathbb{N}} [n] = \varnothing$ and $\displaystyle\bigcup_{n \in \mathbb{N}} [n] = \mathbb{N}$.
 \end{exercise}
 
 \begin{exercise}
 \label{exSubsetsFiniteIntersectionInhabitedInfiniteIntersectionEmpty}
-Find a family of sets $\{ X_n \mid n \in \mathbb{N} \}$ such that:
-\begin{enumerate}[(i)]
-\item $\displaystyle\bigcup_{n \in \mathbb{N}} X_n = \mathbb{N}$;
-\item $\displaystyle\bigcap_{n \in \mathbb{N}} X_n = \varnothing$; and
-\item $X_i \cap X_j \ne \varnothing$ for all $i,j \in \mathbb{N}$.
-\end{enumerate}
-\begin{backhint}
-\hintref{exSubsetsFiniteIntersectionInhabitedInfiniteIntersectionEmpty}
-You need to find a family of subsets of $\mathbb{N}$ such that (i) any two of the subsets have infinitely many elements in common, but (ii) given any natural number, you can find one of the subsets that it is \textit{not} an element of.
-\end{backhint}
+Find a family of sets $\{ X_n \mid n \in \mathbb{N} \}$ such that all three of the following properties hold: (i) $\displaystyle\bigcup_{n \in \mathbb{N}} X_n = \mathbb{N}$; (ii) $\displaystyle\bigcap_{n \in \mathbb{N}} X_n = \varnothing$; and (iii) $X_i \cap X_j \ne \varnothing$ for all $i,j \in \mathbb{N}$.
 \end{exercise}
 
 
@@ -89,13 +94,25 @@ Express $[-2,5) \setminus [4,7)$ and $[4,7) \setminus [-2,5)$ as intervals.
 \end{exercise}
 
 \begin{exercise}
+Let $A$ be the set of all real numbers that are not integers.
+\begin{enumerate}[(a)]
+\item Find an expression for $A$ as a relative complement of one set in another.
+\item Find an expression for $A$ as a union of intervals.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
 \label{exSetMinusSetMinus}
-Let $X$ and $Y$ be sets. Prove that $Y \setminus (Y \setminus X)= X \cap Y$, and deduce that $X \subseteq Y$ if and only if $Y \setminus (Y \setminus X) = X$.
+Let $X$ and $A$ be sets. Prove that $X \setminus (X \setminus A) = X \cap A$, and deduce that $A \subseteq X$ if and only if $X \setminus (X \setminus A) = A$.
+\end{exercise}
+
+\begin{exercise}
+Complete the proof of de Morgan's laws for sets.
 \end{exercise}
 
 
 \begin{exercise}
-Complete the proof of de Morgan's laws for sets.
+Write down all ordered lists that have all of the elements of $\{ 1, 2, 3 \}$ as terms and have no repeated terms.
 \end{exercise}
 
 
@@ -108,6 +125,14 @@ Let $X$ be a set. Prove that $X \times \varnothing = \varnothing$.
 \end{exercise}
 
 \begin{exercise}
-\label{exCartesianProductNotAssociative}
-Let $X$, $Y$ and $Z$ be sets. Under what conditions is it true that $X \times Y = Y \times X$? Under what conditions is it true that $(X \times Y) \times Z = X \times (Y \times Z)$?
+\label{exCartesianProductNotCommutative}
+Let $X$, $Y$ and $Z$ be sets. Under what conditions is it true that $X \times Y = Y \times X$?
 \end{exercise}
+
+
+\begin{exercise}
+Consider the following sets:
+\[ \mathbb{R}^3, ~~~ \mathbb{R}^2 \times \mathbb{R}, ~~~ \mathbb{R} \times \mathbb{R}^2, ~~~ \mathbb{R} \times \mathbb{R} \times \mathbb{R}, ~~~ (\mathbb{R} \times \mathbb{R}) \times \mathbb{R}, ~~~ \mathbb{R} \times (\mathbb{R} \times \mathbb{R}) \]
+Are all of these sets equal? If not, which pairs are (and which are not) equal to each other, and is there another sense in which they are all equivalent?
+\end{exercise}
+

@@ -1,7 +1,7 @@
 % !TeX root = ../../infdesc.tex
 \section{Strong induction}
 \secbegin{secStrongInduction}
-
+\index{induction!strong|(}
 
 \begin{exercise}
 Define a sequence recursively by $a_0 = 4$, $a_1 = 9$ and $a_n = 5a_{n-1} - 6a_{n-2}$ for all $n \ge 2$. Prove that $a_n = 3 \cdot 2^n + 3^n$ for all $n \in \mathbb{N}$.
@@ -15,11 +15,7 @@ Prove that $t_n \le 2^{n-3}$ for all $n \ge 3$.
 
 \begin{exercise}
 The \textit{Frobenius coin problem} asks when a given amount of money can be obtained from coins of given denominations. For example, a value of $7$ dubloons cannot be obtained using only $3$ dubloon and $5$ dubloon coins, but for all $n \ge 8$, a value of $n$ dubloons \textit{can} be obtained using only $3$ dubloon and $5$ dubloon coins. Prove this.
-\hintlabel{exFrobeniusCoinProblem}{%
-Observe that if $n$ dubloons can be obtained using only $3$ and $5$ dubloon coins, then so can $n+3$. See how you might use this fact to exploit strong induction with multiple base cases.
-}
 \end{exercise}
-
 
 
 \begin{exercise}
@@ -29,9 +25,15 @@ What goes wrong in the proof of \Cref{propSqrt2Irrational} if we try instead to 
 \begin{exercise}
 \label{exSquareRootThreeIsIrrational}
 Prove that $\sqrt{3}$ is irrational.
-\begin{backhint}
-\hintref{exSquareRootThreeIsIrrational}
-Prove first that if $a \in \mathbb{Z}$ and $a^2$ is divisible by $3$, then $a$ is divisible by $3$.
-\end{backhint}
 \end{exercise}
 
+
+\begin{exercise}
+Prove that the interval $(0,1)$ has infinite descent.
+\end{exercise}
+
+\begin{exercise}
+Let $n \in \mathbb{N}$. By considering the expression $\sqrt{n} \times \dfrac{\sqrt{n} - \lfloor \sqrt{n} \rfloor}{\sqrt{n} - \lfloor \sqrt{n} \rfloor}$, prove by infinite descent that if $\sqrt{n}$ is not an integer, then $\sqrt{n}$ is irrational.
+\end{exercise}
+
+\index{induction!strong|)}

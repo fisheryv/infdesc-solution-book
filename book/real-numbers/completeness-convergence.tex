@@ -10,7 +10,6 @@
 Define the notions of \textbf{lower bound} and \textbf{infimum}, and find the infimum of the open interval $(0,1)$.
 \end{exercise}
 
-
 \begin{exercise}
 Let $(x_n)$ be the constant sequence with value $a \in \mathbb{R}$. Prove that $(x_n) \to a$.
 \end{exercise}
@@ -18,8 +17,6 @@ Let $(x_n)$ be the constant sequence with value $a \in \mathbb{R}$. Prove that $
 \begin{exercise}
 Prove that the sequence $(z_n)$ defined by $z_n=\frac{n+1}{n+2}$ converges to $1$.
 \end{exercise}
-
-
 
 \begin{exercise}
 Let $(y_n)$ be the sequence defined by $y_n=n$ for all $n \in \mathbb{N}$:
@@ -30,7 +27,6 @@ Prove that $(y_n)$ diverges.
 \begin{exercise}
 Let $r \in \mathbb{R}$. Recall that $(r^n) \to 0$ if $|r|<1$ (this was \Cref{propPowerOfRTendsToZero}) and that $(r^n)$ diverges if $r=-1$ (this was \Cref{exSequencePlusMinusOneDiverges}). Prove that $(r^n)$ diverges if $|r|>1$.
 \end{exercise}
-
 
 \begin{exercise}
 Prove that if a sequence $(x_n)$ converges to a nonzero limit, then $(x_n)$ is eventually nonzero. Find a sequence $(x_n)$ that converges to zero, but is not eventually nonzero.
@@ -43,41 +39,26 @@ If $(x_n) \to a \ne 0$, show that $|x_n-a|$ is eventually small enough that no $
 Let $(x_n)$ be a sequence and let $p(x)$ be a logical formula. What does it mean to say that $p(x_n)$ is \textit{not} eventually true? Find a sentence involving the phrase `not eventually' that is equivalent to the assertion that $(x_n)$ diverges.
 \end{exercise}
 
-
-
 \begin{exercise}[`Eventually' does not preserve negation]
-Find a sequence $(x_n)$ and a logical formula $p(x)$ such that $p(x_n)$ is neither eventually true nor eventually false. (Thus `$p(x_n)$ is eventually false' does not imply `$\neg p(x_n)$ is eventually true'.)
+Find a sequence $(x_n)$ and a logical formula $p(x)$ such that $p(x_n)$ is neither eventually true nor eventually false. (Thus `$p(x_n)$ is not eventually true' does not imply `$\neg p(x_n)$ is eventually true'.)
 \end{exercise}
-
 
 \begin{exercise}
 Prove parts (b) and (d) of \Cref{thmLimitsPreserveArithmeticOperations}.
 \end{exercise}
-
 
 \begin{exercise}
 \label{exPolynomialsAreContinuousUsingSequences}
 Let $(x_n)$ be a sequence of real numbers converging to a real number $a$, and let $p(x) = a_0 + a_1x + \cdots + a_d x^d$ be a polynomial function. Prove that $(p(x_n)) \to p(a)$, and that $\left( \frac{1}{p(x_n)} \right) \to \frac{1}{p(a)}$ if $p(a) \ne 0$.
 \end{exercise}
 
-
-
 \begin{exercise}
 Fix $r \in \mathbb{N}$, and let $p(x) = a_0 + a_1 x + \cdots + a_r x^r$ and $q(x) = b_0 + b_1 x + \cdots + b_r x^r$ be polynomials with real coefficients. Prove that if $b_r \ne 0$, then $\left( \dfrac{p(n)}{q(n)} \right) \to \dfrac{a_r}{b_r}$.
-\hintlabel{exLimitOfQuotientOfPolynomials}{%
-Divide the numerator and denominator by $n^r$ and apply \Cref{thmLimitsPreserveArithmeticOperations} and \Cref{exOneOverNPowerK}.
-}
 \end{exercise}
-
 
 \begin{exercise}
 Prove that the sequence $(5^n-n^5)_{n \ge 0}$ is \textit{eventually} increasing---that is, there is some $k \in \mathbb{N}$ such that $(5^n-n^5)_{n \ge k}$ is an increasing sequence.
-\hintlabel{ex5PowerNMinusNPowerFiveIncreasing}{%
-You might want to begin by solving \Cref{exNPowerFiveLessThanFivePowerN}.
-}
 \end{exercise}
-
-
 
 \begin{exercise}
 \label{exMonotoneConvergenceForDecreasingSequences}
@@ -95,15 +76,10 @@ A sequence $(x_n)$ is defined recursively by $x_0 = 0$ and $x_{n+1} = \sqrt{2+x_
 Prove that $(x_n)$ converges.
 \end{exercise}
 
-
 \begin{exercise}
 Prove that a subsequence of an increasing sequence is increasing, that a subsequence of a decreasing sequence is decreasing, and that a subsequence of a constant sequence is constant.
 \end{exercise}
 
-
 \begin{exercise}
 Prove that every convergent sequence is a Cauchy sequence.
-\hintlabel{exConvergentImpliesCauchy}{%
-In the definition of a Cauchy sequence, observe that $x_m-x_n = (x_m-a) - (x_n-a)$, and apply the triangle inequality (\Cref{thmTriangleInequality1D}).
-}
 \end{exercise}

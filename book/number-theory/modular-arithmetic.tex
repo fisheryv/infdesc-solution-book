@@ -4,34 +4,29 @@
 
 
 \begin{exercise}
-For which integers $x$ does the congruence $5x+1 \equiv x+8 \bmod 3$ hold? Characterise such integers $x$ in terms of their remainder when divided by $3$.
-\end{exercise}
-
-
-
-\begin{exercise}
-Fix a modulus $n$. Is it true that
-\[ a \equiv b \bmod n \quad \Rightarrow \quad a^k \equiv b^k \bmod n \] for all $a,b \in \mathbb{Z}$ and $k \in \mathbb{N}$? If so, prove it; if not, provide a counterexample.
+For which integers $x$ does the congruence $5x+1 \equiv x+8 \cmod{3}$ hold? Characterise such integers $x$ in terms of their remainder when divided by $3$.
 \end{exercise}
 
 \begin{exercise}
 Fix a modulus $n$. Is it true that
-\[ k \equiv \ell \bmod n \quad \Rightarrow \quad a^k \equiv a^{\ell} \bmod n \]
+\[ a \equiv b \cmod{n} \quad \Rightarrow \quad a^k \equiv b^k \cmod{n} \] for all $a,b \in \mathbb{Z}$ and $k \in \mathbb{N}$? If so, prove it; if not, provide a counterexample.
+\end{exercise}
+
+\begin{exercise}
+Fix a modulus $n$. Is it true that
+\[ k \equiv \ell \cmod{n} \quad \Rightarrow \quad a^k \equiv a^{\ell} \cmod{n} \]
 for all $k,\ell \in \mathbb{N}$ and $a \in \mathbb{Z}$? If so, prove it; if not, provide a counterexample.
 \end{exercise}
 
 \begin{exercise}
 Fix a modulus $n$. Is it true that
-\[ qa \equiv qb \bmod n \quad \Rightarrow \quad a \equiv b \bmod n \]
-for all $a,b,q \in \mathbb{Z}$ with $q \not \equiv 0 \bmod n$? If so, prove it; if not, provide a counterexample.
+\[ qa \equiv qb \cmod{n} \quad \Rightarrow \quad a \equiv b \cmod{n} \]
+for all $a,b,q \in \mathbb{Z}$ with $q \not \equiv 0 \cmod{n}$? If so, prove it; if not, provide a counterexample.
 \end{exercise}
-
 
 \begin{exercise}
 For $n=7,8,9,10,11,12$, either find a multiplicative inverse for $6$ modulo $n$, or show that no multiplicative inverse exists. Can you spot a pattern?
 \end{exercise}
-
-
 
 \begin{exercise}
 Let $n$ be a modulus and let $a \in \mathbb{Z}$. Suppose that $u$ is a multiplicative inverse for $a$ modulo $n$. Prove that, for all $k \in \mathbb{Z}$, $u+kn$ is a multiplicative inverse for $a$ modulo $n$.
@@ -39,56 +34,30 @@ Let $n$ be a modulus and let $a \in \mathbb{Z}$. Suppose that $u$ is a multiplic
 
 
 \begin{exercise}
-Find all integers $x$ such that $25x-4 \equiv 4x+3 \bmod 13$.
+Find all integers $x$ such that $25x-4 \equiv 4x+3 \cmod{13}$.
 \end{exercise}
-
-
 
 \begin{exercise}
 \label{exPowerModN}
-Let $n$ be a modulus and let $a \in \mathbb{Z}$ with $a \perp n$. Prove that there exists $k \ge 1$ such that $a^k \equiv 1 \bmod n$.
-\begin{backhint}
-\hintref{exPowerModN}
-Consider the list $a^0, a^1, a^2, \dots$. Since there are only finitely many remainders modulo $n$, we must have $a^i \equiv a^j \bmod n$ for some $0 \le i < j$.
-\end{backhint}
+Let $n$ be a modulus and let $a \in \mathbb{Z}$ with $a \perp n$. Prove that there exists $k \ge 1$ such that $a^k \equiv 1 \cmod{n}$.
 \end{exercise}
 
 
 \begin{exercise}
 \label{RemainderOfThreeExpBigRemThirteen}
 Find the remainder of $3^{244886}$ when divided by $13$.
-\begin{backhint}
-\hintref{RemainderOfThreeExpBigRemThirteen}
-First find the remainder of $244886$ when divided by $12$.
-\end{backhint}
 \end{exercise}
 
 
 \begin{exercise}
 \label{exTotientMultiplyByPrime}
 Let $n \in \mathbb{Z}$ and let $p > 0$ be prime. Prove that if $p \mid n$, then $\varphi(pn) = p \cdot \varphi(n)$. Deduce that $\varphi(p^k) = p^k-p^{k-1}$ for all prime $p>0$ and all $k \ge 1$.
-\begin{backhint}
-\hintref{exTotientMultiplyByPrime}
-Find a bijection $[p] \times C_n \to C_{pn}$, where $C_n = \{ k \in [|n|] \mid k \perp n \}$. You will need to use the techniques of \Cref{secFiniteSets} in your proof.
-\end{backhint}
 \end{exercise}
 
-% \begin{exercise}
-% \label{exTotientOfProductOfTwoPrimes}
-% Let $p$ and $q$ be distinct positive primes. Prove that $\varphi(pq)=(p-1)(q-1)$.
-% \begin{backhint}
-% \hintref{exTotientOfProductOfTwoPrimes}
-% Start by proving that $k \in [pq]$ is \textit{not} coprime to $pq$ if and only if $p \mid k$ or $q \mid k$. You will need to use the techniques of \Cref{secFiniteSets} in your proof.
-% \end{backhint}
-% \end{exercise}
 
 \begin{exercise}
 Let $n \in \mathbb{Z}$ and let $p>0$ be prime. Prove that if $p \nmid n$, then $\varphi(pn)=(p-1)\varphi(n)$.
-\hintlabel{exTotientMultiplyByPrimeTwo}{%
-Start by proving that $k \in [pn]$ is \textit{not} coprime to $pn$ if and only if either $p \mid k$ or $k$ is not coprime to $n$. You will need to use the techniques of \Cref{secFiniteSets} in your proof.
-}
 \end{exercise}
-
 
 
 \begin{exercise}
@@ -96,83 +65,65 @@ Prove that $\varphi(100)=40$, this time using the inclusion--exclusion principle
 \end{exercise}
 
 
-
 \begin{exercise}
 Use Euler's theorem to prove that the last two digits of $3^{79}$ are `$67$'.
-\hintlabel{exLastTwoDigitsOfPower}{%
-Recall that $\varphi(100) = 40$---this was \Cref{exTotientOfOneHundred}.
-}
 \end{exercise}
-
 
 \begin{exercise} \label{exCompositeDividesFactorial}
 Let $n \in \mathbb{Z}$ be composite. Prove that if $n>4$, then $n \mid (n-1)!$.
 \end{exercise}
 
 \begin{exercise} \label{exSquareCongruentToOneModPrimeUnit}
-Let $p$ be a positive prime and let $a \in \mathbb{Z}$. Prove that, if $a^2 \equiv 1 \bmod p$, then $a \equiv 1 \bmod p$ or $a \equiv {-1} \bmod p$. 
-\begin{backhint}
-\hintref{exSquareCongruentToOneModPrimeUnit}
-You need to use the fact that $p$ is prime at some point in your proof.
-\end{backhint}
+Let $p$ be a positive prime and let $a \in \mathbb{Z}$. Prove that, if $a^2 \equiv 1 \cmod{p}$, then $a \equiv 1 \cmod{p}$ or $a \equiv {-1} \cmod{p}$. 
 \end{exercise}
-
 
 
 \begin{exercise}
 \label{exPrimeFactorialCongruentToMinusOne}
-Let $p$ be a positive prime. Prove that $(p-1)! \equiv -1 \bmod p$.
-\begin{backhint}
-\hintref{exPrimeFactorialCongruentToMinusOne}
-Pair as many elements of $[p-1]$ as you can into multiplicative inverse pairs modulo $p$.
-\end{backhint}
+Let $p$ be a positive prime. Prove that $(p-1)! \equiv -1 \cmod{p}$.
 \end{exercise}
+
 
 \begin{exercise}
 Let $p$ be an odd positive prime. Prove that
-\[ \left[ \left( \frac{p-1}{2} \right)! \right]^2 \equiv (-1)^{\frac{p+1}{2}} \bmod p \]
+\[ \left[ \left( \frac{p-1}{2} \right)! \right]^2 \equiv (-1)^{\frac{p+1}{2}} \cmod{p} \]
 \end{exercise}
-
 
 \begin{exercise}
 Find all integer solutions $x$ to the system of congruences:
 \[ \begin{cases}
-x \equiv {-1} \bmod 4 \\
-x \equiv 1 \bmod 9 \\
-x \equiv 5 \bmod{11}
+x \equiv {-1} \cmod{4} \\
+x \equiv 1 \cmod{9} \\
+x \equiv 5 \cmod{11}
 \end{cases} \]
-Express your solution in the form $x \equiv a \bmod n$ for suitable $n > 0$ and $0 \le a < n$.
+Express your solution in the form $x \equiv a \cmod{n}$ for suitable $n > 0$ and $0 \le a < n$.
 \end{exercise}
 
 \begin{exercise}
 \label{exCRTExistence}
 Let $m,n$ be coprime moduli and let $a,b \in \mathbb{Z}$. Let $u,v \in \mathbb{Z}$ be such that
-\[ mu \equiv 1 \bmod n \quad \text{and} \quad nv \equiv 1 \bmod m \]
+\[ mu \equiv 1 \cmod{n} \quad \text{and} \quad nv \equiv 1 \cmod{m} \]
 In terms of $a,b,m,n,u,v$, find an integer $x$ such that
-\[ x \equiv a \bmod m \quad \text{and} \quad x \equiv b \bmod n \]
+\[ x \equiv a \cmod{m} \quad \text{and} \quad x \equiv b \cmod{n} \]
 \end{exercise}
 
 \begin{exercise}
 \label{exCRTUniqueness}
-Let $m,n$ be coprime moduli and let $x,y \in \mathbb{Z}$. Prove that if $x \equiv y \bmod m$ and $x \equiv y \bmod n$, then $x \equiv y \bmod{mn}$.
+Let $m,n$ be coprime moduli and let $x,y \in \mathbb{Z}$. Prove that if $x \equiv y \cmod{m}$ and $x \equiv y \cmod{n}$, then $x \equiv y \cmod{mn}$.
 \end{exercise}
 
 
 \begin{exercise}
 \label{exCRTAlgorithm}
 Verify that the algorithm outlined above is correct. Use it to compute the solutions to the system of congruences
-\[ x \equiv 3 \bmod{12} \quad \text{and} \quad x \equiv 15 \bmod{20} \]
+\[ x \equiv 3 \cmod{12} \quad \text{and} \quad x \equiv 15 \cmod{20} \]
 \end{exercise}
 
 \begin{oexercise}
 \label{exGeneralisedCRT}
 Generalise the Chinese remainder theorem to systems of arbitrarily (finitely) many congruences. That is, given $r \in \mathbb{N}$, find precisely the conditions on moduli $n_1,n_2,\dots,n_r$ and integers $a_1,a_2,\dots,a_r$ such that an integer solution exists to the congruences
-\[ x \equiv a_1 \bmod{n_1}, \quad x \equiv a_2 \bmod{n_2}, \qquad \cdots \qquad x_r \equiv a_r \bmod{n_r} \]
+\[ x \equiv a_1 \cmod{n_1}, \quad x \equiv a_2 \cmod{n_2}, \qquad \cdots \qquad x_r \equiv a_r \cmod{n_r} \]
 Find an explicit formula for such a value of $x$, and find a suitable modulus $n$ in terms of $n_1,n_2,\dots,n_r$ such that any two solutions to the system of congruences are congruent modulo $n$.
-\begin{backhint}
-\hintref{exGeneralisedCRT}
-This generalisation will be tricky! You may need to generalise the definitions and results about greatest common divisors and least common multiples that we have seen so far, including B\'{e}zout's lemma. You might want to try proving this first in the case that $n_i \perp n_j$ for all $i \ne j$.
-\end{backhint}
 \end{oexercise}
 
 \begin{exercise}
@@ -180,10 +131,6 @@ This generalisation will be tricky! You may need to generalise the definitions a
 Prove that gaps between consecutive primes can be made arbitrarily large. That is, prove that for all $n \in \mathbb{N}$, there exists an integer $a$ such that the numbers
 \[ a,\ a+1,\ a+2,\ \dots,\ a+n \]
 are all composite.
-\begin{backhint}
-\hintref{exGapsBetweenPrimesLarge}
-Observe that if $a,k \in \mathbb{Z}$ and $k \mid a$, then $k \mid a+k$.
-\end{backhint}
 \end{exercise}
 
 
@@ -208,7 +155,7 @@ Let $n \in \mathbb{N}$. Find a method for testing if $n$ is divisible by $7$ bas
 Prove that the RSA algorithm is correct. Specifically, prove:
 \begin{enumerate}[(a)]
 \item If $n=pq$, for distinct positive primes $p$ and $q$, then $\varphi(n) = (p-1)(q-1)$;
-\item Given $1<e<\varphi(n)$ with $e \perp \varphi(n)$, there exists $d \in \mathbb{Z}$ with $de \equiv 1 \bmod \varphi(n)$.
-\item Given $M,K \in \mathbb{Z}$ with $K \equiv M^e \bmod n$, it is indeed the case that $K^d \equiv M \bmod n$.
+\item Given $1<e<\varphi(n)$ with $e \perp \varphi(n)$, there exists $d \in \mathbb{Z}$ with $de \equiv 1 \cmod{\varphi(n)}$.
+\item Given $M,K \in \mathbb{Z}$ with $K \equiv M^e \cmod{n}$, it is indeed the case that $K^d \equiv M \cmod{n}$.
 \end{enumerate}
 \end{exercise}

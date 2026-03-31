@@ -1,12 +1,11 @@
 % !TeX root = ../../infdesc.tex
 \section{Alternating sums}
 \secbegin{secAlternatingSums}
+\index{alternating sum|(}
+\index{sum!alternating|(}
 
 \begin{exercise}
 Prove by induction that $\displaystyle \sum_{k=0}^n (-1)^k \dbinom{n}{k} = 0$ for all $n \in \mathbb{N}$.
-\hintlabel{exAlternatingSumOfBinomialCoefficientsByInduction}{%
-You will need to use the recursive definition of binomial coefficients
-}
 \end{exercise}
 
 
@@ -30,8 +29,6 @@ Prove that every involution is a bijection.
 Let $h : X \to X$ be an involution and let $a \in X$. Prove that $h$ either fixes $a$---that is, $h(a)=a$---or swaps it with another element $b \in X$---that is, $h(a)=b$ and $h(b)=a$.
 \end{exercise}
 
-
-
 \begin{exercise}
 \label{exToggleIsInvolution}
 Let $X$ be a set and let $a \in X$. Prove that the function $T_a : \mathcal{P}(X) \to \mathcal{P}(X)$ defined by $T_a(U) = U \oplus a$ for all $U \subseteq X$ is an involution.
@@ -51,6 +48,7 @@ Let $X$ be a finite set. Under what conditions does the involution $r : \mathcal
 Let $n \in \mathbb{N}$ and let $X$ be the set of all functions $[n] \to [n]$, partitioned as in \Cref{exPartitionOfFunctionsFromNToN}, so that a function $f : [n] \to [n]$ has even parity if it fixes an even number of elements, and odd parity if it fixes an odd number of elements. Find a parity-swapping function $X \to X$.
 \end{exercise}
 
+
 \begin{exercise}
 Repeat \Cref{exAlternatingSumOfKTimesBinomialCoefficientByPrimitiveInvolutionPrinciple} using the involution principle---that is, use the involution principle to prove that
 \[ \sum_{k=0}^n (-1)^k \cdot k \cdot \binom{n}{k} = 0 \]
@@ -61,17 +59,13 @@ for all $n \ge 2$.
 Use the involution principle to prove that
 \[ \sum_{k=0}^n (-1)^k \dbinom{n}{k} \dbinom{k}{\ell} = 0 \]
 for all $n,\ell \in \mathbb{N}$ with $\ell < n$.
-\hintlabel{exAlternatingSumOfProductOfBinomialsByInvolution}{%
-Consider selecting a committee from a population of size $n$, with a subcommittee of size exactly $\ell$; toggle whether the oldest member of the population that is not on the subcommittee is or is not on the committee. If you prefer mathematical objects, consider the set of pairs $(A, B)$, where $A \subseteq B \subseteq [n]$ and $|A| = \ell$; toggle the least element of $[n] \setminus A$ in the set $B$.
-}
 \end{exercise}
-
 
 
 \begin{exercise}
 Let $n \in \mathbb{N}$ and consider the set
-\[ X = \{ (k,i) \mid k \le n,~ i \in [k] \} \]
-For example, if $n=3$ then $X = \{ (1,1), (2,1), (2,2), (3,1), (3,2), (3,3) \}$.
+\[ X = \{ (k,i) \mid k \in [n] \text{ and } i \le k \} \]
+For example, if $n=3$ then $X = \{ (0,0), (1,0), (1,1), (2,0), (2,1), (2,2) \}$.
 
 \begin{enumerate}[(a)]
 \item Prove that $|X| = \displaystyle \sum_{k=0}^n k$.
@@ -79,7 +73,6 @@ For example, if $n=3$ then $X = \{ (1,1), (2,1), (2,2), (3,1), (3,2), (3,3) \}$.
 \[ \sum_{k=0}^n (-1)^k k = \begin{cases} \dfrac{n}{2} & \text{if $n$ is even} \\ -\dfrac{n+1}{2} & \text{if $n$ is odd } \end{cases} \]
 \end{enumerate}
 \end{exercise}
-
 
 \begin{exercise}
 \label{exSizeOfUnionOf3Or4Sets}
@@ -89,7 +82,9 @@ Let $W$ be another set. Derive a similar formula for $|W \cup X \cup Y \cup Z|$.
 \end{exercise}
 
 
-
 \begin{exercise}
 How many natural numbers less than $1000$ are multiples of $2$, $3$, $5$ or $7$?
 \end{exercise}
+
+\index{alternating sum|)}
+\index{sum!alternating|)}

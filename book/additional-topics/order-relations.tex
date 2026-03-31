@@ -1,5 +1,8 @@
 % !TeX root = ../../infdesc.tex
 \section{Orders and lattices}
+\label{secOrderRelations}
+\label{secPosets}
+\label{secOrdersLattices}
 
 
 \begin{exercise}
@@ -19,7 +22,6 @@ Let $X$ be a set, and let $U,V \in \mathcal{P}(X)$. Prove that the $\subseteq$-s
 Let $a,b \in \mathbb{N}$. Show that $\mathrm{gcd}(a,b)$ is an infimum of $\{ a, b \}$ and that $\mathrm{lcm}(a,b)$ is a supremum of $\{ a, b \}$ with respect to divisibility.
 \end{exercise}
 
-
 \begin{exercise}[Properties of suprema and infima]
 Let $(X, \preceq)$ be a lattice. Prove that, for all $x,y \in X$, we have:
 \begin{enumerate}[(a)]
@@ -33,25 +35,12 @@ Let $(X, \preceq)$ be a lattice. Prove that, for all $x,y \in X$, we have:
 \begin{exercise}
 \label{exNIsDistributiveLatticeUnderDivisibility}
 Prove that $(\mathbb{N}, {\mid})$ is a distributive lattice.
-\begin{backhint}
-\hintref{exNIsDistributiveLatticeUnderDivisibility}
-Use the characterisation of gcd and lcm in terms of prime factorisation.
-\end{backhint}
 \end{exercise}
-
 
 \begin{exercise}
 Let $(X, \preceq)$ be a distributive lattice with a greatest element and a least element, and let $x \in X$. Prove that, if a complement for $x$ exists, then it is unique; that is, prove that if $y,z \in X$ are complements for $X$, then $y=z$.
-\hintlabel{exComplementIsUnique}{%
-Use distributivity, together with the fact that $y = y \vee \bot$ and $y = y \wedge \top$.
-}
 \end{exercise}
-
-
 
 \begin{exercise}
 Prove part (b) of \Cref{thmDeMorgan}.
-\hintlabel{exSecondPartOfDeMorgan}{%
-This can be proved by swapping $\wedge$ with $\vee$ and $\top$ with $\bot$ in the proof of (a). But there is a shorter proof which uses the result of part (a) together with \Cref{propDoubleNegation}.
-}
 \end{exercise}

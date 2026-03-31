@@ -2,91 +2,101 @@
 \section{Sets}
 \secbegin{secSets}
 
-
 \begin{exercise}
-Which of the following propositions are true, and which are false?
-\[ \frac{1}{2} \in \mathbb{Z} \qquad \frac{1}{2} \in \mathbb{Q} \qquad \mathbb{Z} \in \mathbb{Q} \qquad \mathbb{Z} \in \mathcal{U} \qquad \frac{1}{2} \in \mathcal{U} \]
-\hintlabel{exElementsOfSets}{%
-Think about what `$a \in X$' \textit{really means}---don't let your intuition fool you.
-}
+Think about why the characterisations of `$\forall x \in X$' in terms of `$\forall x$' and of `$\exists x \in X$' in terms of `$\exists x$' involve different logical operators ($\Rightarrow$ for $\forall$, and $\wedge$ for $\exists$), and verify de Morgan's laws for quantifiers (\Cref{thmDeMorganQuantifiers}) for the expanded forms.
 \end{exercise}
 
+\begin{solutions*}
+When proving a proposition of the form $\forall x \in X,\, p(x)$, we let $x \in X$ and then prove $p(x)$---thus, we introduce a variable $x$, we assume $x \in X$, and we prove $p(x)$. This is equivalent to introducing an element $x \in \mathcal{U}$ and proving $x \in X \Rightarrow p(x)$, which explains the implication operator in $\forall x,\, x \in X \Rightarrow p(x)$.
 
-\begin{exercise}
-\label{exDyadicRatioal}
-\index{rational number!dyadic}
-A \textbf{dyadic rational} is a rational number that can be expressed as an integer divided by a power of $2$. Express the set of all dyadic rationals using set-builder notation.
+When proving a proposition of the form $\exists x \in X,\, p(x)$, we define a specific object $a$, we prove $a \in X$, and we prove $p(a)$. This is equivalent to defining $a \in \mathcal{U}$ and then proving $a \in X \wedge p(a)$, which explains the conjunction operator in $\exists x,\, x \in X \wedge p(x)$.
+
+We can use maximal negation (as in \Cref{secLogicalEquivalence}) to verify de Morgan's laws:
+\begin{align*}
+\neg \forall x \in X,\, p(x) &\equiv \neg \forall x,\, (x \in X \Rightarrow p(x)) && \\
+&\equiv \exists x,\, \neg (x \in X \Rightarrow p(x)) && \text{by \Cref{thmDeMorganQuantifiers}} \\
+&\equiv \exists x,\, (x \in X \wedge (\neg p(x))) && \text{by \Cref{exNegationOfImplication}} \\
+&\equiv \exists x \in X,\, \neg p(x)
+\end{align*}
+and
+
+\begin{align*}
+\neg \exists x \in X,\, p(x) &\equiv \neg \exists x,\, (x \in X \wedge p(x)) && \\
+&\equiv \forall x,\, \neg (x \in X \wedge p(x)) && \text{by \Cref{thmDeMorganQuantifiers}} \\
+&\equiv \forall x,\, (x \in X \Rightarrow (\neg p(x))) && \text{by \Cref{exNegationOfConjunctionAlternative}} \\
+&\equiv \forall x \in X,\, \neg p(x)
+\end{align*}
+\end{solutions*}
+
+\begin{exercise}[Russell's paradox has been resolved!]
+Repeat \Cref{exRussellsParadox} with the updated definitions of sets and set-builder notation.
 \end{exercise}
 
+\begin{solutions*}
+Note that by the new characterisation of set-builder notation, we have $R \in R$ if and only if $R \in \mathcal{U} \wedge R \not\in R$.
 
-\begin{exercise}
-Express the set of dyadic rationals (defined in \Cref{exDyadicRatioal}) in this alternate form of set-builder notation.
-\end{exercise}
+If $R \in \mathcal{U}$, this means that $R \in R$ if and only if $R \not\in R$, which is a contradiction for the same reason as in \Cref{exRussellsParadox}.
 
-\begin{exercise}
-For each of the following illustrations, find the interval that it depicts. A filled circle $\bullet$ indicates that an end-point is included in the interval, whereas a hollow circle $\circ$ indicates that an end-point is not included in the interval.
-
-\begin{enumerate}[(a)]
-\item
-\begin{tikzpicture}
-\draw[latex-latex] (-5.5,0) -- (5.5,0);
-\draw[line width=1.5pt, color=blue] (-3,0) -- (3,0);
-\filldraw[blue](-3,0)circle[radius=2.5pt];
-\filldraw[white](3,0)circle[radius=2.5pt];
-\draw[blue](3,0)circle[radius=2.5pt];
-\node[at={(-3,3pt)},above]{$-2$};
-\node[at={(3,3pt)},above]{$5$};
-\end{tikzpicture}
-
-\item
-\begin{tikzpicture}
-\draw[latex-latex] (-5.5,0) -- (5.5,0);
-\draw[line width=1.5pt, color=blue] (-3,0) -- (3,0);
-\filldraw[blue](-3,0)circle[radius=2.5pt];
-\filldraw[blue](3,0)circle[radius=2.5pt];
-\node[at={(-3,3pt)},above]{$-2$};
-\node[at={(3,3pt)},above]{$5$};
-\end{tikzpicture}
-
-
-\item
-\begin{tikzpicture}
-\draw[latex-latex] (-5.5,0) -- (5.5,0);
-\draw[latex-, line width=1.5pt, color=blue] (-5.5,0) -- (3,0);
-\filldraw[white](3,0)circle[radius=2.5pt];
-\draw[blue](3,0)circle[radius=2.5pt];
-\node[at={(3,3pt)},above]{$5$};
-\end{tikzpicture}
-
-\item 
-\begin{tikzpicture}
-\draw[latex-latex] (-5.5,0) -- (5.5,0);
-\draw[-latex, line width=1.5pt, color=blue] (-3,0) -- (5.5,0);
-\filldraw[blue](-3,0)circle[radius=2.5pt];
-\node[at={(-3,3pt)},above]{$-2$};
-\end{tikzpicture}
-\end{enumerate}
-\end{exercise}
+It follows that $R \not\in \mathcal{U}$; but then all this means is that $R \in R$ is false.
+\end{solutions*}
 
 
 \begin{exercise}
 Let $a,b,c,d \in \mathbb{R}$ with $a<b$ and $c<d$. Prove that $[a,b) \subseteq (c,d]$ if and only if $a > c$ and $b \le d$.
 \end{exercise}
 
+\begin{solutions*}
+$(\Rightarrow)$ Assume $[a,b) \subseteq (c,d]$.
+\begin{itemize}
+\item Since $a \in [a,b)$, we have $a \in (c,d]$ and so $a > c$ as required.
+\item Towards a contradiction, assume $b > d$. Then $\frac{b+d}{2} < \frac{b+b}{2} = b$, so $\frac{b+d}{2} \in [a,b)$, and so $\frac{b+d}{2} \in (c,d]$. This implies that $\frac{b+d}{2} \le d$; however since $b>d$ we have $\frac{b+d}{2} > \frac{d+d}{2} = d$, contradicting $\frac{b+d}{2} \le d$. So indeed $b \le d$, as required.
+\end{itemize}
+$(\Leftarrow)$ Assume $a>c$ and $b \le d$, and let $x \in [a,b)$, so that $x \in \mathbb{R}$ and $a \le x < b$. We need to prove that $x \in (c,d]$. Well, combining these inequalities, we have
+\[ c < a \le x < b \le d \]
+and so $c < x \le d$, so that $x \in (c,d]$, as required. \qed
+\end{solutions*}
+
 
 \begin{exercise}
 Prove that $\{ x \in \mathbb{R} \mid x^2 < x \} = (0,1)$.
 \end{exercise}
 
+\begin{solutions*}
+Write $A = \{ x \in \mathbb{R} \mid x^2 < x \}$; we prove that $A = (0,1)$ by double containment.
+\begin{itemize}
+\item $(\subseteq)$ Let $x \in A$. Then $x \in \mathbb{R}$ and $x^2 < x$, so that $0 < x-x^2 = x(1-x)$. Now, if $x \le 0$ then $1-x > 0$, and so $x(1-x) \le 0$; and if $x \ge 1$ then $x > 0$ and $1-x \le 0$, and so $x(1-x) \le 0$. Thus we must have $0<x<1$, and so $x \in (0,1)$, as required.
+\item $(\supseteq)$ Let $x \in (0,1)$. Then $x \in \mathbb{R}$ and $0<x<1$. Since $x>0$, the inequality $x<1$ is preserved when we multiply through by $x$, and so $x^2 \le x$. Hence $x \in A$, as required.
+\end{itemize}
+By double containment, we have $A = (0,1)$. \qed
+\end{solutions*}
 
 \begin{exercise}
 Prove by double containment that $\{ 0, 1 \} = \{ 1, 0 \}$ and $\{ 0, 0 \} = \{ 0 \}$.
 \end{exercise}
 
+\begin{solutions*}
+Proving $\{ 0, 1 \} = \{ 1, 0 \}$:
+\begin{itemize}
+\item $(\subseteq)$ Let $x \in \{ 0, 1 \}$. Then either $x = 0 \in \{ 1, 0 \}$ or $x = 1 \in \{ 1, 0 \}$; in both cases we see that $x \in \{ 1, 0 \}$.
+\item $(\supseteq)$ Identical to $(\subseteq)$, but swap the roles of $0$ and $1$.
+\end{itemize}
+Hence $\{ 0, 1 \} = \{ 1, 0 \}$ by double containment. \qed
+
+Proving $\{ 0, 0 \} = \{ 0 \}$:
+\begin{itemize}
+\item $(\subseteq)$ Let $x \in \{ 0, 0 \}$. Then $x = 0$ or $x = 0$\dots{} so $x = 0 \in \{ 0 \}$.
+\item $(\supseteq)$ Let $x \in \{ 0 \}$. Then $x = 0 \in \{ 0, 0 \}$.
+\end{itemize}
+Hence $\{ 0, 0 \} = \{ 0 \}$ by double containment. \qed
+
+These proofs are a little bit silly, but they demonstrate that in list notation for sets, we can change the order that the elements are listed and we can repeat elements in the list without changing the set.
+\end{solutions*}
+
 
 \begin{exercise}
 Let $a,b \in \mathbb{R}$. Prove that $[a,b]$ is empty if and only if $a > b$, and that $(a,b)$ is empty if and only if $a \ge b$.
 \end{exercise}
+
 
 
 \begin{exercise}
@@ -98,8 +108,23 @@ Recall from the beginning of \Cref{secSets} that $\forall x \in X,\, p(x)$ is eq
 
 
 \begin{exercise}
-\label{exEmptySetSubsetOfEverySet}
-Let $X$ be a set. Prove that $\varnothing \subseteq X$.
+\label{exEmptySetElementSubsetOfEverySet}
+Is it true or false that $\varnothing \in X$ for all sets $X$? Is it true or false that $\varnothing \subseteq X$ for all sets $X$?
+\end{exercise}
+
+\begin{exercise}
+Explain why the sets $\varnothing$, $\{ \varnothing \}$ and $\{ \{ \varnothing \} \}$ are different, and then determine the truth values of each of the following propositions:
+\begin{multicols}{3}
+\begin{enumerate}[(a)]
+\item $\varnothing \in \varnothing$
+\item $\varnothing \subseteq \varnothing$
+\item $\varnothing \in \{ \varnothing \}$
+\item $\varnothing \in \{ \{ \varnothing \} \}$
+\item $\{ \varnothing \} \subseteq \{ \varnothing \}$
+\item $\{ \varnothing \} \subseteq \{ \{ \varnothing \} \}$
+\end{enumerate}
+\end{multicols}
+Find more examples of simple elementhood and subsethood propositions---that is, propositions of the form $A \in B$ or $A \subseteq B$---involving the three sets $\varnothing$, $\{ \varnothing \}$, $\{ \{ \varnothing \} \}$; you should find at least one true and one false elementhood proposition, and at least one true and one false subsethood proposition.
 \end{exercise}
 
 
@@ -119,9 +144,8 @@ Write out the elements of $\mathcal{P}(\varnothing)$, $\mathcal{P}(\mathcal{P}(\
 \begin{exercise}
 Determine, with proof, whether or not each of the following statements is true.
 \begin{enumerate}[(a)]
+\item $\mathcal{P}(\varnothing) \in \{ \varnothing \}$;
 \item $\mathcal{P}(\varnothing) \in \mathcal{P}(\mathcal{P}(\varnothing))$;
-\item $\varnothing \in \{ \{ \varnothing \} \}$;
-\item $\{ \varnothing \} \in \{ \{ \varnothing \} \}$;
 \item $\mathcal{P}(\mathcal{P}(\varnothing)) \in \{ \varnothing, \{ \varnothing, \{ \varnothing \} \} \}$.
 \end{enumerate}
 Repeat the exercise with all instances of `$\in$' replaced by `$\subseteq$'.

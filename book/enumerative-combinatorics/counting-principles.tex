@@ -2,11 +2,12 @@
 \section{Counting principles}
 \secbegin{secCountingPrinciples}
 
+\index{counting|(}
+
 
 \begin{exercise}
 Fix $n \in \mathbb{N}$. Prove that $\binom{n}{0} = 1$, $\binom{n}{1} = n$ and $\binom{n}{n} = 1$.
 \end{exercise}
-
 
 
 \begin{exercise}
@@ -14,11 +15,21 @@ List all the permutations of the set $[4]$.
 \end{exercise}
 
 
+\begin{exercise}[Other characterisations of the factorial]
+\label{exOtherCharacterisationsOfFactorial}
+Let $n \in \mathbb{N}$, and let $X$ and $Y$ be finite sets with $|X|=|Y|=n$.
+
+Prove that the following sets all have size $n!$:
+\begin{enumerate}[(a)]
+\item The set of all $n$-tuples $(x_0,x_1,\dots,x_{n-1}) \in X^n$ such that each element of $X$ appears exactly once in the list;
+\item The set of all permutations of $X$;
+\item The set of all enumerations of $X$ (that is, bijections $[n] \to X$); and
+\item The set of all bijections $X \to Y$.
+\end{enumerate}
+\end{exercise}
+
 \begin{exercise}
 Let $X$ and $Y$ be finite sets, and recall that $Y^X$ denotes the set of functions from $X$ to $Y$. Prove that $|Y^X|=|Y|^{|X|}$.
-\hintlabel{exSizeOfFunctionSet}{%
-Any function $f : X \to Y$ with finite domain can be specified by listing its values. For each $x \in X$, how many choices do you have for the value $f(x)$?
-}
 \end{exercise}
 
 \begin{exercise}
@@ -28,9 +39,6 @@ Since September 2001, car number plates on the island of Great Britain have take
 
 \begin{exercise}
 Count the number of injections $[3] \to [4]$.
-\hintlabel{exNumberOfInjectionsThreeToFour}{%
-The image (\Cref{defImage}) of an injection $[3] \to [4]$ must be a subset of $[4]$ of size three.
-}
 \end{exercise}
 
 
@@ -39,9 +47,8 @@ Prove \Cref{thmAdditionPrinciple}. The proof follows the same pattern as that of
 \end{exercise}
 
 
-
 \begin{exercise}
-Pick your favourite integer $n > 1000$. For this value of $n$, how many inhabited subsets of $[n]$ contain either only even or only odd numbers? (You need not evaluate exponents.)
+Pick your favourite integer $n \ge 1000$. For this value of $n$, how many inhabited subsets of $[n]$ contain either only even or only odd numbers? (You need not evaluate exponents.)
 \end{exercise}
 
 
@@ -71,10 +78,6 @@ Provide a combinatorial proof that if $n,k \in \mathbb{N}$ with $n \ge k$, then
 \[ \binom{n+1}{k+1} = \binom{n}{k} + \binom{n}{k+1} \]
 
 Deduce that the combinatorial definition of binomial coefficients (\Cref{defBinomialCoefficient}) is equivalent to the recursive definition (\Cref{defBinomialCoefficientRecursive}).
-\begin{backhint}
-\hintref{exPascalIdentity}
-How many ways can you select $k+1$ animals from a set containing $n$ cats and one dog?
-\end{backhint}
 \end{exercise}
 
 
@@ -82,10 +85,6 @@ How many ways can you select $k+1$ animals from a set containing $n$ cats and on
 \label{exCountingKTimesNChooseK}
 Let $n,k \in \mathbb{N}$ with $k \le n+1$. Prove that
 \[ k \binom{n}{k} = (n-k+1) \binom{n}{k-1} \]
-\begin{backhint}
-\hintref{exCountingKTimesNChooseK}
-Find two procedures for counting the number of pairs $(U, u)$, such that $U \subseteq [n]$ is a $k$-element subset and $u \in U$. Equivalently, count the number of ways of forming a committee of size $k$ from a population of size $n$, and then appointing one member of the committee to be the chair.
-\end{backhint}
 \end{exercise}
 
 
@@ -95,8 +94,6 @@ Given natural numbers $n,a,b,c$ with $a+b+c=n$, define the \textbf{trinomial coe
 \[ \left\{ (A,B,C)\ \middle|\ 
 \begin{matrix} \begin{matrix} A \subseteq [n], & B \subseteq [n], & C \subseteq[n], \\ |A|=a, & |B|=b, & |C|=c, \end{matrix} \\ \text{and } A \cup B \cup C = [n] \end{matrix} \right\} \]
 By considering trinomial coefficients, prove that if $a,b,c \in \mathbb{N}$, then $(a+b+c)!$ is divisible by $a! \cdot b! \cdot c!$.
-\begin{backhint}
-\hintref{exTrinomialCoefficients}
-Find an expression for $(a+b+c)!$ in terms of $a!$, $b!$, $c!$ and $\binom{a+b+c}{a,b,c}$, following the pattern of \Cref{thmBinomAsFactorial}.
-\end{backhint}
 \end{exercise}
+
+\index{counting|)}

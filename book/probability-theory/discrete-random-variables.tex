@@ -3,7 +3,6 @@
 \secbegin{secDiscreteRandomVariables}
 
 
-
 \begin{exercise}
 With probability space $(\Omega,\mathbb{P})$ and random variable $N$ defined as in \Cref{exThreeCoinFlips}, compute $\mathbb{P}\{N \text{ is odd}\}$ and $\mathbb{P}\{N = 4\}$.
 \end{exercise}
@@ -14,15 +13,12 @@ Let $(\Omega, \mathbb{P})$ be a probability space, let $E$ be a set, let $X$ be 
 \[ \mathbb{P}\{X \in U\} = \sum_{e \in U} f_X(e) \]
 \end{exercise}
 
-
-
 \begin{exercise}
-A coin which shows heads with probability $p \in [0,1]$, and tails otherwise, is flipped five times. For each $i \in [5]$, let
+A coin which shows heads with probability $p \in [0,1]$, and tails otherwise, is flipped five times. For each $1 \le i \le 5$, let
 \[ X_i = \begin{cases} 0 & \text{if the } i^{\text{th}} \text{ flip shows tails} \\
 1 & \text{if the } i^{\text{th}} \text{ flip shows heads} \end{cases} \]
 Prove that the random variables $X_1,X_2,X_3,X_4,X_5$ are pairwise independent.
 \end{exercise}
-
 
 
 \begin{exercise}
@@ -35,12 +31,12 @@ Let $X$ be a $\{0,1\}$-valued random variable. Prove that $X \sim \mathrm{U}(\{0
 \end{exercise}
 
 
-
 \begin{exercise}
 Let $p \in [0,1]$ and let $X \sim \mathrm{Geom}(p)$. Prove that
 \[ \mathbb{P}\{X \text{ is even}\} = \frac{1}{2-p} \]
 What is the probability that $X$ is odd?
 \end{exercise}
+
 
 \begin{exercise}
 Let $(\Omega,\mathbb{P})$ be a probability space and let $c \in \mathbb{R}$. Thinking of $c$ as a \textit{constant} real-valued random variable,\footnote{Formally, we should define $X : \Omega \to \mathbb{R}$ by letting $X(\omega)=c$ for all $\omega \in \Omega$; then compute $\mathbb{E}[X]$.} prove that $\mathbb{E}[c]=c$.
@@ -57,10 +53,7 @@ Use \Cref{exDerivativeOfGeometricSeries} to prove that the expectation of a $\ma
 Prove that the expectation of a $\mathbb{N}^+$-valued random variable which is geometrically distributed with parameter $p \in [0,1]$ is equal to $\frac{1}{p}$.
 \end{exercise}
 
-
-
 \begin{exercise}
 Let $(\Omega,\mathbb{P})$ be a probability space, let $E \subseteq \mathbb{R}$ be countable, let $\{ X_i \mid i \in I \}$ be a family of $E$-valued random variables on $(\Omega,\mathbb{P})$, indexed by some countable set $I$, and let $\{ a_n \mid n \in \mathbb{N} \}$ be an $I$-indexed family of real numbers. Prove that
 \[ \mathbb{E} \left[ \sum_{i \in I} a_i X_i \right] = \sum_{i \in I} a_i\mathbb{E}[X_i] \]
 \end{exercise}
-

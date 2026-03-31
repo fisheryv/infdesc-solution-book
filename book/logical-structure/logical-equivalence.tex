@@ -8,7 +8,6 @@
 Let $p$, $q$ and $r$ be propositional variables. Prove that the propositional formula $(p \vee q) \Rightarrow r$ is logically equivalent to $(p \Rightarrow r) \wedge (q \Rightarrow r)$.
 \end{exercise}
 
-
 \begin{exercise}
 Use the definitions of $\wedge$, $\vee$ and $\Rightarrow$ to justify the truth tables in \Cref{exNegationConjunctionDisjunctionImplicationTruthTable}.
 \hintlabel{exJustifyBasicTruthTables}{Note that you may need to use the law of excluded middle (\Cref{axLEM}) and the principle of explosion (\Cref{axPrincipleOfExplosion}).}
@@ -24,14 +23,12 @@ Use a truth table to prove that $p \Rightarrow q \equiv (\neg p) \vee q$.
 Let $p$, $q$ and $r$ be propositional variables. Use a truth table to prove that the propositional formula $(p \vee q) \Rightarrow r$ is logically equivalent to $(p \Rightarrow r) \wedge (q \Rightarrow r)$.
 \end{exercise}
 
-
 \begin{exercise}
 Use the law of contraposition to prove that $p \Leftrightarrow q \equiv (p \Rightarrow q) \wedge ((\neg p) \Rightarrow (\neg q))$, and use the proof technique that this equivalence suggests to prove that an integer is even if and only if its square is even.
 \hintlabel{exIntegerEvenIffSquareEven}{%
 Express this statement as $\forall n \in \mathbb{Z},\, (n \text{ is even}) \Leftrightarrow (n^2 \text{ is even})$, and note that the negation of `$x$ is even' is `$x$ is odd'.
 }
 \end{exercise}
-
 
 \begin{exercise}
 Prove that $p \vee q \equiv (\neg p) \Rightarrow q$. Use this logical equivalence to suggest a new strategy for proving propositions of the form $p \vee q$, and use this strategy to prove that if two integers sum to an even number, then either both integers are even or both are odd.
@@ -48,6 +45,10 @@ Prove \Cref{thmDeMorganLogicalOperators}(b) thrice: once using the definition of
 Prove that $\neg (p \Rightarrow q) \equiv p \wedge (\neg q)$ twice, once using a truth table, and once using \Cref{exImplicationInTermsOfDisjunctionWithTruthTables} together with de Morgan's laws and the law of double negation.
 \end{exercise}
 
+\begin{exercise}
+\label{exNegationOfConjunctionAlternative}
+Prove that $\neg (p \wedge q) \equiv p \Rightarrow (\neg q)$. What strategy does this suggest for proving that a conjunction is false? How does this compare with the strategy suggested by de Morgan's laws for logical operators?
+\end{exercise}
 
 
 \begin{exercise}

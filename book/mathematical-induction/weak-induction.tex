@@ -1,6 +1,8 @@
 % !TeX root = ../../infdesc.tex
 \section{Weak induction}
 \secbegin{secWeakInduction}
+\index{induction!weak|(}
+
 
 \begin{exercise}
 \label{exSumOfPowersOf2}
@@ -12,7 +14,6 @@ Prove by induction that $\displaystyle \sum_{k=0}^n 2^k = 2^{n+1} - 1$ for all $
 Write down the statement $p(n)$ that \Cref{exHorseInductionFail} attempted to prove for all $n \ge 1$. Convince yourself that the proof of the base case is correct, then write down---with quantifiers---exactly the proposition that the induction step is meant to prove. Explain why the argument in the induction step failed to prove this proposition.
 \end{exercise}
 
-
 \begin{exercise}
 \label{exFormulaForGeometricProgression}
 Let $a,r \in \mathbb{R}$ with $r \ne 1$. Then
@@ -20,14 +21,9 @@ Let $a,r \in \mathbb{R}$ with $r \ne 1$. Then
 for all $n \in \mathbb{N}$.
 \end{exercise}
 
-
 \begin{exercise}
-Let $n \in \mathbb{N}$ and let $\{ X_k \mid 1 \le k \le n \}$ be a family of sets. Prove by induction on $n$ that there is a bijection $\displaystyle \prod_{k=1}^{n+1} X_k \to \left( \prod_{k=1}^n X_k \right) \times X_n$.
-\hintlabel{exProductOfSuccNSets}{%
-To define the bijection, think about what the elements of the two sets look like: The elements of $\prod_{k=1}^{n+1} X_k$ look like $(a_1, a_2, \dots, a_n, a_{n+1})$, where $a_k \in X_k$ for each $1 \le k \le n+1$. On the other hand, the elements of $\left( \prod_{k=1}^n X_k \right) \times X_{n+1}$ look like $((a_1, a_2, \dots, a_n), a_{n+1})$.
-}
+Let $n \in \mathbb{N}$ and for each $k \in [n+1]$ let $X_k$ be a set. Prove by induction on $n$ that there is a bijection $\displaystyle \prod_{k \in [n+1]} X_k \to \left( \prod_{k \in [n]} X_k \right) \times X_n$.
 \end{exercise}
-
 
 \begin{exercise}
 Prove that $\dbinom{n}{k} = \dbinom{n}{n-k}$ for all $n,k \in \mathbb{N}$ with $k \le n$.
@@ -37,7 +33,6 @@ Prove that $\dbinom{n}{k} = \dbinom{n}{n-k}$ for all $n,k \in \mathbb{N}$ with $
 \begin{exercise}
 Use the binomial theorem to prove that
 \[ \sum_{i=0}^n (-1)^i \binom{n}{i} = 0 \]
-\hintlabel{exAlternatingSumOfBinomialCoefficientsIsZero}{%
-Note that $(-1)^i \dbinom{n}{i} = \dbinom{n}{i} \cdot (-1)^i \cdot 1^{n-i}$.
-}
 \end{exercise}
+
+\index{induction!weak|)}

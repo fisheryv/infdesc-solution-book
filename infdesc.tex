@@ -13,8 +13,12 @@
 \newcommand{\adaptername}{} % Your full name
 \newcommand{\adapteremail}{} % Your email address
 
+% Language
+% 0:en_GB 1:en_US
+\newcounter{englishvariant}\setcounter{englishvariant}{0}
+
 % Page layout
-% 0:6"x9", 1:a4, 2:usletter, 3:tablet, 4:phone
+% 0:7"x10", 1:a4, 2:usletter, 3:tablet, 4:phone
 \newcounter{bookformat}\setcounter{bookformat}{0}
 
 % Book version - if you are adapting the book, please leave
@@ -44,11 +48,8 @@
 \input{book/front-matter/titlepage.tex}
 \restoregeometry
 
-\clearpage
-\input{book/front-matter/copyright.tex}
-
 % Table of contents
-\bookmark[page=3,level=0]{Contents}
+\bookmark[page=1,level=0]{Contents}
 \tableofcontents
 
 \mainmatter
@@ -77,12 +78,6 @@
 \input{book/probability-theory/_probability-theory.tex}
 \input{book/additional-topics/_additional-topics.tex}
 
-% Source: LaTeX Stack Exchange
-% https://tex.stackexchange.com/q/6489 (Malabarba)
-% https://tex.stackexchange.com/a/6494 (Stefan Kottwitz)
-% https://tex.stackexchange.com/a/6494#comment971771_6494 (egreg)
-\addtocontents{toc}{\protect\pagebreak}
-
 \appendix
 
 \begin{appendices}
@@ -97,8 +92,6 @@
 \input{book/miscellany/_miscellany.tex}
 
 \end{appendices}
-
-\backmatter
 
 \input{book/licence/_licence.tex}
 
