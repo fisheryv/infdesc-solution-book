@@ -36,7 +36,7 @@ Now set $m = \ceil{-x}$. By definition of ceiling we have $m-1 < -x \le m$. Mult
 
 \begin{exercise}
 \label{exRationalNumbersAreAField}
-Complete the proof of \Cref{thmRationalNumbersAreAField}.
+Complete the proof of Theorem 0.13.
 \end{exercise}
 
 \begin{solutions*}
@@ -82,6 +82,20 @@ Determine the truth values of the following propositions.
 \end{enumerate}
 \end{solutions*}
 
+\begin{exercise}
+\label{exDyadicRatioal}
+A \textbf{dyadic rational} is a rational number that can be expressed as an integer divided by a power of $2$. Express the set of all dyadic rationals using set-builder notation in at least two different ways.
+\end{exercise}
+
+\begin{solutions*}
+Letting $X$ be the set of all dyadic rationals, we have equivalently:
+\[ X = \dsetb{x \in \Rat}{x=\dfrac{a}{2^n} \text{ for some } a \in \Int \text{ and } n \in \Nat} \]
+or
+\[ X = \dsetb{\dfrac{a}{2^n}}{a \in \Int \text{ and } n \in \Nat} \]
+Note that $2^n \ne 0$ for all $n \in \Nat$ so we don't need to worry about the part of the definition of rational numbers that requires the denominator of the fraction to be nonzero.
+
+These are not the only two possible answers to this question but they are perhaps the closest to the definition using the two variantes of set-builder notation described earlier in the section.
+\end{solutions*}
 
 \begin{exercise}
 \label{exNotationsInvolvingBrackteN}
@@ -195,33 +209,181 @@ Express each of the sets illustrated below using the most appropriate notation. 
 Find the binary, ternary, octal, decimal, hexadecimal and base-$36$ expansions of the number $21127$, using the letters $\mathrm{A}$--$\mathrm{F}$ as additional digits for the hexadecimal expansion (representing the numbers $10$--$15$, respectively), and the letters $\mathrm{A}$--$\mathrm{Z}$ as additional digits for the base-$36$ expansion.
 \end{exercise}
 
+\begin{solutions*}
+Converting from decimal to other bases can be done by dividing by the base and then reading the remainders in reverse order. Taking binary as an example,
+\begin{center}
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+  \node at (0,0) {
+    $\begin{array}{r@{~}r@{~}l}
+      21127 &\mid 2 &\dots 1 \\
+      10563 &\mid 2 &\dots 1 \\
+      5281 &\mid 2 &\dots 1 \\
+      2640 &\mid 2 &\dots 0 \\
+      1320 &\mid 2 &\dots 0 \\
+      660 &\mid 2 &\dots 0 \\
+      330 &\mid 2 &\dots 0 \\
+      165 &\mid 2 &\dots 1 \\
+      82 &\mid 2 &\dots 0 \\
+      41 &\mid 2 &\dots 1 \\
+      20 &\mid 2 &\dots 0 \\
+      10 &\mid 2 &\dots 0 \\
+      5 &\mid 2 &\dots 1 \\
+      2 &\mid 2 &\dots 0 \\
+      1 &\mid 2 &\dots 1 \\
+    \end{array}$
+  };
+  \draw[->, thick] (current bounding box.east) ++(0.5em,-3cm) -- ++(0, 6.0cm) node[midway,right] {read remainders backwards};
+\end{tikzpicture}
+\end{center}
+
+So $21127 = 101001010000111_{(2)}$.
+
+We can convert $21127$ to ternary expansions as with the same method,
+\begin{center}
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+  \node at (0,0) {
+    $\begin{array}{r@{~}r@{~}l}
+      21127 &\mid 3 &\dots 1 \\
+      7042 &\mid 3 &\dots 1 \\
+      2347 &\mid 3 &\dots 1 \\
+      782 &\mid 3 &\dots 2 \\
+      260 &\mid 3 &\dots 2 \\
+      86 &\mid 3 &\dots 2 \\
+      28 &\mid 3 &\dots 1 \\
+      9 &\mid 3 &\dots 0 \\
+      3 &\mid 3 &\dots 0 \\
+      1 &\mid 3 &\dots 1 \\
+    \end{array}$
+  };
+  \draw[->, thick] (current bounding box.east) ++(0.5em,-2cm) -- ++(0, 4.0cm) node[midway,right] {read remainders backwards};
+\end{tikzpicture}
+\end{center}
+
+So $21127 = 1001222111_{(3)}$.
+
+Similarly, $21127 = 51207_{(8)} = 5287_{(16)} = \mathtt{GAV}_{(36)}$. Therefore,
+\[
+21127 = 101001010000111_{(2)} = 1001222111_{(3)} = 51207_{(8)} = 5287_{(16)} = \mathtt{GAV}_{(36)}.
+\]
+\end{solutions*}
+
 
 \begin{exercise}
 \label{exOneDividesEveryIntegerDividesZero}
 Prove that $1$ divides every integer, and that every integer divides $0$.
 \end{exercise}
 
+\begin{solutions*}
+  \fixlistskip
+  \begin{proof}
+    We know that $\forall n \in \Int, n = 1 \cdot n$.
+    According to the Definition 0.33, it follows that $1$ divides every integer.\\
+
+    Similarly, we know that $\forall n \in \Int, 0 = 0 \cdot n$.
+    According to the Definition 0.33, it follows that every integer divides $0$.
+  \end{proof}
+\end{solutions*}
+
 \begin{exercise}
 \label{exDivisibilityIsLinear}
 Let $a,b,d \in \Int$. Suppose that $d$ divides $a$ and $d$ divides $b$. Given integers $u$ and $v$, prove that $d$ divides $au+bv$.
 \end{exercise}
+
+\begin{solutions*}
+  \fixlistskip
+  \begin{proof}
+    According to the Definition 0.33, if $d$ divides $a$, then $a = d \cdot m$ for some integer $m$.
+
+    Similarly, if $d$ divides $b$, then $b = d \cdot n$ for some integer $n$.
+    
+    Given integers $u$ and $v$, 
+    \[au+bv = (dm)u+(dn)v = d(mu+nv)\]
+    Since $m,n,u,v$ are all integers, according to the Definition 0.33, $d$ divides $au+bv$.
+  \end{proof}
+\end{solutions*}
 
 
 \begin{exercise}
 Prove that if an integer $a$ leaves a remainder of $r$ when divided by an integer $b$, then $a$ leaves a remainder of $r$ when divided by $-b$.
 \end{exercise}
 
+\begin{solutions*}
+  \fixlistskip
+  \begin{proof}
+    Let $a$ and $b$ be integers with $b \neq 0$. If $a$ leaves a remainder 
+$r$ when divided by $b$, then according to the division algorithm, there exist integers $q$ such that 
+\[a = qb + r, \quad 0 \leq r \leq |b|\]
+
+Now consider division by $-b$. Since $|b| = |-b|$, we can rewrite the equation as
+\[a = (-q)(-b)+r, \quad 0 \leq r \leq |-b|\]
+Since $-q$ is an integer and the remainder $r$ still satisfies $0 \leq r \leq |-b|$. This is precisely the unique representation of $a$ in the division algorithm with divisor $-b$. Therefore, the remainder when $a$ is divided by $-b$ is also $r$.
+  \end{proof}
+\end{solutions*}
+
 
 \begin{exercise}
 Find the base-$17$ expansion of $408\,735\,787$ and the base-$36$ expansion of $1\,442\,151\,747$.
 \end{exercise}
+
+\begin{solutions*}
+  Let letter $\mathrm{A}$--$\mathrm{G}$ represent the digits $10-16$.
+  \begin{center}
+  \begin{tikzpicture}[baseline=(current bounding box.center)]
+    \node at (0,0) {
+      $\begin{array}{r@{~}r@{~}l}
+        408735787 &\mid 17 &\dots 10 -- A\\
+        24043281 &\mid 17 &\dots 11 -- B\\
+        1414310 &\mid 17 &\dots 12 -- C\\
+        83194 &\mid 17 &\dots 13 -- D\\
+        4893 &\mid 17 &\dots 14 -- E\\
+        287 &\mid 17 &\dots 15 -- F\\
+        16 &\mid 17 &\dots 16 -- G \\
+      \end{array}$
+    };
+    \draw[->, thick] (current bounding box.east) ++(0.5em,-1.5cm) -- ++(0, 3.0cm) node[midway,right] {read remainders backwards};
+  \end{tikzpicture}
+  \end{center}
+
+  So $408\,735\,787 = \mathtt{GFEDCBA}_{(17)}$.
+
+  Let letter $\mathrm{A}$--$\mathrm{Z}$ represent the digits $10-35$.
+  \begin{center}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+      \node at (0,0) {
+        $\begin{array}{r@{~}r@{~}l}
+          1442151747 &\mid 36 &\dots 27 -- R\\
+          40059770 &\mid 36 &\dots 14 -- E\\
+          1112771 &\mid 36 &\dots 11 -- B\\
+          30910 &\mid 36 &\dots 22 -- M\\
+          858 &\mid 36 &\dots 30 -- U\\
+          23 &\mid 36 &\dots 23 -- N\\
+        \end{array}$
+      };
+      \draw[->, thick] (current bounding box.east) ++(0.5em,-1.5cm) -- ++(0, 3.0cm) node[midway,right] {read remainders backwards};
+    \end{tikzpicture}
+  \end{center}
+
+  So $1\,442\,151\,747 = \mathtt{NUMBER}_{(36)}$.
+
+\end{solutions*}
 
 
 \begin{exercise}
 Let $r$ be a rational number and let $a$ be an irrational number. Prove that it is possible that $ra$ be rational, and it is possible that $ra$ be irrational.
 \end{exercise}
 
+\begin{solutions*}
+  Let $r = 0$ and $a = \pi$, then $ra = 0$, which is rational.
+
+  Let $r = 1$ and $a = \pi$, then $ra = \pi$, which is irrational.
+\end{solutions*}
 
 \begin{exercise}
 Interpret the operations of subtraction and division as geometric transformations of the real number line.
 \end{exercise}
+
+\begin{solutions*}
+\textbf{Subtraction} by a fixed number $a$ can be considered as shifting $a$ units on the real number line. If $a>0$, it shifts left; if $a<0$, it shifts right.
+
+\textbf{Division} by a fixed nonzero number $b$ can be considered as scaling about the origin. If $|b|>1$, it contracts; if $0<|b|<1$, it expands; if $b<0$, it also reflects the line across the origin.
+\end{solutions*}

@@ -20,6 +20,17 @@
 ]{infdescthm}
 
 \declaretheoremstyle[
+    spaceabove=10pt,
+    spacebelow=10pt,
+    headfont={\color{solcol}\fontfamily{bch}\bfseries},
+    headpunct={{\par\nobreak}\\},
+    notefont={\mdseries},
+    notebraces={(}{)},
+    bodyfont={\fixthmbox\normalfont},
+    mdframed={backgroundcolor=solbgcol, linecolor=solbdcol, linewidth=\thmboxborderwidth}, 
+]{infdescsolution}
+
+\declaretheoremstyle[
     spaceabove=6pt,
     spacebelow=6pt,
     headfont={\color{thmcol}\fontfamily{bch}\bfseries\hspace{-\thmsymbolwidth}\thmintrosymbol},
@@ -91,8 +102,7 @@
     headpunct={{\par\nobreak}\\},
     notefont={\mdseries},
     notebraces={(}{)},
-    bodyfont=\normalfont,
-    qed={\exqedsymbol}
+    bodyfont=\normalfont
 ]{infdescpr}
 
 \declaretheoremstyle[
@@ -163,12 +173,12 @@
 
 % Results
 
-\declaretheorem[style=infdescimptthm, numberwithin=section, Refname={Solution,Solutions}, name=Solution]{solutions}
-% \declaretheorem[style=infdescimptthm, sibling=theorem, Refname={Solution,Solutions}, name={Solution\assumesAC{thmcolac}}]{solutionac}
-% \declaretheorem[style=infdescimptthm, numberwithin=chapter, Refname={Solution,Solutions}, name=Solution]{chsolution}
-% \declaretheorem[style=infdescimptthm, sibling=theorem, refname={solution,solutions}, Refname={Solution,Solutions}, name=Solution]{isolution}
-\declaretheorem[style=infdescimptthm, numbered=no, refname={solution,solutions}, Refname={Solution,Solutions}, name=Solution]{solutions*}
-% \declaretheorem[style=infdescimptthm, sibling=theorem, refname={solution,solutions}, Refname={Solution,Solutions}, name={\optmark{Solution}}]{osolution}
+\declaretheorem[style=infdescsolution, numberwithin=section, Refname={Solution,Solutions}, name=Solution]{solutions}
+% \declaretheorem[style=infdescsolution, sibling=theorem, Refname={Solution,Solutions}, name={Solution\assumesAC{thmcolac}}]{solutionac}
+% \declaretheorem[style=infdescsolution, numberwithin=chapter, Refname={Solution,Solutions}, name=Solution]{chsolution}
+% \declaretheorem[style=infdescsolution, sibling=theorem, refname={solution,solutions}, Refname={Solution,Solutions}, name=Solution]{isolution}
+\declaretheorem[style=infdescsolution, numbered=no, refname={solution,solutions}, Refname={Solution,Solutions}, name=Solution]{solutions*}
+% \declaretheorem[style=infdescsolution, sibling=theorem, refname={solution,solutions}, Refname={Solution,Solutions}, name={\optmark{Solution}}]{osolution}
 
 \declaretheorem[style=infdescimptthm, numberwithin=section, Refname={Theorem,Theorems}, name=Theorem]{theorem}
 \declaretheorem[style=infdescimptthm, sibling=theorem, Refname={Theorem,Theorems}, name={Theorem\assumesAC{thmcolac}}]{theoremac}
