@@ -14,6 +14,16 @@ Find logical formulae that represent each of the following English statements.
 \end{enumerate}
 \end{exercise}
 
+\begin{solutions*}
+    \fixlistskip
+    \begin{enumerate}[(a)]
+\item $\exists q \in \mathbb{Z},\, \forall a \in \mathbb{Z},\, \exists k \in \mathbb{Z}, (q = ak)$
+\item Define odd integer set $O=\{x \mid x=2k+1, k \in \mathbb{N}\}$
+\[\neg \exists a \in O\, \forall b \in O, (a \ge b)\]
+\item $\forall p,q \in \mathbb{R} \wedge p < q\, \exists r \in \mathbb{R}, (p < r \wedge r < q)$
+\item $\forall a \in \mathbb{Z},\, \forall q \in \mathbb{Q},\, (q^2=a \implies q \in \mathbb{Z})$
+\end{enumerate}
+\end{solutions*}
 
 \begin{exercise}
 \label{exLogicalFormulaeToEnglish}
@@ -26,33 +36,90 @@ Find statements in plain English, involving as few variables as possible, that a
 \end{enumerate}
 \end{exercise}
 
+\begin{solutions*}
+    \fixlistskip
+    \begin{enumerate}[(a)]
+    \item $b$ divides $a$.
+    \item $x$ is a rational number.
+    \item The only positive divisors of $n$ are $1$ and $n$.
+    \item There is no largest positive real number.
+    \end{enumerate}
+\end{solutions*}
+
 \begin{exercise}
 \label{exEveryIntegerIsRational}
 Prove that every integer is rational.
 \end{exercise}
 
+\begin{solutions*}
+    \fixlistskip
+    \begin{proof}
+        For any arbitrary integer $n$, let $p = n$ and $q = 1$, we get $p = qn$.
+
+        Therefore, every integer is rational.
+    \end{proof}
+\end{solutions*}
+
 \begin{exercise}
 Prove that every linear polynomial over $\mathbb{Q}$ has a rational root.
 \end{exercise}
 
+\begin{solutions*}
+    \fixlistskip
+    \begin{proof}
+        For any arbitrary linear polynomial $ax + b (a \neq 0)$ over $\mathbb{Q}$, it has a root $x = -\frac{b}{a}$. Since $a$ and $b$ are rational numbers, let $a = \dfrac{p}{q}$ and $b = \dfrac{r}{s}$, where $p, q, r, s \in \mathbb{Z}$ and $q, s \ne 0$. Then $x = -\dfrac{b}{a}=-\dfrac{rq}{sp}$ is a rational number.
+
+        Therefore, every linear polynomial over $\mathbb{Q}$ has a rational root.
+    \end{proof}
+\end{solutions*}
+
 \begin{exercise}
 Prove that, for all real numbers $x$ and $y$, if $x$ is irrational, then $x+y$ and $x-y$ are not both rational.
-\hintlabel{exIrrationalPlusMinusRealNotBothRational}{%
-Consider the sum of $x+y$ and $x-y$.
-}
 \end{exercise}
+
+\begin{solutions*}
+    \fixlistskip
+    \begin{proof}
+    Suppose $x$ is irrational. Assume for the sake of contradiction that $x+y$ and $x-y$ are both rational.
+    
+    Let $a = x+y \in \mathbb{Q}$ and $b = x-y \in \mathbb{Q}$, then
+    \[a+b = (x+y) + (x-y) = 2x\]
+    \[x = \frac{a+b}{2} \in \mathbb{Q}\]
+    This contracts the assumption that $x$ is irrational. 
+    
+    Therefore, $x+y$ and $x-y$ are not both rational.
+    \end{proof}
+\end{solutions*}
 
 \begin{exercise}
 Prove that there is a real number which is irrational but whose square is rational.
 \end{exercise}
 
+\begin{solutions*}
+    \fixlistskip
+    \begin{proof}
+        We can prove this existentially quantified statements by constructing a specific example.
+
+        Let $x = \sqrt{2}$, then $x$ is irrational and $x^2 = 2$ is rational.
+
+        Therefore, there is a real number which is irrational but whose square is rational.
+    \end{proof}
+\end{solutions*}
+
 \begin{exercise}
 Prove that there is an integer which is divisible by zero.
-\hintlabel{exZeroDividesSomeInteger}{%
-Look carefully at the definition of divisibility (\Cref{defDivisionPreliminary}).
-}
 \end{exercise}
 
+\begin{solutions*}
+    \fixlistskip
+    \begin{proof}
+        According to the Definition 0.33, $a$ is divisible $b$ if $a = qb$ for some integer $q$.
+
+        Let $a = 0$ and $b = 0$, then $a = qb = 0q = 0$.
+
+        Therefore, there is an integer which is divisible by zero.
+    \end{proof}
+\end{solutions*}
 
 \begin{exercise}
 \label{exExamplesOfUniqueExistentialQuantifier}
@@ -64,6 +131,55 @@ For each of the propositions, write it out as a logical formula involving the $\
 \end{enumerate}
 \end{exercise}
 
+\begin{solutions*}
+    \fixlistskip
+    \begin{enumerate}[(a)]
+    \item $\forall a \in \mathbb{R},\, \exists! x \in \mathbb{R},\, x^2 + 2ax + a^2 = 0$
+    \begin{proof}
+        Let $a$ be an arbitrary real number. We must show that there exists a unique real number $x$ that satisfies $x^2 + 2ax + a^2 = 0$. We can rewrite the equation by factoring the perfect square:
+        \[x^2 + 2ax + a^2 = (x+a)^2 = 0\]
+        \begin{itemize}
+            \item (Existence) Let $x = -a$. Since $a \in \mathbb{R}$, its negation $-a$ is also in $\mathbb{R}$. Substituting this into our factored equation yields:
+            \[(-a + a)^2 = 0^2 = 0\]
+            Thus, $x = -a$ is a valid real solution. This proves existence.
+            \item (Uniqueness) Suppose there are two real solutions, $x_1$ and $x_2$. By our equation, this means:
+            \[\begin{cases}
+                (x_1 + a)^2 = 0 \implies x_1 = -a\\
+                (x_2 + a)^2 = 0 \implies x_2 = -a
+            \end{cases}\]
+            Therefore, $x_1 = x_2$. This proves that the solution is unique.
+        \end{itemize}
+    \end{proof}
+    \item $\exists! a \in \mathbb{R}, \exists x \in \mathbb{R}, x^2 + a^2 = 0$
+    \begin{proof}
+        We must show there is exactly one real number $a$ that allows the equation $x^2 + a^2 = 0$ to be solvable for a real number $x$.
+        \begin{itemize}
+            \item (Existence) Let $a = 0$. The equation becomes $x^2 + 0^2 = 0$, it has a real solutions $x = 0$. Thus, there exists at least one such real number $a$.
+            \item (Uniqueness) Suppose there is some real number $b$ for which the equation $x^2 + b^2 = 0$ has a real solution $x'$. Because $x'$ and $b$ are real numbers, their squares must be non-negative:
+            \[x'^2 \ge 0 \quad \text{and} \quad b^2 \ge 0\]
+            The sum of two non-negative real numbers can only equal $0$ if both numbers are individually equal to $0$. Therefore, we must have:
+            \[x'^2 = 0 \quad \text{and} \quad b^2 = 0\]
+            Therefore, $b = a = 0$. This proves that the real number $a$ is unique.
+        \end{itemize}
+    \end{proof}
+    \item $\exists! n \in \mathbb{N},\, (\exists! d \in \mathbb{N},\, \exists q \in \mathbb{N},\, n = qd)$
+    \begin{proof}
+        We must show there is exactly one natural number $n$ that has exactly one natural number $d$ dividing it.
+        \begin{itemize}
+            \item (Existence) Let $n = 1$. The positive divisors of $1$ are those natural numbers $d$ such that $1 = qd$ for some natural number $q$. Since $q \ge 1$ and $d \ge 1$, their product can only be $1$ if both $q = 1$ and $d = 1$. Therefore, $d=1$ is the only positive divisor of $n=1$. Thus, at least one natural number with exactly one positive divisor exists.
+            \item (Uniqueness) Suppose $m$ is a natural number that has exactly one positive divisor.
+            
+            Since the number $1$ divides every natural number, $1$ is a positive divisor of $m$.
+
+            Also, every natural number divides itself. Thus, $m$ is a positive divisor of $m$.
+
+            Since we assumed $m$ has exactly one positive divisor, all divisors of $m$ must be the same number. So the divisor $1$ and the divisor $m$ must be identical: $m=1$.
+
+            Therefore, $m = n = 1$. This proves that the natural number $n$ is unique.
+        \end{itemize}
+    \end{proof}
+    \end{enumerate}
+\end{solutions*}
 
 \begin{exercise}
 Let $p(x,y)$ be the statement `$x + y$ is even'.
@@ -72,3 +188,32 @@ Let $p(x,y)$ be the statement `$x + y$ is even'.
 \item Prove that $\exists y \in \mathbb{Z},\, \forall x \in \mathbb{Z},\, p(x,y)$ is false.
 \end{itemize}
 \end{exercise}
+
+\begin{solutions*}
+\begin{itemize}
+    \item \textbf{Prove that $\forall x \in \mathbb{Z},\, \exists y \in \mathbb{Z},\, p(x,y)$ is true.}
+
+    \begin{proof}
+        Let $x$ be an arbitrary integer. Choose $y = x$, then $x + y = 2x$ is even.
+
+        Because we found a valid integer $y$ for arbitrary $x$, the statement is true. More generally,
+        \begin{itemize}
+            \item If $x$ is even, then $x$ can be represented as $x = 2k$ for some integer $k$. In this case, let $y = 2\ell$ is even and $x + y = 2(k + \ell)$ is even.
+            \item If $x$ is odd, then $x$ can be represented as $x = 2k+1$ for some integer $k$. In this case, let $y = 2\ell + 1$ is odd and $x + y = 2(k + \ell + 1)$ is even.
+        \end{itemize}
+        In summary, regardless of whether $x$ is even or odd, there exists a $y$ such that $x + y$ is even. Therefore, $\forall x \in \mathbb{Z},\, \exists y \in \mathbb{Z},\, p(x,y)$ is true.
+    \end{proof}
+
+    \item \textbf{Prove that $\exists y \in \mathbb{Z},\, \forall x \in \mathbb{Z},\, p(x,y)$ is false.}
+
+    \begin{proof}
+        To prove this statement is false, the standard mathematical approach is to prove that its logical negation is true.
+        
+        The negation of $\exists y \in \mathbb{Z},\, \forall x \in \mathbb{Z},\, p(x,y)$ is:
+        \[\forall y \in \mathbb{Z},\, \exists x \in \mathbb{Z},\, \neg p(x,y)\]
+        Let $y$ be an arbitrary integer. Choose $x = y+1$, then $x + y = 2y+1$ is odd.
+
+        Therefore, for any integer $y$, there exists an integer $x$ that makes $x+y$ odd. Because the negation of the original statement is true, the original statement must be false. 
+    \end{proof}
+\end{itemize}
+\end{solutions*}
