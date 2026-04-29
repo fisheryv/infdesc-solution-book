@@ -8,36 +8,272 @@
 Let $p$, $q$ and $r$ be propositional variables. Prove that the propositional formula $(p \vee q) \Rightarrow r$ is logically equivalent to $(p \Rightarrow r) \wedge (q \Rightarrow r)$.
 \end{exercise}
 
+\begin{solutions*}
+    \fixlistskip
+    \begin{itemize}
+        \item First assume that $(p \vee q) \Rightarrow r$ is true. By the LEM, either $(p \vee q)$ is true or $\neg (p \vee q)$ is true.
+        \begin{itemize}
+            \item If $(p \vee q)$ is true, by the definition of disjunction, either $p$ is true or $q$ is true or both are true.
+            \begin{itemize}
+                \item If $p$ is true, then $(p \Rightarrow r)$ is true, and by the principle of explosion, $(q \Rightarrow r)$ is true.
+                \item If $q$ is true, then $(q \Rightarrow r)$ is true, and by the principle of explosion, $(p \Rightarrow r)$ is true.
+                \item If both are true, then both $p \Rightarrow r$ and $q \Rightarrow r$ are true.
+            \end{itemize}
+            In all cases above, we have $(p \Rightarrow r) \wedge (q \Rightarrow r)$ is true.
+            \item If $\neg (p \vee q)$ is true, then $(p \vee q)$ is false. By the definition of disjunction, both $p$ and $q$ are false.
+            
+            By the principle of explosion, $(p \Rightarrow r)$ is true, and $(q \Rightarrow r)$ is true.
+
+            In this case, we have $(p \Rightarrow r) \wedge (q \Rightarrow r)$ is true.
+        \end{itemize}
+        \item Then assume that$(p \Rightarrow r) \wedge (q \Rightarrow r)$ is true. By the definition of conjunction, both $(p \Rightarrow r)$ and $(q \Rightarrow r)$ is true.
+        \begin{itemize}
+            \item If $(p \Rightarrow r)$ is true, then $p$ is true and $r$ is true, or $p$ is false.
+            \item If $(q \Rightarrow r)$ is true, then $q$ is true and $r$ is true, or $q$ is false.
+        \end{itemize}
+        In summary, we have $(p \vee q) \Rightarrow r$ is true.
+    \end{itemize}
+    Since we can derive $(p \vee q) \Rightarrow r$ from $(p \Rightarrow r) \wedge (q \Rightarrow r)$ and vice versa, it follows that
+    \[(p \vee q) \Rightarrow r \equiv (p \Rightarrow r) \wedge (q \Rightarrow r)\]
+\end{solutions*}
+
 \begin{exercise}
-Use the definitions of $\wedge$, $\vee$ and $\Rightarrow$ to justify the truth tables in \Cref{exNegationConjunctionDisjunctionImplicationTruthTable}.
-\hintlabel{exJustifyBasicTruthTables}{Note that you may need to use the law of excluded middle (\Cref{axLEM}) and the principle of explosion (\Cref{axPrincipleOfExplosion}).}
+Use the definitions of $\wedge$, $\vee$ and $\Rightarrow$ to justify the truth tables in Example 1.3.8.
 \end{exercise}
+
+\begin{solutions*}
+    \fixlistskip
+    \begin{itemize}
+        \item $\wedge$: According to the definition of $\wedge$, 
+        \begin{quote}
+            \introrule{\wedge} If $p$ is true and $q$ is true, then $p \wedge q$ is true;
+        \end{quote}
+        If $p$ is false or $q$ is false, we cannot say $p \wedge q$ is true. By the LEM, it must be false.
+
+        So we have the truth table for $\wedge$:
+        \begin{center}
+            \begin{tabular}{cc|c|c}
+            $p$ & $q$ & $p \wedge q$ \\ \hline
+            \TT & \TT & \TT \\
+            \TT & \FF & \FF\\
+            \FF & \TT & \FF\\
+            \FF & \FF & \FF
+            \end{tabular}
+        \end{center}
+        \item $\vee$: According to the definition of $\vee$, 
+        \begin{quote}
+            \introrulesub{\vee}{1} If $p$ is true, then $p \vee q$ is true;\\
+            \introrulesub{\vee}{2} If $q$ is true, then $p \vee q$ is true;
+        \end{quote}
+        If $p$ is false and $q$ is false, we cannot say $p \vee q$ is true. By the LEM, it must be false.
+
+        So we have the truth table for $\vee$:
+        \begin{center}
+            \begin{tabular}{cc|c|c}
+            $p$ & $q$ & $p \vee q$ \\ \hline
+            \TT & \TT & \TT \\
+            \TT & \FF & \TT\\
+            \FF & \TT & \TT\\
+            \FF & \FF & \FF
+            \end{tabular}
+        \end{center}
+        \item $\Rightarrow$: According to the definition of $\Rightarrow$, 
+        \begin{quote}
+            \introrule{\Rightarrow} If $p$ is true, then $p \Rightarrow q$ is true.
+        \end{quote}
+        If $p$ is true, but $q$ is false, we cannot say $p \Rightarrow q$ is true. By the LEM, it must be false.
+
+        If $p$ is false, by the principle of explosion, any consequence may be derived. So under a false hypothesis, we cannot say the overall statement is false. By the LEM, it must be true.
+
+        So we have the truth table for $\Rightarrow$:
+        \begin{center}
+            \begin{tabular}{cc|c|c}
+            $p$ & $q$ & $p \Rightarrow q$ \\ \hline
+            \TT & \TT & \TT \\
+            \TT & \FF & \FF\\
+            \FF & \TT & \TT\\
+            \FF & \FF & \TT
+            \end{tabular}
+        \end{center}
+    \end{itemize}
+\end{solutions*}
 
 \begin{exercise}
 \label{exImplicationInTermsOfDisjunctionWithTruthTables}
 Use a truth table to prove that $p \Rightarrow q \equiv (\neg p) \vee q$.
 \end{exercise}
 
+\begin{solutions*}
+    \fixlistskip
+    \begin{center}
+        \begin{tabular}{cc||c||c|c}
+        $p$ & $q$ & $p \Rightarrow q$ & $\neg p$ &$\neg p \vee q$\\ \hline
+        \TT & \TT & \TT & \FF & \TT\\
+        \TT & \FF & \FF & \FF & \FF\\
+        \FF & \TT & \TT & \TT & \TT\\
+        \FF & \FF & \TT & \TT & \TT
+        \end{tabular}
+    \end{center}
+    In the truth table above, $p \Rightarrow q$ and $(\neg p) \vee q$ have identical columns, therefore $p \Rightarrow q \equiv (\neg p) \vee q$.
+\end{solutions*}
+
 \begin{exercise}
 \label{exPAndQImpliesRIffPImpliesRAndQImpliesRWithTruthTables}
 Let $p$, $q$ and $r$ be propositional variables. Use a truth table to prove that the propositional formula $(p \vee q) \Rightarrow r$ is logically equivalent to $(p \Rightarrow r) \wedge (q \Rightarrow r)$.
 \end{exercise}
 
+\begin{solutions*}
+    \fixlistskip
+    \begin{center}
+        \begin{tabular}{ccc||c|c||cc|c}
+        $p$ & $q$ & r & $p \vee q$ & $(p \vee q) \Rightarrow r$ &$p \Rightarrow r$ & $q \Rightarrow r$ & $(p \Rightarrow r) \wedge (q \Rightarrow r)$ \\ \hline
+        \TT & \TT & \TT & \TT & \TT & \TT & \TT & \TT\\
+        \TT & \TT & \FF & \TT & \FF & \FF & \FF & \FF\\
+        \TT & \FF & \TT & \TT & \TT & \TT & \TT & \TT\\
+        \TT & \FF & \FF & \TT & \FF & \FF & \TT & \FF\\
+        \FF & \TT & \TT & \TT & \TT & \TT & \TT & \TT\\
+        \FF & \TT & \FF & \TT & \FF & \TT & \FF & \FF\\
+        \FF & \FF & \TT & \FF & \TT & \TT & \TT & \TT\\
+        \FF & \FF & \FF & \FF & \TT & \TT & \TT & \TT\\
+        \end{tabular}
+    \end{center}
+    In the true table above, $(p \vee q) \Rightarrow r$ and $(p \Rightarrow r) \wedge (q \Rightarrow r)$ have identical columns, therefore $(p \vee q) \Rightarrow r \equiv (p \Rightarrow r) \wedge (q \Rightarrow r)$.
+\end{solutions*}
+
 \begin{exercise}
 Use the law of contraposition to prove that $p \Leftrightarrow q \equiv (p \Rightarrow q) \wedge ((\neg p) \Rightarrow (\neg q))$, and use the proof technique that this equivalence suggests to prove that an integer is even if and only if its square is even.
-\hintlabel{exIntegerEvenIffSquareEven}{%
-Express this statement as $\forall n \in \mathbb{Z},\, (n \text{ is even}) \Leftrightarrow (n^2 \text{ is even})$, and note that the negation of `$x$ is even' is `$x$ is odd'.
-}
 \end{exercise}
+
+\begin{solutions*}
+    By law of contraposition, we have $((\neg p) \Rightarrow (\neg q)) \equiv (q \Rightarrow p)$. 
+    \[(p \Rightarrow q) \wedge ((\neg p) \Rightarrow (\neg q)) \equiv (p \Rightarrow q) \wedge (q \Rightarrow p)\]
+    By the definition of biconditional operator ($\Leftrightarrow$), it follows
+    \[p \Leftrightarrow q \equiv (p \Rightarrow q) \wedge(q \Rightarrow p) \equiv (p \Rightarrow q) \wedge ((\neg p) \Rightarrow (\neg q))\]
+
+    \begin{proof}
+        We define the following propositions: 
+        \begin{itemize}
+            \item Let proposition $p$ be ``the integer $n$ is even'';
+            \item Let proposition $q$ be ``the integer $n^2$ is even''.
+        \end{itemize}
+        We want to prove that
+        \[p \Leftrightarrow q\]
+        \begin{itemize}
+            \item $p \Rightarrow q$\\
+            Suppose $n$ is even, then $n = 2k$ for some integer $k$.
+            \[n^2 = (2k)^2 = 4k^2\]
+            Therefore, $n^2$ is even.
+            \item $(\neg p) \Rightarrow (\neg q)$\\
+            Suppose $n$ is odd, then $n = 2k+1$ for some integer $k$.
+            \[n^2 = (2k+1)^2 = 4k^2+4k+1\]
+            Therefore, $n^2$ is odd.
+        \end{itemize}
+        By the logical equivalence $p \Leftrightarrow q \equiv (p \Rightarrow q) \wedge ((\neg p) \Rightarrow (\neg q))$, we have proved $p \Leftrightarrow q$, which is the statement we wanted to prove.
+    \end{proof}
+\end{solutions*}
 
 \begin{exercise}
 Prove that $p \vee q \equiv (\neg p) \Rightarrow q$. Use this logical equivalence to suggest a new strategy for proving propositions of the form $p \vee q$, and use this strategy to prove that if two integers sum to an even number, then either both integers are even or both are odd.
 \end{exercise}
 
+\begin{solutions*}
+    We will prove $p \vee q \equiv (\neg p) \Rightarrow q$ by truth table.
+    \begin{proof}
+        \fixlistskip
+        \begin{center}
+            \begin{tabular}{cc||c||c|c}
+            $p$ & $q$ & $p \vee q$ & $\neg p$ & $(\neg p) \Rightarrow q$\\ \hline
+                \TT & \TT & \TT & \FF & \TT\\
+                \TT & \FF & \TT & \FF & \TT\\
+                \FF & \TT & \TT & \TT & \TT\\
+                \FF & \FF & \FF & \TT & \FF\\
+            \end{tabular}
+        \end{center}
+        In the truth table above, $p \vee q$ and $(\neg p) \Rightarrow q$ have identical columns, therefore $p \vee q \equiv (\neg p) \Rightarrow q$.
+    \end{proof}
+
+    Using the logical equivalence $p \vee q \equiv (\neg p) \Rightarrow q$, we can suggest a new proof strategy.
+    \begin{strategy}
+        In order to prove a proposition of the form $p \vee q$, we can suppose $p$ is false (i.e. $\neg p$ is true) and prove that $q$ is true.
+    \end{strategy}
+
+    Let's use this new strategy to prove the statement: 
+    \begin{quote}
+        That if two integers sum to an even number, then either both integers are even or both are odd.
+    \end{quote}
+    \begin{proof}
+        Let $m$ and $n$ be two integers. We define the following propositions: 
+        \begin{itemize}
+            \item Let proposition $r$ be ``$m+n$ is even''; 
+            \item Let proposition $p$ be ``$m$ and $n$ are both even''; 
+            \item Let proposition $q$ be ``$m$ and $n$ are both odd''.
+        \end{itemize}
+        We want to prove that
+        \[r \Rightarrow (p \vee q) \equiv (\neg p) \Rightarrow q\]
+        Suppose $r$ is true, i.e. $m+n$ is even, we have $m+n = 2k$ for some integer $k$.
+
+        $\neg p$ is true means $m$ is odd or $n$ is odd or both are odd.
+        \begin{itemize}
+            \item If $m$ is odd and $n$ is even. Let $m = 2k+1$ and $n=2\ell$ for some integer $k$ and $\ell$, then $m+n = 2k+1 + 2\ell = 2(k+\ell)+1$ is odd. This contradicts $m+n$ is even. So the hypothesis is false.
+            \item If $n$ is odd and $m$ is even. Let $m = 2k$ and $n=2\ell+1$ for some integer $k$ and $\ell$, then $m+n = 2k+2\ell+1 = 2(k+\ell)+1$ is odd. This contradicts $m+n$ is even. So the hypothesis is false.
+            \item If $m$ and $n$ are both odd. Let $m = 2k+1$ and $n=2\ell+1$ for some integer $k$ and $\ell$, then $m+n = 2k+2\ell+2=2(k+\ell+1)$ is even. Noticed that $m$ and $n$ are both odd is just $q$, in this case, we proved $\neg p \Rightarrow q$.
+        \end{itemize}
+        By the logical equivalence $p \vee q \equiv (\neg p) \Rightarrow q$, we have proved $r \Rightarrow (p \vee q)$, which is the statement we wanted to prove.
+    \end{proof}
+\end{solutions*}
 
 \begin{exercise}
-Prove \Cref{thmDeMorganLogicalOperators}(b) thrice: once using the definition of logical equivalence directly (like we did in \Cref{exConjunctionDistributesOverDisjunction,exImplicationInTermsOfDisjunction} and \Cref{exPAndQImpliesRIffPImpliesRAndQImpliesR}), once using a truth table, and once using part (a) together with the law of double negation.
+Prove Theorem 1.3.24(b) thrice: once using the definition of logical equivalence directly (like we did in Examples 1.3.3 and 1.3.4 and \Cref{exPAndQImpliesRIffPImpliesRAndQImpliesR}), once using a truth table, and once using part (a) together with the law of double negation.
 \end{exercise}
+
+\begin{solutions*}
+    \textbf{Method 1: Definition of Logical Equivalence}
+
+    \begin{proof}
+         We want to prove that $\neg (p \vee q) \equiv (\neg p) \wedge (\neg q)$.
+        \begin{itemize}
+            \item First assume that $\neg (p \vee q)$ is true. This means that $p \vee q$ is false. By definition of disjunction, both $p$ and $q$ are false. Then $(\neg p)$ and $(\neg q)$ are true. By the definition of conjunction, $(\neg p) \wedge (\neg q)$ is true.
+            
+            we proved that $\neg (p \vee q) \Rightarrow (\neg p) \wedge (\neg q)$ is true.
+            \item Then assume that $(\neg p) \wedge (\neg q)$ is true. By the definition of conjunction, both $\neg p$ and $\neg q$ are true, that is, $p$ is false and $q$ is false. By the definition of disjunction, $p \vee q$ is false. By the LEM, $\neg (p \vee q)$ must be true.
+        \end{itemize}
+        Since we can derive $\neg (p \vee q)$ from $(\neg p) \wedge (\neg q)$ and vice versa, it follows that
+        \[\neg (p \vee q) \equiv (\neg p) \wedge (\neg q)\]
+    \end{proof}
+
+    \textbf{Method 2: Truth Table}
+    \begin{proof}
+        \fixlistskip
+        \begin{center}
+            \begin{tabular}{cc||c|c||cc|c}
+            $p$ & $q$ & $(p \vee q)$ &$\neg (p \vee q)$ & $\neg p$ & $\neg q$ & $(\neg p) \wedge (\neg q)$\\ \hline
+                \TT & \TT & \TT & \FF & \FF & \FF & \FF \\
+                \TT & \FF & \TT & \FF & \FF & \TT & \FF \\
+                \FF & \TT & \TT & \FF & \TT & \FF & \FF \\
+                \FF & \FF & \FF & \TT & \TT & \TT & \TT \\
+            \end{tabular}
+        \end{center}
+        In the truth table above, $\neg (p \vee q)$ and $(\neg p) \wedge (\neg q)$ have identical columns, therefore
+        \[\neg (p \vee q) \equiv (\neg p) \wedge (\neg q)\]
+    \end{proof}
+
+    \textbf{Method 3: de Morgan's laws with double negation}
+    \begin{proof}
+        By part (a) of Theorem 1.3.24, we have $\neg (p \wedge q) \equiv (\neg p) \vee (\neg q)$. Then we can replace $p$ by $\neg p$ and $q$ by $\neg q$, yields
+        \[\neg ((\neg p) \wedge (\neg q)) \equiv (\neg (\neg p)) \vee (\neg (\neg q))\]
+
+        By the law of double negation, we have
+        \[\neg ((\neg p) \wedge (\neg q)) \equiv p \vee q\]
+
+        Taking the negation on both sides, we have
+        \[\neg (p \vee q) \equiv \neg(\neg ((\neg p) \wedge (\neg q)))\]
+
+        By the law of double negation again, we have
+        \[\neg (p \vee q) \equiv (\neg p) \wedge (\neg q)\]
+        This is what we wanted to prove. Therefore,
+         \[\neg (p \vee q) \equiv (\neg p) \wedge (\neg q)\]
+    \end{proof}
+\end{solutions*}
 
 
 \begin{exercise}
@@ -45,18 +281,75 @@ Prove \Cref{thmDeMorganLogicalOperators}(b) thrice: once using the definition of
 Prove that $\neg (p \Rightarrow q) \equiv p \wedge (\neg q)$ twice, once using a truth table, and once using \Cref{exImplicationInTermsOfDisjunctionWithTruthTables} together with de Morgan's laws and the law of double negation.
 \end{exercise}
 
+\begin{solutions*}
+    \textbf{Method 1: Truth Table}
+    \begin{proof}
+        \fixlistskip
+        \begin{center}
+            \begin{tabular}{cc||c|c||c|c}
+            $p$ & $q$ & $p \Rightarrow q$ & $\neg (p \Rightarrow q)$ & $\neg q$ & $p \wedge (\neg q)$\\ \hline
+                \TT & \TT & \TT & \FF & \FF & \FF \\
+                \TT & \FF & \FF & \TT & \TT & \TT \\
+                \FF & \TT & \TT & \FF & \FF & \FF \\
+                \FF & \FF & \TT & \FF & \TT & \FF \\
+            \end{tabular}
+        \end{center}
+        In the truth table above, $\neg (p \Rightarrow q)$ and $p \wedge (\neg q)$ have identical columns, therefore
+        \[\neg (p \Rightarrow q) \equiv p \wedge (\neg q)\]
+    \end{proof}
+
+    \textbf{Method 2: de Morgan's laws with double negation}
+    \begin{proof}
+        By \Cref{exImplicationInTermsOfDisjunctionWithTruthTables}, we have $p \Rightarrow q \equiv (\neg p) \vee q$. 
+
+        Taking the negation on both sides, we have
+        \[\neg (p \Rightarrow q) \equiv \neg ((\neg p) \vee q)\]
+
+        By de Morgan's law, we have
+        \[\neg (p \Rightarrow q) \equiv (\neg (\neg p)) \wedge (\neg q)\]
+
+        By the law of double negation, we have
+        \[\neg (p \Rightarrow q) \equiv p \wedge (\neg q)\]
+
+        This is what we wanted to prove. Therefore,
+        \[\neg (p \Rightarrow q) \equiv p \wedge (\neg q)\]
+    \end{proof}
+\end{solutions*}
+
 \begin{exercise}
 \label{exNegationOfConjunctionAlternative}
 Prove that $\neg (p \wedge q) \equiv p \Rightarrow (\neg q)$. What strategy does this suggest for proving that a conjunction is false? How does this compare with the strategy suggested by de Morgan's laws for logical operators?
 \end{exercise}
 
+\begin{solutions*}
+    \fixlistskip
+    \begin{proof}
+        We want to prove that $\neg (p \wedge q) \equiv p \Rightarrow (\neg q)$.
+
+        By de Morgan's law, we have 
+        \[\neg (p \wedge q) \equiv (\neg p) \vee (\neg q)\]
+        Because $p \Rightarrow q \equiv (\neg p) \vee q$. replacing $q$ by $\neg q$, we have
+        \[p \Rightarrow (\neg q) \equiv (\neg p) \vee (\neg q)\]
+        Therefore, $\neg (p \wedge q) \equiv p \Rightarrow (\neg q)$ as required.
+    \end{proof}
+
+    This logical equivalence suggests a new strategy for proving that a conjunction is false. In order to prove $p \wedge q$ is false, that is $\neg (p \wedge q)$ is true, we can suppose $p$ is true and prove that $q$ is false.
+
+    The new strategy is different from the strategy suggested by de Morgan's law. By de Morgan's law, in order to prove $p \wedge q$ is false, we can prove either $p$ is false or $q$ is false. The new strategy requires us to suppose $p$ is true and prove $q$ is false, which is more restrictive than the strategy suggested by de Morgan's law.
+\end{solutions*}
+
 
 \begin{exercise}
 Prove by counterexample that not every rational number can be expressed as $\dfrac{a}{b}$ where $a \in \mathbb{Z}$ is even and $b \in \mathbb{Z}$ is odd.
-\hintlabel{exNotEveryRationalIsEvenDividedByOdd}{%
-Find a rational number all of whose representations as a ratio of two integers have an even denominator.
-}
 \end{exercise}
+
+\begin{solutions*}
+    There are infinitely many counterexamples. 
+    
+    For example, $\dfrac{1}{2}$ is a rational number, but $a=1$ is odd and $b=2$ is even. In fact, any rational number of the form $\dfrac{2k+1}{2\ell}$ for some $k, \ell \in \mathbb{Z}$ is a counterexample.
+
+    Another counterexamples is $\dfrac{3}{5}$, in which $a=3$ is odd and $b=5$ is odd. In fact, any rational number of the form $\dfrac{2k+1}{2\ell+1}$ for some $k, \ell \in \mathbb{Z}$ and $k \ne \ell$ is a counterexample.
+\end{solutions*}
 
 
 \begin{exercise}
@@ -69,18 +362,81 @@ Determine which of the following logical formulae are maximally negated.
 \end{enumerate}
 \end{exercise}
 
+\begin{solutions*}
+    \fixlistskip
+    \begin{enumerate}[(a)]
+    \item is not maximally negated, because there is a negation applied to a conjunction, which is $\neg (r(x,y) \wedge s(x,y))$. We can apply de Morgan's law to rewrite $\neg (r(x,y) \wedge s(x,y))$ as $(\neg r(x,y)) \vee (\neg s(x,y))$, then the overall formula becomes
+    \[\forall x \in X,\, (\neg p(x)) \Rightarrow \forall y \in X, (\neg r(x,y))\vee (\neg s(x,y))\]
+
+    \item is maximally negated, because all the negation symbols are in front of atomic formulas.
+
+    \item is maximally negated, because the only negation is $\neg (x^2 \le y)$, which is in front of an atomic formula (the inequality). BTW, We can also rewrite $\neg (x^2 \le y)$ as $x^2 > y$, then the overall formula becomes
+    \[\forall x \in \mathbb{R},\, [x > 1 \Rightarrow (\exists y \in \mathbb{R},\, [x < y \wedge x^2 > y])]\]
+
+    \item is not maximally negated, because a negation applied to an existential quantifier. We can apply the equivalence $\neg \exists x \in X,\, p(x) \equiv \forall x \in X,\, \neg p(x)$ to rewrite (d) as (c).
+    \end{enumerate}
+\end{solutions*}
+
 
 \begin{exercise}
 Find a maximally negated propositional formula that is logically equivalent to $\neg (p \Leftrightarrow q)$.
-\hintlabel{exMaximallyNegateBiconditional}{%
-Start by expressing $\Leftrightarrow$ in terms of $\Rightarrow$ and $\wedge$, as in \Cref{defBiconditional}.
-}
 \end{exercise}
+
+\begin{solutions*}
+    By the definition of biconditional, we have $p \Leftrightarrow q \equiv (p \Rightarrow q) \wedge (q \Rightarrow p)$. Taking the negation on both sides, we have
+    \[\neg (p \Leftrightarrow q) \equiv \neg ((p \Rightarrow q) \wedge (q \Rightarrow p))\]
+
+    By de Morgan's law, we have
+    \[\neg (p \Leftrightarrow q) \equiv (\neg (p \Rightarrow q)) \vee (\neg (q \Rightarrow p))\]
+
+    By \Cref{exNegationOfConjunctionAlternative}, we have $\neg (p \Rightarrow q) \equiv p \wedge (\neg q)$ and $\neg (q \Rightarrow p) \equiv q \wedge (\neg p)$, therefore
+    \[\neg (p \Leftrightarrow q) \equiv (p \wedge (\neg q)) \vee (q \wedge (\neg p))\]
+    This is a maximally negated propositional formula that is logically equivalent to $\neg (p \Leftrightarrow q)$.
+\end{solutions*}
 
 \begin{exercise}
 Maximally negate the following logical formula, then prove that it is true or prove that it is false.
 \[ \exists x \in \mathbb{R},\, [x > 1 \wedge (\forall y \in \mathbb{R},\, [x < y \Rightarrow x^2 \le y])]\]
 \end{exercise}
+
+\begin{solutions*}
+    \fixlistskip
+    \begin{align*}
+        &\neg \exists x \in \mathbb{R},\, [x > 1 \wedge (\forall y \in \mathbb{R},\, [x < y \Rightarrow x^2 \le y])] \\
+        \equiv &\forall x \in \mathbb{R},\, \neg [x > 1 \wedge (\forall y \in \mathbb{R},\, [x < y \Rightarrow x^2 \le y])] & \text{(de Morgan's laws for quantifiers)}\\
+        \equiv &\forall x \in \mathbb{R},\, [\neg (x > 1) \vee \neg (\forall y \in \mathbb{R},\, [x < y \Rightarrow x^2 \le y])] & \text{(de Morgan's law for logical operators)}\\
+        \equiv &\forall x \in \mathbb{R},\, [\neg (x > 1) \vee (\exists y \in \mathbb{R},\, \neg [x < y \Rightarrow x^2 \le y])] & \text{(de Morgan's law for quantifiers)}\\
+        \equiv &\forall x \in \mathbb{R},\, [x > 1 \Rightarrow (\exists y \in \mathbb{R},\, \neg[\neg(x < y) \vee (x^2 \le y)])] & (p \Rightarrow q \equiv \neg p \vee q)\\
+        \equiv &\forall x \in \mathbb{R},\, [x > 1 \Rightarrow (\exists y \in \mathbb{R},\, [x < y \wedge \neg (x^2 \le y)])] & \text{(de Morgan's law for logical operators)}\\
+        \equiv &\forall x \in \mathbb{R},\, [x > 1 \Rightarrow (\exists y \in \mathbb{R},\, [x < y \wedge x^2 > y])]
+    \end{align*}
+
+    I declare that $\forall x \in \mathbb{R},\, [x > 1 \Rightarrow (\exists y \in \mathbb{R},\, [x < y \wedge x^2 > y])]$ is True.
+
+    \begin{proof}
+        Let $x$ be an arbitrary real number. We want to prove that if $x > 1$, then there exists a real number $y$ such that $x < y$ and $x^2 > y$.
+
+        This is an existential statement. Suppose $x > 1$. Let $y = \dfrac{x^2 + x}{2}$, then $y$ is a real number. 
+        
+        First, we prove that $x < y$.
+        \begin{align*}
+            y-x =& \dfrac{x^2 + x}{2} - x\\
+            =& \dfrac{x^2 - x}{2}\\
+            =& \dfrac{x(x-1)}{2}
+        \end{align*}
+        Since $x > 1$, so $x-1 > 0$ and $x > 0$, therefore, $y-x > 0$, which means $x < y$.
+
+        Next, we prove that $x^2 > y$.
+        \begin{align*}
+            x^2 - y =& x^2 - \dfrac{x^2 + x}{2}\\
+            =& \dfrac{x^2 - x}{2}\\
+            =& \dfrac{x(x-1)}{2}
+        \end{align*}
+        Since $x > 1$, so $x-1 > 0$ and $x > 0$, therefore, $x^2-y > 0$, which means $x^2 > y$.
+
+        We have proved that if $x > 1$, then there exists a real number $y$ such that $x < y$ and $x^2 > y$. Since $x$ is an arbitrary real number, we have $\forall x \in \mathbb{R},\, [x > 1 \Rightarrow (\exists y \in \mathbb{R},\, [x < y \wedge x^2 > y])]$ is true.
+    \end{proof}
+\end{solutions*}
 
 
 \begin{exercise}
@@ -96,3 +452,71 @@ Prove that each of the following is a tautology:
 For each, try to interpret what it means, and how it might be useful in a proof.
 \end{exercise}
 
+
+\begin{solutions*}
+    \fixlistskip
+    \begin{itemize}
+        \item $[(p \Rightarrow q) \wedge (q \Rightarrow r)] \Rightarrow (p \Rightarrow r)$
+        \begin{proof}
+            Suppose $[(p \Rightarrow q) \wedge (q \Rightarrow r)]$ is true, then $p \Rightarrow q$ is true and $q \Rightarrow r$ is true. Suppose $p$ is true, then $q$ is true by $p \Rightarrow q$, and then $r$ is true by $q \Rightarrow r$. Therefore, if $p$ is true, then $r$ is true, which means $p \Rightarrow r$ is true. We have proved that if $[(p \Rightarrow q) \wedge (q \Rightarrow r)]$ is true, then $(p \Rightarrow r)$ is true, therefore,
+            \[[(p \Rightarrow q) \wedge (q \Rightarrow r)] \Rightarrow (p \Rightarrow r)\]
+             is a tautology.
+        \end{proof}
+
+        \textbf{Interpretation and use: }\\
+        This is the law of syllogism. In a proof, when we want to prove that $p \Rightarrow r$, if it's hard to prove it directly, we can try to find an intermediate statement $q$ such that $p \Rightarrow q$ and $q \Rightarrow r$ are easier to prove.
+        
+        \item $[p \Rightarrow (q \Rightarrow r)] \Rightarrow [(p \Rightarrow q) \Rightarrow (p \Rightarrow r)]$
+        \begin{proof}
+            Suppose $[p \Rightarrow (q \Rightarrow r)]$ is true, suppose $p$ is true, then $q \Rightarrow r$ is true. Suppose $q$ is true, then $r$ is true by $q \Rightarrow r$. If $p,q,r$ are all true, then we have $p \Rightarrow q$ is true, and $p \Rightarrow r$ is true. Therefore, 
+            \[[p \Rightarrow (q \Rightarrow r)] \Rightarrow [(p \Rightarrow q) \Rightarrow (p \Rightarrow r)]\]
+            is a tautology.
+        \end{proof}
+
+        \textbf{Interpretation and use: }\\
+        This is a distributive law for implication. In a proof, it allows us to deduce $p \Rightarrow r$ from $p \Rightarrow (q \Rightarrow r)$ and $p \Rightarrow q$. For example, suppose we have established $p \Rightarrow (q \Rightarrow r)$ as a true statement (maybe by a lemma). Later we prove $p \Rightarrow q$ by some other argument. Then the law tells us we can infer $p \Rightarrow r$ directly, without rebuilding the proof.
+
+        \item $\exists y \in Y,\, \forall x \in X,\, p(x,y) \Rightarrow \forall x \in X,\, \exists y \in Y,\, p(x,y)$
+        \begin{proof}
+            Assume there exists $y_0 \in Y$ such that $\forall x \in X, p(x,y_0)$ holds. Take an arbitrary $x \in X$. Since $p(x,y_0)$ holds for every $x$, in particular it holds for this $x$. Thus for this $x$ we have found $y = y_0$ such that $p(x,y)$ holds. Because $x$ was arbitrary, we conclude $\forall x \in X, \exists y \in Y, p(x,y)$. Hence the implication holds. Therefore the formula is a tautology.
+        \end{proof}
+
+        \textbf{Interpretation and use: }\\
+        This shows that a uniform existence (one $y$ works for all $x$) implies the weaker pointwise existence (each $x$ may need its own $y$). In proofs, it is often used to deduce $\forall x \in X,\, \exists y \in Y,\, p(x,y)$ from the stronger claim $\exists y \in Y,\, \forall x \in X,\, p(x,y)$. For example, to show every real number has a square root, one could try to find a single function (the square root) that works for all non-negative numbers; doing so immediately yields the existence of a square root for each individual number.
+
+        \item $[\neg (p \wedge q)] \Leftrightarrow [(\neg p) \vee (\neg q)]$
+        \begin{proof}
+            I will prove this by truth table.
+            \begin{center}
+                \begin{tabular}{cc||c|c||cc|c}
+                $p$ & $q$ & $p \wedge q$ & $\neg (p \wedge q)$ & $\neg p$ & $\neg q$ & $(\neg p) \vee (\neg q)$\\ \hline
+                    \TT & \TT & \TT & \FF & \FF & \FF & \FF\\
+                    \TT & \FF & \FF & \TT & \FF & \TT & \TT\\
+                    \FF & \TT & \FF & \TT & \TT & \FF & \TT\\
+                    \FF & \FF & \FF & \TT & \TT & \TT & \TT\\
+                \end{tabular}
+            \end{center}
+            In the truth table above, $\neg (p \wedge q)$ and $(\neg p) \vee (\neg q)$ have identical columns, therefore
+            \[\neg (p \wedge q) \equiv (\neg p) \vee (\neg q)\]
+            is a tautology.
+        \end{proof}
+
+        \textbf{Interpretation and use: }\\
+        This is De Morgan's law for conjunction. In a proof, it allows us to replace a negated conjunction with a disjunction of negations, and vice versa. For instance, to prove that a conjunction is false, it suffices to show that at least one conjunct is false. It is frequently used in proof by cases and in transforming logical statements into a more convenient form.
+
+        \item $[\neg \forall x \in X,\, p(x)] \Leftrightarrow [\exists x \in X,\, \neg p(x)]$
+        \begin{proof}
+            This is a biconditional statement. We will prove it by two directions separately.
+            \begin{itemize}
+                \item ($\Rightarrow$) Suppose $\neg \forall x \in X,\, p(x)$ is true. Then it is not the case that $p(x)$ holds for all $x \in X$. Therefore, there exists some $x_0 \in X$ such that $\neg p(x_0)$ is true. Hence, $\exists x \in X,\, \neg p(x)$ is true.
+                \item ($\Leftarrow$) Suppose $\exists x \in X,\, \neg p(x)$ is true. Then there exists some $x_0 \in X$ such that $\neg p(x_0)$ is true. Therefore, it is not the case that $p(x)$ holds for all $x \in X$. Hence, $\neg \forall x \in X,\, p(x)$ is true.
+            \end{itemize}
+            Since we have shown both directions, it follows that
+            \[\neg \forall x \in X,\, p(x) \equiv \exists x \in X,\, \neg p(x)\]
+            is a tautology.
+        \end{proof}
+
+        \textbf{Interpretation and use: }\\
+        This is De Morgan's law for quantifiers. It allows us to transform a negated universal statement into an existential statement with a negated predicate, and vice versa. In proofs, it is often used to negate statements involving quantifiers, or to rewrite statements in a more convenient form for applying other logical equivalences or proof techniques.
+    \end{itemize}
+\end{solutions*}

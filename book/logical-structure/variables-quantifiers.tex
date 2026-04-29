@@ -190,30 +190,31 @@ Let $p(x,y)$ be the statement `$x + y$ is even'.
 \end{exercise}
 
 \begin{solutions*}
-\begin{itemize}
-    \item \textbf{Prove that $\forall x \in \mathbb{Z},\, \exists y \in \mathbb{Z},\, p(x,y)$ is true.}
+     \fixlistskip
+    \begin{itemize}
+        \item \textbf{Prove that $\forall x \in \mathbb{Z},\, \exists y \in \mathbb{Z},\, p(x,y)$ is true.}
 
-    \begin{proof}
-        Let $x$ be an arbitrary integer. Choose $y = x$, then $x + y = 2x$ is even.
+        \begin{proof}
+            Let $x$ be an arbitrary integer. Choose $y = x$, then $x + y = 2x$ is even.
 
-        Because we found a valid integer $y$ for arbitrary $x$, the statement is true. More generally,
-        \begin{itemize}
-            \item If $x$ is even, then $x$ can be represented as $x = 2k$ for some integer $k$. In this case, let $y = 2\ell$ is even and $x + y = 2(k + \ell)$ is even.
-            \item If $x$ is odd, then $x$ can be represented as $x = 2k+1$ for some integer $k$. In this case, let $y = 2\ell + 1$ is odd and $x + y = 2(k + \ell + 1)$ is even.
-        \end{itemize}
-        In summary, regardless of whether $x$ is even or odd, there exists a $y$ such that $x + y$ is even. Therefore, $\forall x \in \mathbb{Z},\, \exists y \in \mathbb{Z},\, p(x,y)$ is true.
-    \end{proof}
+            Because we found a valid integer $y$ for arbitrary $x$, the statement is true. More generally,
+            \begin{itemize}
+                \item If $x$ is even, then $x$ can be represented as $x = 2k$ for some integer $k$. In this case, let $y = 2\ell$ is even and $x + y = 2(k + \ell)$ is even.
+                \item If $x$ is odd, then $x$ can be represented as $x = 2k+1$ for some integer $k$. In this case, let $y = 2\ell + 1$ is odd and $x + y = 2(k + \ell + 1)$ is even.
+            \end{itemize}
+            In summary, regardless of whether $x$ is even or odd, there exists a $y$ such that $x + y$ is even. Therefore, $\forall x \in \mathbb{Z},\, \exists y \in \mathbb{Z},\, p(x,y)$ is true.
+        \end{proof}
 
-    \item \textbf{Prove that $\exists y \in \mathbb{Z},\, \forall x \in \mathbb{Z},\, p(x,y)$ is false.}
+        \item \textbf{Prove that $\exists y \in \mathbb{Z},\, \forall x \in \mathbb{Z},\, p(x,y)$ is false.}
 
-    \begin{proof}
-        To prove this statement is false, the standard mathematical approach is to prove that its logical negation is true.
-        
-        The negation of $\exists y \in \mathbb{Z},\, \forall x \in \mathbb{Z},\, p(x,y)$ is:
-        \[\forall y \in \mathbb{Z},\, \exists x \in \mathbb{Z},\, \neg p(x,y)\]
-        Let $y$ be an arbitrary integer. Choose $x = y+1$, then $x + y = 2y+1$ is odd.
+        \begin{proof}
+            To prove this statement is false, the standard mathematical approach is to prove that its logical negation is true.
+            
+            The negation of $\exists y \in \mathbb{Z},\, \forall x \in \mathbb{Z},\, p(x,y)$ is:
+            \[\forall y \in \mathbb{Z},\, \exists x \in \mathbb{Z},\, \neg p(x,y)\]
+            Let $y$ be an arbitrary integer. Choose $x = y+1$, then $x + y = 2y+1$ is odd.
 
-        Therefore, for any integer $y$, there exists an integer $x$ that makes $x+y$ odd. Because the negation of the original statement is true, the original statement must be false. 
-    \end{proof}
-\end{itemize}
+            Therefore, for any integer $y$, there exists an integer $x$ that makes $x+y$ odd. Because the negation of the original statement is true, the original statement must be false. 
+        \end{proof}
+    \end{itemize}
 \end{solutions*}
