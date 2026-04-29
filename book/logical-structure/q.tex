@@ -11,6 +11,16 @@ For fixed $n \in \mathbb{N}$, let $p$ represent the proposition `$n$ is even', l
 \end{enumerate}
 \end{chapex}
 
+\begin{solutions*}
+    \fixlistskip
+    \begin{enumerate}[(a)]
+    \item If $n$ is even and $n$ is prime, then $n = 2$. This is true for all $n \in \mathbb{N}$.
+    \item If $n$ is prime and $n \ne 2$, then $n$ is not even. This is true for all $n \in \mathbb{N}$.
+    \item Either $n$ is not even, or $n$ is not prime, or $n \ne 2$. This is true for all $n \in \mathbb{N}$.
+    \item $n$ is even and $n$ is prime, and $n \ne 2$. This is false for all $n \in \mathbb{N}$.
+    \end{enumerate}
+\end{solutions*}
+
 \begin{chapex}
 For each of the following plain English statements, translate it into a symbolic propositional formula. The propositional variables in your formulae should represent the simplest propositions that they can.
 \begin{enumerate}[(a)]
@@ -20,15 +30,41 @@ For each of the following plain English statements, translate it into a symbolic
 \end{enumerate}
 \end{chapex}
 
+\begin{solutions*}
+    \fixlistskip
+    \begin{enumerate}[(a)]
+    \item Let $p$ represent the proposition `guinea pigs are quiet'.\\
+    Let $q$ represent the proposition `guinea pigs are loud'.\\
+    Let $r$ represent the proposition `guinea pigs are hungry'. \\
+    Then the statement can be represented by the propositional formula $p \wedge (r \Rightarrow q)$.
+    \item Let $p$ represent the proposition `$2$ is even'.\\
+    Let $q$ represent the proposition `$2$ is a prime number'. \\
+    Then the statement can be represented by the propositional formula $(p \vee \neg p) \Rightarrow q$.
+    \item Let $p$ represent the proposition `$\sqrt{2}$ is an integer'.\\
+    Let $q$ represent the proposition `$\sqrt{2}$ is an irrational number'.\\
+    Then the statement can be represented by the propositional formula $q \Rightarrow \neg p$.
+    \end{enumerate}
+\end{solutions*}
+
 \begin{chapex}
 Let $p$ and $q$ be propositions, and assume that $p \Rightarrow (\neg q)$ is true and that $(\neg q) \Rightarrow p$ is false. Which of the following are true, and which are false?
 \begin{enumerate}[(a)]
 \item $q$ being false is necessary for $p$ to be true.
 \item $q$ being false is sufficient for $p$ to be true.
 \item $p$ being true is necessary for $q$ to be false.
-\item $p$ being true is sufficient for $p$ to be false.
+\item $p$ being true is sufficient for $q$ to be false.
 \end{enumerate}
 \end{chapex}
+
+\begin{solutions*}
+    \fixlistskip
+    \begin{enumerate}[(a)]
+    \item True. ``$q$ being false is necessary for $p$ to be true'' means that $p \Rightarrow (\neg q)$. Since $p \Rightarrow (\neg q)$ is true, it follows that this statement is true.
+    \item False. ``$q$ being false is sufficient for $p$ to be true'' means that $(\neg q) \Rightarrow p$. Since $(\neg q) \Rightarrow p$ is false, it follows that this statement is false.
+    \item False. ``$p$ being true is necessary for $q$ to be false'' means that $(\neg q) \Rightarrow p$. Since $(\neg q) \Rightarrow p$ is false, it follows that this statement is false.
+    \item True. ``$p$ being true is sufficient for $q$ to be false.'' means that $p \Rightarrow (\neg q)$. Since $p \Rightarrow (\neg q)$ is true, it follows that this statement is true.
+    \end{enumerate}
+\end{solutions*}
 
 In \Crefrange{cqStructureProofBegin}{cqStructureProofEnd}, use the definitions of the logical operators in \Cref{secPropositionalLogic} to describe what steps should be followed in order to prove the propositional formula in the question; the letters $p$, $q$, $r$ and $s$ are propositional variables.
 
@@ -37,18 +73,43 @@ In \Crefrange{cqStructureProofBegin}{cqStructureProofEnd}, use the definitions o
 $(p \wedge q) \Rightarrow (\neg r)$
 \end{chapex}
 
+\begin{solutions*}
+    To prove $(p \wedge q) \Rightarrow (\neg r)$, we need to assume that $p \wedge q$ is true and then show that $\neg r$ is true. 
+
+    Since $p \wedge q$ is true, by the definition of conjunction, we have $p$ is true and $q$ is true. We need to use the fact that $p$ and $q$ are both true to derive $r$ is false or a contradiction if we assume that $r$ is true. If we can derive $r$ is false or a contradiction from the assumption that $r$ is true, then it follows that $\neg r$ must be true. 
+\end{solutions*}
+
 \begin{chapex}
 $(p \vee q) \Rightarrow (r \Rightarrow s)$
 \end{chapex}
+
+\begin{solutions*}
+    To prove $(p \vee q) \Rightarrow (r \Rightarrow s)$, we need to assume that $p \vee q$ is true and then show that $r \Rightarrow s$ is true.
+
+    Since $p \vee q$ is true, by the definition of disjunction, we have either $p$ is true or $q$ is true. We need to use the fact that at least one of $p$ or $q$ is true to derive that if $r$ is true, then $s$ must be true. 
+
+    To show that $r \Rightarrow s$ is true, we need to assume that $r$ is true and then show that $s$ is true. 
+\end{solutions*}
 
 \begin{chapex}
 $(p \Rightarrow q) \Leftrightarrow (\neg p \Rightarrow \neg q)$
 \end{chapex}
 
+\begin{solutions*}
+    We know that original proposition $p \Rightarrow q$ is logically equivalent to its contrapositive $\neg q \Rightarrow \neg p$. Therefore, we can rewrite the proposition in this question as
+    \[(p \Rightarrow q) \Leftrightarrow (q \Rightarrow p)\]
+    \[[(p \Rightarrow q) \Rightarrow (q \Rightarrow p)] \wedge [(q \Rightarrow p) \Rightarrow (p \Rightarrow q)]\]
+    This means that $p \Leftrightarrow q$. To prove $p \Leftrightarrow q$, we need to show that $p \Rightarrow q$ and $q \Rightarrow p$ are both true. To show that $p \Rightarrow q$ is true, we need to assume that $p$ is true and then show that $q$ is true. To show that $q \Rightarrow p$ is true, we need to assume that $q$ is true and then show that $p$ is true.
+\end{solutions*}
+
 \begin{chapex}
 \label{cqStructureProofEnd}
 $(p \wedge (\neg q)) \vee (q \wedge (\neg p))$
 \end{chapex}
+
+\begin{solutions*}
+    $(p \wedge (\neg q)) \vee (q \wedge (\neg p))$ equivalent to $p \oplus q$ (exclusive OR). To prove $p \oplus q$, we need to show that either $p$ is true and $q$ is false, or $q$ is true and $p$ is false. To show that $p$ is true and $q$ is false, we need to assume that $p$ is true and then show that $q$ is false. To show that $q$ is true and $p$ is false, we need to assume that $q$ is true and then show that $p$ is false.
+\end{solutions*}
 
 % Variables and quantifiers %
 
@@ -56,13 +117,71 @@ $(p \wedge (\neg q)) \vee (q \wedge (\neg p))$
 Find a statement in plain English, involving no variables at all, that is equivalent to the logical formula $\forall a \in \mathbb{Q},\, \forall b \in \mathbb{Q},\, (a < b \Rightarrow \exists c \in \mathbb{R},\, [a < c < b ~\wedge~ \neg (c \in \mathbb{Q})])$. Then prove this statement, using the structure of the logical formula as a guide.
 \end{chapex}
 
+\begin{solutions*}
+    \fixlistskip
+    \begin{center}
+        Between any two distinct rational numbers, there exists an irrational number.
+    \end{center}
+    \begin{proof}
+        This is an existential statement. Let $a, b \in \mathbb{Q}$ be arbitrary, we need to construct a real number $c$ such that $a < c < b$ and $c \not\in \mathbb{Q}$. 
+
+        Let $c=a+\dfrac{b-a}{\sqrt{2}}$.
+        \begin{itemize}
+            \item Show $a < c < b$ \\
+            Since $a < b$, we have $b-a > 0$, so $\dfrac{b-a}{\sqrt{2}} > 0$. Adding $a$ to both sides gives $c = a + \dfrac{b-a}{\sqrt{2}} > a$. 
+            
+            Since $\sqrt{2} > 1$, we have $\dfrac{b-a}{\sqrt{2}} < b-a$. Adding $a$ to both sides gives $c = a + \dfrac{b-a}{\sqrt{2}} < a + (b-a) = b$.
+            
+            Therefore, $a < c < b$.
+            \item Show $c \not\in \mathbb{Q}$ \\
+            Since $\sqrt{2}$ is irrational and $a, b$ are rational, $c = a + \dfrac{b-a}{\sqrt{2}}$ is irrational.
+        \end{itemize}
+
+        Thus we have exhibited an irrational number $c$ strictly between $a$ and $b$. Since $a,b$ were arbitrary rational numbers with $a<b$, the statement holds for all such pairs.
+    \end{proof}
+\end{solutions*}
+
 \begin{chapex}
 Find a purely symbolic logical formula that is equivalent to the following statement, and then prove it: ``\textit{No matter which integer you may choose, there will be an integer greater than it.}''
 \end{chapex}
 
+\begin{solutions*}
+    \[\forall x \in \mathbb{Z},\, \exists y \in \mathbb{Z},\, (y > x)\]
+    \begin{proof}
+        Let $x \in \mathbb{Z}$ be arbitrary. We need to find an integer $y$ such that $y > x$. Let $y = x + 1$. Since $x$ is an integer, $y$ is also an integer. Moreover, $y = x + 1 > x$. Thus, for every integer $x$, there exists an integer $y$ such that $y > x$. Therefore, the statement is true.
+    \end{proof}
+\end{solutions*}
+
 \begin{chapex}
 Let $X$ be a set and let $p(x)$ be a predicate. Find a logical formula representing the statement `there are exactly two elements $x \in X$ such that $p(x)$ is true'. Use the structure of this logical formula to describe how a proof should be structured, and use this structure to prove that there are exactly two real numbers $x$ such that $x^2=1$.
 \end{chapex}
+
+\begin{solutions*}
+    \[\exists x_1, x_2 \in X \, (x_1 \ne x_2 \wedge p(x_1) \wedge p(x_2) \wedge \forall x' \in X (p(x') \Rightarrow (x'=x_1 \vee x'=x_2)))\]
+    This formula says: there exist two distinct elements $x_1$ and $x_2$ both satisfying $p$, and every element that satisfies $p$ must be equal to one of these two.
+
+    To prove that \textbf{exactly two} elements of a set satisfy a property $p$, we must show two things:
+    \begin{itemize}
+        \item Existence of at least two distinct elements:\\
+            Find two specific elements $x_1$ and $x_2$ (with $x_1 \ne x_2$) such that $p(x_1)$ and $p(x_2)$ both hold.
+        \item Existence of at most two distinct elements:\\
+            Prove that if any element $x'$ satisfies $p$, then necessarily $x'=x_1$ or $x'=x_2$.
+    \end{itemize}
+
+    \begin{proof}
+        We want to prove that there are exactly two real numbers $x$ such that $x^2=1$.
+
+        Let $p(x)$ be the statement $x^2=1$, where $x \in \mathbb{R}$.
+
+        \begin{itemize}
+            \item Existence of at least two distinct elements:\\
+                Let $x_1 = 1$ and $x_2=-1$. It's clear that $x_1 \ne x_2$ and $x_1^2=1^2=1$ and $x_2^2=(-1)^2=1$. Hence we have two distinct elements satisfying the property.
+            \item Existence of at most two distinct elements:\\
+                Let $x'$ be any real number such that $x'^2=1$. Then $x'^2-1=0$, i.e., $(x'-1)(x'+1)=0$. Since the product of real numbers is zero if and only if at least one factor is zero, we have $x'-1=0$ or $x'+1=0$. Thus $x'=1$ or $x'=-1$. So every element satisfying $p$ is either $1$ or $-1$.
+        \end{itemize}
+        Therefore, there are exactly two real numbers $x$ such that $x^2=1$.
+    \end{proof}
+\end{solutions*}
 
 % Logical equivalence %
 
@@ -74,9 +193,40 @@ p \Leftrightarrow q \equiv (p \Rightarrow q) \wedge ((\neg p) \Rightarrow (\neg 
 How might this logical equivalence help you to prove statements of the form `$p$ if and only if $q$'?
 \end{chapex}
 
+\begin{solutions*}
+    \fixlistskip
+    \begin{proof}
+    \begin{align*}
+        p \Leftrightarrow q & \equiv (p \Rightarrow q) \wedge (q \Rightarrow p) \\
+        & \equiv (p \Rightarrow q) \wedge (\neg q \vee p)\\
+        & \equiv (p \Rightarrow q) \wedge (\neg (\neg p) \vee \neg q)\\
+        & \equiv (p \Rightarrow q) \wedge ((\neg p) \Rightarrow (\neg q))
+    \end{align*}
+    \end{proof}
+    In logic, the original proposition "if $p$ then $q$" is logically equivalent to its contrapositive "if not $q$ then not $p$".
+    \[p \Rightarrow q \equiv \neg q \Rightarrow \neg p\]
+    This logical equivalence introduces proof by contradiction. Sometimes, when the original proposition $p \Rightarrow q$ is difficult to prove, we can use proof by contradiction to prove its contrapositive $\neg q \Rightarrow \neg p$.
+\end{solutions*}
+
 \begin{chapex}
 Prove using truth tables that $p \Rightarrow q \not\equiv q \Rightarrow p$. Give an example of propositions $p$ and $q$ such that $p \Rightarrow q$ is true but $q \Rightarrow p$ is false.
 \end{chapex}
+
+\begin{solutions*}
+    \fixlistskip
+    \begin{center}
+        \begin{tabular}{cc|c|c}
+            $p$ & $q$ & $p \Rightarrow q$ & $q \Rightarrow p$ \\ \hline
+            \TT & \TT & \TT & \TT \\
+            \TT & \FF & \FF & \TT \\
+            \FF & \TT & \TT & \FF \\
+            \FF & \FF & \TT & \TT
+        \end{tabular}
+    \end{center}
+    Accouding to the true value table above, we can find that $p \Rightarrow q$ and $q \Rightarrow p$ have different true value. Therefore, $p \Rightarrow q \not\equiv q \Rightarrow p$.
+
+    For example, let $p$ be ``$n$ is a rational number'', let $q$ be ``$n$ is a real number''. Then we can say $p \Rightarrow q$, but we cannot say $q \Rightarrow p$. 
+\end{solutions*}
 
 In \Crefrange{cqTruthTablesBegin}{cqTruthTablesEnd}, find a logical formula whose column in a truth table is as shown.
 
@@ -91,6 +241,11 @@ $p$ & $q$ & \hspace{50pt} \\ \hline
 \end{tabular}
 \end{chapex}
 
+\begin{solutions*}
+    This is the truth table of \textbf{exclusive OR}. The logical formula is $p \oplus q \equiv (p \wedge \neg q) \vee (\neg p \wedge q)$.
+\end{solutions*}
+
+
 \begin{chapex}
 \begin{tabular}{cc|c}
 $p$ & $q$ & \hspace{50pt} \\ \hline
@@ -100,6 +255,10 @@ $p$ & $q$ & \hspace{50pt} \\ \hline
 \FF & \FF & \FF \\
 \end{tabular}
 \end{chapex}
+
+\begin{solutions*}
+    The output is exactly the truth value of $q$, regardless of $p$, so the logical formula is just $q$.
+\end{solutions*}
 
 \begin{chapex}
 \begin{tabular}{ccc|c}
@@ -115,6 +274,10 @@ $p$ & $q$ & $r$ & \hspace{50pt} \\ \hline
 \end{tabular}
 \end{chapex}
 
+\begin{solutions*}
+    The output is exactly the truth value of $p \Rightarrow q$, regardless of $r$, so the logical formula is just $p \Rightarrow q$.
+\end{solutions*}
+
 \begin{chapex}
 \label{cqTruthTablesEnd}
 \begin{tabular}{ccc|c}
@@ -129,6 +292,10 @@ $p$ & $q$ & $r$ & \hspace{50pt} \\ \hline
 \FF & \FF & \FF & \FF \\
 \end{tabular}
 \end{chapex}
+
+\begin{solutions*}
+    $r \wedge (p \Rightarrow q)$
+\end{solutions*}
 
 \begin{chapex}
 A new logical operator $\uparrow$ is defined by the following rules:
@@ -146,19 +313,163 @@ This question explores this curious new logical operator.
 \end{enumerate}
 \end{chapex}
 
+\begin{solutions*}
+    According to the definition of $\uparrow$, we can derive the following truth table for $p \uparrow q$:
+    \begin{center}
+        \begin{tabular}{cc|c}
+            $p$ & $q$ & $p \uparrow q$ \\ \hline
+            \TT & \TT & \FF \\
+            \TT & \FF & \TT \\
+            \FF & \TT & \TT \\
+            \FF & \FF & \TT
+        \end{tabular}
+    \end{center}
+    When $p$ and $q$ are both false, $p \uparrow q$ is true. This shares the same idea with $\Rightarrow$. If the assumption is false, by the principle of explosion, any consequence may be derived. So under a false hypothesis, we cannot say the overall statement is false. By the LEM, it must be true.
+
+    \begin{enumerate}[(a)]
+        \item Prove that $p \uparrow p \equiv \neg p$, and deduce that $((p \uparrow p) \uparrow (p \uparrow p)) \equiv p$.
+            \begin{proof}
+                We will prove that $p \uparrow p \equiv \neg p$ by truth table.
+                \begin{center}
+                    \begin{tabular}{cc|c|c}
+                        $p$ & $p$ & $p \uparrow p$ & $\neg p$ \\ \hline
+                        \TT & \TT & \FF & \FF \\
+                        \FF & \FF & \TT & \TT
+                    \end{tabular}
+                \end{center}
+                According to the truth table above, we can find that $p \uparrow p$ and $\neg p$ have the same truth value. Therefore, $p \uparrow p \equiv \neg p$. Then we have
+                \[((p \uparrow p) \uparrow (p \uparrow p)) \equiv (\neg p) \uparrow (\neg p) \equiv \neg (\neg p) \equiv p\]
+            \end{proof}
+        \item Prove that $p \vee q \equiv (p \uparrow p) \uparrow (q \uparrow q)$ and $p \wedge q \equiv (p \uparrow q) \uparrow (p \uparrow q)$.
+            \begin{proof}
+                We will prove $p \vee q \equiv (p \uparrow p) \uparrow (q \uparrow q)$ by truth table.
+                \begin{center}
+                    \begin{tabular}{cc||c||c|c|c}
+                        $p$ & $q$ & $p \vee q$ & $(p \uparrow p)$ & $(q \uparrow q)$ & $(p \uparrow p) \uparrow (q \uparrow q)$ \\ \hline
+                        \TT & \TT & \TT & \FF & \FF & \TT \\
+                        \TT & \FF & \TT & \FF & \TT & \TT \\
+                        \FF & \TT & \TT & \TT & \FF & \TT \\
+                        \FF & \FF & \FF & \TT & \TT & \FF
+                    \end{tabular}
+                \end{center}
+                According to the truth table above, we can find that $p \vee q$ and $(p \uparrow p) \uparrow (q \uparrow q)$ have the same truth value. Therefore, $p \vee q \equiv (p \uparrow p) \uparrow (q \uparrow q)$.\\
+
+                We will prove $p \wedge q \equiv (p \uparrow q) \uparrow (p \uparrow q)$ by truth table.
+                \begin{center}
+                    \begin{tabular}{cc||c||c|c}
+                        $p$ & $q$ & $p \wedge q$ & $(p \uparrow q)$ & $(p \uparrow q) \uparrow (p \uparrow q)$ \\ \hline
+                        \TT & \TT & \TT & \FF & \TT \\
+                        \TT & \FF & \FF & \TT & \FF \\
+                        \FF & \TT & \FF & \TT & \FF \\
+                        \FF & \FF & \FF & \TT & \FF
+                    \end{tabular}
+                \end{center}
+                According to the truth table above, we can find that $p \wedge q$ and $(p \uparrow q) \uparrow (p \uparrow q)$ have the same truth value. Therefore, $p \wedge q \equiv (p \uparrow q) \uparrow (p \uparrow q)$.
+            \end{proof}
+        \item Find a propositional formula using only the logical operator $\uparrow$ that is equivalent to $p \Rightarrow q$.
+            \begin{proof}
+            Since $p \Rightarrow q \equiv \neg p \vee q$, we can rewrite it as
+            \begin{align*}
+                p \Rightarrow q & \equiv \neg p \vee q \\
+                & \equiv (\neg p \uparrow \neg p) \uparrow (q \uparrow q) \\
+                & \equiv p \uparrow (\neg q)
+            \end{align*}
+            We can verify that $p \Rightarrow q \equiv p \uparrow (\neg q)$ by truth table.
+            \begin{center}
+                \begin{tabular}{cc||c||c|c}
+                    $p$ & $q$ & $p \Rightarrow q$ & $\neg q$ & $p \uparrow (\neg q)$\\ \hline
+                    \TT & \TT & \TT & \FF & \TT \\
+                    \TT & \FF & \FF & \TT & \FF \\
+                    \FF & \TT & \TT & \FF & \TT \\
+                    \FF & \FF & \TT & \TT & \TT
+                \end{tabular}
+            \end{center}
+            According to the truth table above, we can find that $p \Rightarrow q$ and $p \uparrow (\neg q)$ have the same truth value. Therefore, $p \Rightarrow q \equiv p \uparrow (\neg q)$.
+            \end{proof}
+    \end{enumerate}
+\end{solutions*}
+
 \begin{chapex}
 Let $X$ be $\mathbb{Z}$ or $\mathbb{Q}$, and define a logical formula $p$ by:
 $$\forall x \in X,\, \exists y \in X,\, (x<y \wedge [\forall z \in X,\, \neg (x<z \wedge z<y)])$$
 Write out $\neg p$ as a maximally negated logical formula. Prove that $p$ is true when $X = \mathbb{Z}$, and $p$ is false when $X = \mathbb{Q}$.
 \end{chapex}
 
-\begin{chapex}
-Use \Cref{defUniqueExistentialQuantifier} to write out a maximally negated logical formula that is equivalent to $\neg \exists! x \in X,\, p(x)$. Describe the strategy that this equivalence suggests for proving that there is not a unique $x \in X$ such that $p(x)$ is true, and use this strategy to prove that, for all $a \in \mathbb{R}$, if $a \ne -1$ then there is not a unique $x \in \mathbb{R}$ such that $x^4-2ax^2+a^2-1=0$.
-\end{chapex}
+\begin{solutions*}
+    The maximally negated logical formula of $\neg p$ is
+    \begin{align*}
+        \neg p & \equiv \neg [\forall x \in X,\, \exists y \in X,\, (x<y \wedge [\forall z \in X,\, \neg (x<z \wedge z<y)])]\\
+        & \equiv \exists x \in X,\, \neg [\exists y \in X,\, (x<y \wedge [\forall z \in X,\, \neg (x<z \wedge z<y)])]\\
+        & \equiv \exists x \in X,\, \forall y \in X,\, \neg (x<y \wedge [\forall z \in X,\, \neg (x<z \wedge z<y)])\\
+        & \equiv \exists x \in X,\, \forall y \in X,\, [\neg (x<y) \vee \neg [\forall z \in X,\, \neg (x<z \wedge z<y)]]\\
+        & \equiv \exists x \in X,\, \forall y \in X,\, [x \ge y \vee \exists z \in X,\, (x<z \wedge z<y)]
+    \end{align*}
+    \begin{proof}
+        When $X = \mathbb{Z}$, we want to prove $p$ is true. That is for every integer $x$, there exists an integer $y$ such that $x<y$ and there is no integer strictly between $x$ and $y$.
+        
+        Let $x \in \mathbb{Z}$ be arbitrary. Let $y = x + 1$. Then $y \in \mathbb{Z}$ and $x < y$. Moreover, assume that there exists $z \in \mathbb{Z}$ and $x < z < y$, then $z$ must be equal to $x+1$, which is a contradiction with $z < y$. Therefore, for every integer $x$, there exists an integer $y$ such that $x<y$ and there is no integer strictly between $x$ and $y$. Thus, $p$ is true when $X = \mathbb{Z}$.
+    \end{proof}
+    \begin{proof}
+        When $X = \mathbb{Q}$, we want to prove $p$ is false, i.e. $\neg p$ is true. That is there exists a rational number $x$ such that for every rational number $y$, either $x \ge y$ or there exists a rational number $z$ such that $x < z < y$.
+
+        Let $x = 0$. Let $y \in \mathbb{Q}$ be arbitrary. There are 2 cases:
+        \begin{itemize}
+            \item If $y \le 0$, then $x \ge y$.
+            \item If $y > 0$, then there exists a rational number $z = \dfrac{y}{2}$ such that $x < z < y$.
+        \end{itemize}
+        In summary, for every rational number $y$, either $x \ge y$ or there exists a rational number $z$ such that $x < z < y$. Thus, $\neg p$ is true when $X = \mathbb{Q}$. Therefore, $p$ is false when $X = \mathbb{Z}$.
+    \end{proof}
+\end{solutions*}
 
 \begin{chapex}
-Define a new quantifier $\forall !$ such that de Morgan's laws for quantifiers (\Cref{thmDeMorganQuantifiers}) hold with $\forall$ and $\exists$ replaced by $\forall !$ and $\exists !$, respectively.
+Use Definition 1.2.26 to write out a maximally negated logical formula that is equivalent to $\neg \exists! x \in X,\, p(x)$. Describe the strategy that this equivalence suggests for proving that there is not a unique $x \in X$ such that $p(x)$ is true, and use this strategy to prove that, for all $a \in \mathbb{R}$, if $a \ne -1$ then there is not a unique $x \in \mathbb{R}$ such that $x^4-2ax^2+a^2-1=0$.
 \end{chapex}
+
+\begin{solutions*}
+    \fixlistskip
+    \begin{align*}
+        \neg \exists! x \in X,\, p(x) &\equiv \neg [(\exists x \in X,\, p(x)) \wedge (\forall a \in X,\, \forall b \in X,\, [(p(a)=p(b)) \Rightarrow a=b])]\\
+        & \equiv [\neg (\exists x \in X,\, p(x))] \vee [\neg (\forall a \in X,\, \forall b \in X,\, [(p(a)=p(b)) \Rightarrow a=b])]\\
+        & \equiv \underbrace{(\forall x \in X,\, \neg p(x))}_{non-existence} \vee \underbrace{(\exists a \in X,\, \exists b \in X,\, [(p(a)=p(b)) \wedge a \ne b])}_{non-uniqueness}
+    \end{align*}
+    If we want to prove that there is not a unique $x \in X$ such that $p(x)$ is true, we can show that either there does not exist any $x \in X$ such that $p(x)$ is true, or there exist at least two distinct elements $a$ and $b$ in $X$ such that $p(a)$ and $p(b)$ are both true.
+
+    \begin{proof}
+        Let $a \in \mathbb{R}$ be arbitrary and assume that $a \ne -1$. We want to prove that there is not a unique $x \in \mathbb{R}$ such that $x^4-2ax^2+a^2-1=0$.
+
+        Notice that $x^4-2ax^2+a^2-1$ can be factored into
+        \[x^4-2ax^2+a^2-1 = (x^2-a)^2-1 = (x^2-a-1)(x^2-a+1)\]
+        Thus $x^4-2ax^2+a^2-1=0$ has four roots
+        \[x = \pm\sqrt{a+1} \quad \text{and} \quad x = \pm\sqrt{a-1}\]
+        \begin{itemize}
+            \item If $a<-1$, then $a+1<0$ and $a-1<0$, so both roots are imaginary. Thus, there does not exist any $x \in \mathbb{R}$ such that $x^4-2ax^2+a^2-1=0$.
+            \item If $a>-1$, then $a+1>0$, so there exist at least two real roots $\pm\sqrt{a+1}$.
+        \end{itemize}
+        In summary, if $a<-1$, then there does not exist any $x \in \mathbb{R}$ such that $x^4-2ax^2+a^2-1=0$. If $a>-1$, then there exist at least two distinct elements $\pm\sqrt{a+1} \in \mathbb{R}$ such that $x^4-2ax^2+a^2-1=0$. Therefore, for all $a \in \mathbb{R}$, if $a \ne -1$ then there is not a unique $x \in \mathbb{R}$ such that $x^4-2ax^2+a^2-1=0$.
+    \end{proof}
+\end{solutions*}
+
+\begin{chapex}
+Define a new quantifier $\forall !$ such that de Morgan's laws for quantifiers (Theorem 1.3.29) hold with $\forall$ and $\exists$ replaced by $\forall !$ and $\exists !$, respectively.
+\end{chapex}
+
+\begin{solutions*}
+    de Morgan's laws for quantifiers hold with $\forall$ and $\exists$ replaced by $\forall !$ and $\exists !$, means the following equivalences hold:
+    \begin{align*}
+    \neg \forall ! x \in X,\, p(x) & \equiv \exists ! x \in X,\, \neg p(x)\\
+    \neg \exists ! x \in X,\, p(x) & \equiv \forall ! x \in X,\, \neg p(x)
+    \end{align*}
+    Thus, $\forall !$ can be defined as follows:
+    \[\forall ! x \in X,\, p(x) \equiv \neg \exists ! x \in X,\, \neg p(x)\]
+    We can maximally negate the right-hand side to get an equivalent definition of $\forall !$:
+    \begin{align*}
+    \forall ! x \in X,\, p(x) & \equiv \neg \exists ! x \in X,\, \neg p(x)\\
+    & \equiv \neg [(\exists x \in X,\, \neg p(x)) \wedge (\forall a \in X,\, \forall b \in X,\, [(\neg p(a)=\neg p(b)) \Rightarrow a=b])]\\
+    & \equiv [\neg (\exists x \in X,\, \neg p(x))] \vee [\neg (\forall a \in X,\, \forall b \in X,\, [(\neg p(a)=\neg p(b)) \Rightarrow a=b])]\\
+    & \equiv (\forall x \in X,\, p(x)) \vee (\exists a \in X,\, \exists b \in X,\, [(\neg p(a)=\neg p(b)) \wedge a \ne b])
+    \end{align*}
+    In words: ``For all $x \in X$, $p(x)$ holds, or there are at least two distinct elements $a, b \in X$ for which $\neg p(a)$ and $\neg p(b)$ are both true'' (i.e., it is not the case that exactly one element fails to satisfy $p$).
+\end{solutions*}
 
 \subsection*{True--False questions}
 
@@ -169,42 +480,177 @@ Define a new quantifier $\forall !$ such that de Morgan's laws for quantifiers (
 Every implication is logically equivalent to its contrapositive.
 \end{chapex}
 
+\begin{solutions*}
+    \textbf{True}
+
+    We can verify that $p \Rightarrow q \equiv \neg q \Rightarrow \neg p$ by truth tables.
+    \begin{center}
+        \begin{tabular}{cc||c||cc|c}
+            $p$ & $q$ & $p \Rightarrow q$ & $\neg p$ & $\neg q$ & $\neg q \Rightarrow \neg p$ \\ \hline
+            \TT & \TT & \TT & \FF & \FF & \TT \\
+            \TT & \FF & \FF & \FF & \TT & \FF \\
+            \FF & \TT & \TT & \TT & \FF & \TT \\
+            \FF & \FF & \TT & \TT & \TT & \TT
+        \end{tabular}
+    \end{center}
+    According to the truth table above, we can find that $p \Rightarrow q$ and $\neg q \Rightarrow \neg p$ have the same truth value. Therefore, $p \Rightarrow q \equiv \neg q \Rightarrow \neg p$.
+\end{solutions*}
+
 \begin{chapex} % False
 Every implication is logically equivalent to its converse.
 \end{chapex}
+
+\begin{solutions*}
+        
+
+    We can verify that $p \Rightarrow q \not\equiv q \Rightarrow p$ by truth tables.
+    \begin{center}
+        \begin{tabular}{cc|c|c}
+            $p$ & $q$ & $p \Rightarrow q$ & $q \Rightarrow p$ \\ \hline
+            \TT & \TT & \TT & \TT \\
+            \TT & \FF & \FF & \TT \\
+            \FF & \TT & \TT & \FF \\
+            \FF & \FF & \TT & \TT
+        \end{tabular}
+    \end{center}
+    According to the truth table above, we can find that $p \Rightarrow q$ and $q \Rightarrow p$ have different truth values. Therefore, $p \Rightarrow q \not\equiv q \Rightarrow p$.
+\end{solutions*}
 
 \begin{chapex} % True
 Every propositional formula whose only logical operators are conjunctions and negations is logically equivalent to a propositional formula whose only logical operators are disjunctions and negations.
 \end{chapex}
 
+\begin{solutions*}
+    \textbf{True}
+
+    This is a consequence of De Morgan's laws. Any propositional formula involving only conjunctions and negations can be transformed into an equivalent formula involving only disjunctions and negations, and vice versa. For example, the formula $p \wedge q$ can be rewritten as $\neg (\neg p \vee \neg q)$, and the formula $p \vee q$ can be rewritten as $\neg (\neg p \wedge \neg q)$.
+\end{solutions*}
+
 \begin{chapex} % False
 Every propositional formula whose only logical operators are conjunctions is logically equivalent to a propositional formula whose only logical operators are disjunctions.
 \end{chapex}
+
+\begin{solutions*}
+    \textbf{False}
+
+    For example, the formula $p \wedge q$ cannot be rewritten as an equivalent formula involving only disjunctions. If we try to rewrite $p \wedge q$ using only disjunctions, we would need to use negations as well, which is not allowed in this case. Therefore, not every propositional formula whose only logical operators are conjunctions is logically equivalent to a propositional formula whose only logical operators are disjunctions.
+\end{solutions*}
 
 \begin{chapex} % False
 The formulae $p \wedge (q \vee r)$ and $(p \wedge q) \vee r$ are logically equivalent.
 \end{chapex}
 
+\begin{solutions*}
+    \textbf{False}
+
+    We can verify that $p \wedge (q \vee r) \not\equiv (p \wedge q) \vee r$ by truth tables.
+    \begin{center}
+        \begin{tabular}{ccc||c|c||c|c}
+            $p$ & $q$ & $r$ & $(q \vee r)$ & $p \wedge (q \vee r)$ & $(p \wedge q)$ & $(p \wedge q) \vee r$ \\ \hline
+            \TT & \TT & \TT & \TT & \TT & \TT & \TT \\
+            \TT & \TT & \FF & \TT & \TT & \TT & \TT \\
+            \TT & \FF & \TT & \TT & \TT & \FF & \TT \\
+            \TT & \FF & \FF & \FF & \FF & \FF & \FF \\
+            \FF & \TT & \TT & \TT & \FF & \FF & \TT \\
+            \FF & \TT & \FF & \TT & \FF & \FF & \FF \\
+            \FF & \FF & \TT & \TT & \FF & \FF & \TT\\
+            \FF & \FF & \FF & \FF & \FF & \FF & \FF
+        \end{tabular}
+    \end{center}
+    According to the truth table above, we can find that $p \wedge (q \vee r)$ and $(p \wedge q) \vee r$ have different truth values. Therefore, $p \wedge (q \vee r) \not\equiv (p \wedge q) \vee r$.
+\end{solutions*}
+
 \begin{chapex} % True
 The formulae $p \vee (q \vee r)$ and $(p \vee q) \wedge (p \vee r)$ are logically equivalent.
 \end{chapex}
+
+\begin{solutions*}
+    \textbf{True}
+
+    We can verify that $p \vee (q \vee r) \equiv (p \vee q) \wedge (p \vee r)$ by truth tables.
+    \begin{center}
+        \begin{tabular}{ccc||c|c||c|c|c}
+            $p$ & $q$ & $r$ & $(q \vee r)$ & $p \vee (q \vee r)$ & $(p \vee q)$ & $(p \vee r)$ & $(p \vee q) \wedge (p \vee r)$\\ \hline
+            \TT & \TT & \TT & \TT & \TT & \TT & \TT & \TT\\
+            \TT & \TT & \FF & \TT & \TT & \TT & \TT & \TT\\
+            \TT & \FF & \TT & \TT & \TT & \TT & \TT & \TT\\
+            \TT & \FF & \FF & \FF & \TT & \TT & \TT & \TT\\
+            \FF & \TT & \TT & \TT & \TT & \TT & \TT & \TT\\
+            \FF & \TT & \FF & \TT & \TT & \TT & \FF & \TT \\
+            \FF & \FF & \TT & \TT & \TT & \FF & \TT & \TT \\
+            \FF & \FF & \FF & \FF & \FF & \FF & \FF & \FF
+        \end{tabular}
+    \end{center}
+    According to the truth table above, we can find that $p \vee (q \vee r)$ and $(p \vee q) \wedge (p \vee r)$ have the same truth values. Therefore, $p \vee (q \vee r) \equiv (p \vee q) \wedge (p \vee r)$.
+\end{solutions*}
 
 \begin{chapex} % False
 The logical formulae $\neg \forall x \in X,\, \forall y \in Y,\, p(x,y)$ and $\exists x \in X,\, \forall y \in Y,\, p(x,y)$ are logically equivalent.
 \end{chapex}
 
+\begin{solutions*}
+    \textbf{False}
+
+    \begin{proof}
+        The maximally negated version of the original logical formula is:
+        \[
+        \neg \forall x \in X,\, \forall y \in Y,\, p(x,y) \equiv \exists x \in X,\, \exists y \in Y,\, \neg p(x,y)
+        \]
+        It is not the same as the given logical formula. Therefore, 
+        \[\neg \forall x \in X,\, \forall y \in Y,\, p(x,y) \not\equiv \exists x \in X,\, \forall y \in Y,\, p(x,y)\]
+    \end{proof}
+\end{solutions*}
+
 \begin{chapex} % False
 $\neg \forall x \ge 0,\, \exists y \in \mathbb{R},\, y^2=x$ is logically equivalent to $\forall x < 0,\, \exists y \not\in \mathbb{R},\, y^2 \ne x$.
 \end{chapex}
+
+\begin{solutions*}
+    \textbf{False}
+
+    \begin{proof}
+        The maximally negated version of the original logical formula is:
+        \[
+        \neg \forall x \ge 0,\, \exists y \in \mathbb{R},\, y^2=x \equiv \exists x \ge 0,\, \forall y \in \mathbb{R},\, y^2 \ne x
+        \]
+        It is not the same as the given logical formula. Therefore, 
+        \[\neg \forall x \ge 0,\, \exists y \in \mathbb{R},\, y^2=x \not\equiv \forall x < 0,\, \exists y \not\in \mathbb{R},\, y^2 \ne x\]
+    \end{proof}
+\end{solutions*}
 
 \begin{chapex} % True
 $\neg \forall x \ge 0,\, \exists y \in \mathbb{R},\, y^2=x$ is logically equivalent to $\exists x \ge 0,\, \forall y \in \mathbb{R},\, y^2 \ne x$.
 \end{chapex}
 
+\begin{solutions*}
+    \textbf{True}
+
+    \begin{proof}
+        The maximally negated version of the original logical formula is:
+        \[
+        \neg \forall x \ge 0,\, \exists y \in \mathbb{R},\, y^2=x \equiv \exists x \ge 0,\, \forall y \in \mathbb{R},\, y^2 \ne x
+        \]
+        Obviously, the given logical formula is the same as the maximally negated version of the original formula, so the they are equivalent.
+    \end{proof}
+\end{solutions*}
+
 \begin{chapex} % False
 \label{cqLogicTFEnd}
 $\neg \forall x \ge 0,\, \exists y \in \mathbb{R},\, y^2=x$ is logically equivalent to $\exists x < 0,\, \forall y \in \mathbb{R},\, y^2 = x$.
 \end{chapex}
+
+\begin{solutions*}
+    \textbf{False}
+
+    \begin{proof}
+        The maximally negated version of the original logical formula is:
+        \[
+        \neg \forall x \ge 0,\, \exists y \in \mathbb{R},\, y^2=x \equiv \exists x \ge 0,\, \forall y \in \mathbb{R},\, y^2 \ne x
+        \]
+        In this problem, the discussion scope of the given logical formula has changed, so it is necessarily not equivalent to the original proposition. Therefore,
+        \[\neg \forall x \ge 0,\, \exists y \in \mathbb{R},\, y^2=x \not\equiv \exists x < 0,\, \forall y \in \mathbb{R},\, y^2 = x\]
+    \end{proof}
+\end{solutions*}
 
 \subsection*{Always--Sometimes--Never questions}
 
@@ -215,19 +661,66 @@ $\neg \forall x \ge 0,\, \exists y \in \mathbb{R},\, y^2=x$ is logically equival
 Let $p$ and $q$ be propositions and assume that $p$ is true. Then $p \Rightarrow q$ is true.
 \end{chapex}
 
+\begin{solutions*}
+    \textbf{Sometimes}
+
+    By the definition of implication, assume that $p$ is true
+    \begin{itemize}
+        \item If $q$ is true, then $p \Rightarrow q$ is true.
+        \item If $q$ is false, then $p \Rightarrow q$ is false. 
+    \end{itemize}
+\end{solutions*}
+
 \begin{chapex} % Always
 Let $p$ and $q$ be propositions and assume that $p$ is false. Then $p \Rightarrow q$ is true.
 \end{chapex}
+
+\begin{solutions*}
+    \textbf{Always}
+
+    By the definition of implication, assume that $p$ is false, then $p \Rightarrow q$ is true regardless of the truth value of $q$.
+\end{solutions*}
 
 \begin{chapex} % Always
 Let $X$ and $Y$ be sets and let $p(x,y)$ be a predicate with free variables $x \in X$ and $y \in Y$. Then the logical formulae $\forall x \in X,\, \forall y \in Y,\, p(x,y)$ and $\forall y \in Y,\, \forall x \in X,\, p(x,y)$ are logically equivalent.
 \end{chapex}
 
+\begin{solutions*}
+    \textbf{Always}
+    
+    The two statements $\forall x \in X,\, \forall y \in Y,\, p(x,y)$ and $\forall y \in Y,\, \forall x \in X,\, p(x,y)$ are always logically equivalent because both assert that $p(x,y)$ holds for every ordered pair $(x,y)\in X \times Y$. More formally:
+    \begin{itemize}
+        \item If $\forall x \in X,\, \forall y \in Y,\, p(x,y)$ is true, then for every $x \in X$ and every $y \in Y$, $p(x,y)$ holds. In particular, for every $y \in Y$ and every $x \in X$, $p(x,y)$ holds, so $\forall y \in Y,\, \forall x \in X,\, p(x,y)$ is true.
+        \item Conversely, if $\forall y \in Y,\, \forall x \in X,\, p(x,y)$ is true, then for every $y \in Y$ and every $x \in X$, $p(x,y)$ holds. In particular, for every $x \in X$ and every $y \in Y$, $p(x,y)$ holds, so $\forall x \in X,\, \forall y \in Y,\, p(x,y)$ is true.
+    \end{itemize}
+\end{solutions*}
+
 \begin{chapex} % Sometimes
 Let $X$ and $Y$ be sets and let $p(x,y)$ be a predicate with free variables $x \in X$ and $y \in Y$. Then the logical formulae $\forall x \in X,\, \exists y \in Y,\, p(x,y)$ and $\exists y \in Y,\, \forall x \in X,\, p(x,y)$ are logically equivalent.
 \end{chapex}
+
+\begin{solutions*}
+    \textbf{Sometimes}
+
+    \begin{itemize}
+        \item \textbf{Case 1: A case where the statements are equivalent}
+        
+        Let $X, Y$ be the integer set and let $p(x,y)$ be the predicate ``$x$ divides $y$''. Since every integer divides $0$, let $y = 0$, then $\forall x \in X,\, \exists y \in Y,\, p(x,y)$ is true, and $\exists y \in Y,\, \forall x \in X,\, p(x,y)$ is also true. Therefore, the two statements are logically equivalent in this case.
+        \item \textbf{Case 2: A case where the statements are not equivalent}
+        
+        Let $X$ be the set of odd integers, $Y$ be the integer set, and let $p(x,y)$ be the predicate ``$x=2y+1$''. Since every odd integer can be written as $2y+1$ for some integer $y$, $\forall x \in X,\, \exists y \in Y,\, p(x,y)$ is true. However, there does not exist an integer $y$ such that $2y+1$ represents all odd integers, so $\exists y \in Y,\, \forall x \in X,\, p(x,y)$ is false. Therefore, the two statements are not logically equivalent in this case.
+    \end{itemize}
+    In fact, $\exists y \in Y,\, \forall x \in X,\, p(x,y)$ is stronger than $\forall x \in X,\, \exists y \in Y,\, p(x,y)$. $\exists y \in Y,\, \forall x \in X,\, p(x,y)$ always implies $\forall x \in X,\, \exists y \in Y,\, p(x,y)$. So if $\exists y \in Y,\, \forall x \in X,\, p(x,y)$ is true, then $\forall x \in X,\, \exists y \in Y,\, p(x,y)$ must be true. However, the converse does not hold. Therefore, the two statements are sometimes logically equivalent.
+\end{solutions*}
 
 \begin{chapex} % Never
 \label{cqLogicASNEnd}
 Let $X$ and $Y$ be sets and let $p(x,y)$ be a predicate with free variables $x \in X$ and $y \in Y$. Then the logical formulae $\forall x \in X,\, \forall y \in Y,\, p(x,y)$ and $\exists x \in X,\, \exists y \in Y,\, \neg p(x,y)$ are logically equivalent.
 \end{chapex}
+
+\begin{solutions*}
+    \textbf{Never}
+
+    \[\exists x \in X,\, \exists y \in Y,\, \neg p(x,y) \equiv \neg (\forall x \in X,\, \forall y \in Y,\, p(x,y))\]
+    which is not the same as $\forall x \in X,\, \forall y \in Y,\, p(x,y)$. In fact, $\exists x \in X,\, \exists y \in Y,\, \neg p(x,y)$ is the negation of $\forall x \in X,\, \forall y \in Y,\, p(x,y)$. Therefore, the two statements are never logically equivalent.
+\end{solutions*}
