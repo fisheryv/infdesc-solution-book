@@ -1,25 +1,29 @@
-% If you intend to adapt the material in this textbook
-% in any way, then you must set the \adaptername and
-% \adapteremail commands on lines 13 and 14 of this file
-% to your full name and email address, respectively.
+% An Infinite Descent into Pure Mathematics and its source code are licensed
+% under CC BY-SA 4.0 and LPPL Version 1.3.
+%
+% See LICENCES.md or the following URI for more information:
+% https://codeberg.org/cnewstead/infdesc
+%
+% If you intend to adapt the material in this textbook in any way, then you
+% should set the \adaptername and \adapteremail commands on lines 15 and 16 of
+% this file to your full name and email address, respectively.
 %
 % Example usage:
 % \newcommand{\adaptername}{Exampleface McLastname}
 % \newcommand{\adapteremail}{exampleface-mclastname@example.web}
-%
-% Any duplications, derivations or adaptations of this work
-% must be released under the Creative Commons BY-SA 4.0 licence.
 
 \newcommand{\adaptername}{} % Your full name
 \newcommand{\adapteremail}{} % Your email address
 
 % Language
 % 0:en_GB 1:en_US
-\newcounter{englishvariant}\setcounter{englishvariant}{0}
+\newcounter{englishvariant}
+\setcounter{englishvariant}{0}
 
 % Page layout
-% 0:7"x10", 1:a4, 2:usletter, 3:tablet, 4:phone
-\newcounter{bookformat}\setcounter{bookformat}{0}
+% 0:7"x10", 1:a4, 2:usletter, 3:tablet, 4:phone, 100:7"x10" on letter paper
+\newcounter{bookformat}
+\setcounter{bookformat}{0}
 
 % Book version - if you are adapting the book, please leave
 % these unchanged so that the original version can be traced.
@@ -38,9 +42,6 @@
 
 \begin{document}
 
-% Uncomment to display cover spread
-% \includepdf[pages=-,fitpaper=true,noautoscale=false]{book/media/spread.pdf}
-
 \frontmatter
 
 % Title page
@@ -48,8 +49,10 @@
 \input{book/front-matter/titlepage.tex}
 \restoregeometry
 
+\clearpage
+
 % Table of contents
-\bookmark[page=1,level=0]{Contents}
+\bookmark[page=5,level=0]{Contents}
 \tableofcontents
 
 \mainmatter
@@ -78,20 +81,49 @@
 \input{book/probability-theory/_probability-theory.tex}
 \input{book/additional-topics/_additional-topics.tex}
 
-\appendix
+% Source: LaTeX Stack Exchange
+% https://tex.stackexchange.com/q/6489 (Malabarba)
+% https://tex.stackexchange.com/a/6494 (Stefan Kottwitz)
+% https://tex.stackexchange.com/a/6494#comment971771_6494 (egreg)
+\addtocontents{toc}{\protect\pagebreak}
 
-\begin{appendices}
+% \appendix
 
-\renewcommand{\sectionmark}[1]{\markboth{\leftmark}{Section \thesection.\ #1}}
-\renewcommand{\chaptermark}[1]{\markboth{Appendix \thechapter.\ #1}{\rightmark}}
+% \begin{appendices}
 
-\part*{Appendices}
-\addcontentsline{toc}{part}{Appendices}
+% \renewcommand{\sectionmark}[1]{\markboth{\leftmark}{Section \thesection.\ #1}}
+% \renewcommand{\chaptermark}[1]{\markboth{Appendix \thechapter.\ #1}{\rightmark}}
 
-\input{book/proof-writing/_proof-writing.tex}
-\input{book/miscellany/_miscellany.tex}
+% \part*{Appendices}
+% \addcontentsline{toc}{part}{Appendices}
 
-\end{appendices}
+% \input{book/proof-writing/_proof-writing.tex}
+% \input{book/miscellany/_miscellany.tex}
+% \input{book/hints-solutions/_hints-solutions.tex}
+% \input{book/latex/_latex.tex}
+
+% \end{appendices}
+
+\backmatter
+
+% {%
+% \part*{Indices}
+% \addcontentsline{toc}{part}{Indices}
+
+% \renewcommand{\chaptername}{Indices}
+
+% \addcontentsline{toc}{chapter}{Index of topics}
+% \printindex
+
+% \addcontentsline{toc}{chapter}{Index of vocabulary}
+% \printindex[vocabulary]
+
+% \addcontentsline{toc}{chapter}{Index of notation}
+% \printindex[notation]
+
+% \addcontentsline{toc}{chapter}{Index of \LaTeX{} commands}
+% \printindex[latex]%
+% }
 
 \input{book/licence/_licence.tex}
 

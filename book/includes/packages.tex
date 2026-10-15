@@ -7,7 +7,6 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{amsthm}
 \usepackage{afterpage}
 \usepackage{appendix}
 \usepackage{array}
@@ -15,6 +14,7 @@
 \usepackage{bbm}
 \usepackage{bussproofs}
 \usepackage{calc}
+\usepackage{clipboard}
 \usepackage{datetime}
     \newdateformat{customdate}{\dayofweekname{\THEDAY}{\THEMONTH}{\THEYEAR} \ordinaldate{\THEDAY} \monthname[\THEMONTH] \THEYEAR}
 \usepackage{enumerate}
@@ -23,6 +23,7 @@
 \usepackage{fancyhdr}
 \usepackage{float}
 \usepackage[T1]{fontenc}
+\usepackage{framed}
 \usepackage[showcrop]{geometry}
 \usepackage{graphicx}
 \usepackage[hang,flushmargin]{footmisc}
@@ -45,6 +46,7 @@
 \usepackage{mathptmx}
 \usepackage[framemethod=TikZ]{mdframed}
 \usepackage{multicol}
+\usepackage[thmmarks,framed]{ntheorem}
 \usepackage{pdfpages}
 \usepackage{pifont}
 \usepackage{refcount}
@@ -52,8 +54,6 @@
     \setlength{\TPHorizModule}{1in}
     \setlength{\TPVertModule}{1in}
 \usepackage[artemisia]{textgreek}
-\usepackage{thmtools}
-\usepackage{thm-restate}
 \usepackage{tikz}
     \tikzset{node distance=3cm and 5cm, auto}
     \usetikzlibrary{arrows,shapes,decorations.pathreplacing}
@@ -65,13 +65,14 @@
 \usepackage{xpatch}
 \usepackage[many]{tcolorbox}
 
+
 % Packages that are fussy about what order they're put in
 \usepackage[makeindex]{imakeidx}
 \usepackage{hyperref}
 \usepackage[numbered]{bookmark}
     \hypersetup{
         pdftitle={An Infinite Descent into Pure Mathematics},
-        pdfsubject={Introductory pure mathematics textbook with an emphasis on proof},
+        pdfsubject={Introductory pure mathematics textbook with an emphasis on constructing and writing proofs},
         pdfauthor={Clive Newstead},
         pdfkeywords={math,maths,mathematics,pure mathematics,undergraduate,textbook},
         pdfproducer={Clive Newstead},

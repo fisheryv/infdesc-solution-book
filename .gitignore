@@ -13,6 +13,8 @@
 .*.lb
 
 *.cll
+*.sol
+*.hnt
 
 ## Intermediate documents:
 *.dvi
@@ -303,3 +305,4 @@ TSWLatexianTemp*
 #*Notes.bib
 
 *.idea/
+book_bak/

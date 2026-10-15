@@ -14,17 +14,19 @@ For each of the following equations, determine whether there exists a function $
 \end{chapex}
 
 \begin{chapex}
+\label{cqSingletonSubsetFunction}
 Let $X$ be a set. Prove that
 \[ \forall a \in X,\, \exists ! U \in \mathcal{P}(X), (a \in U \wedge \exists ! x \in X,\, x \in U) \]
 Give an explicit description of the function $X \to \mathcal{P}(X)$ that is suggested by this logical formula.
-\hintlabel{cqSingletonSubsetFunction}{%
+\hint{cqSingletonSubsetFunction}{%
 The function $X \to \mathcal{P}(X)$ must send each $a \in X$ to the (unique) $U \in \mathcal{P}(X)$ satisfying $a \in U \wedge \exists ! x \in X,\, x \in U$. Think about what the latter logical formula tells you about what elements $U$ has, and doesn't have. This will help with the proof of existence and uniqueness.
 }
 \end{chapex}
 
 \begin{chapex}
+\label{cqFunctionEmptyCodomain}
 Show that there is only one function whose codomain is empty. What is its domain?
-\hintlabel{cqFunctionEmptyCodomain}{%
+\hint{cqFunctionEmptyCodomain}{%
 Given a function $f : X \to \varnothing$, we must have $f(a) \in \varnothing$ for each $a \in X$.
 }
 \end{chapex}
@@ -53,15 +55,17 @@ Let $U \subseteq \mathbb{R}$, and let $\chi_U : \mathbb{R} \to [2]$ be the indic
 \end{chapex}
 
 \begin{chapex}
+\label{cqEveryFunctionIsUniquelySumOfEvenAndOdd}
 Prove that for every function $f : \mathbb{R} \to \mathbb{R}$, there is a unique even function $g : \mathbb{R} \to \mathbb{R}$ and a unique odd function $h : \mathbb{R} \to \mathbb{R}$ such that $f(x)=g(x)+h(x)$ for all $x \in \mathbb{R}$.
-\hintlabel{cqEveryFunctionIsUniquelySumOfEvenAndOdd}{%
+\hint{cqEveryFunctionIsUniquelySumOfEvenAndOdd}{%
 Consider $f(x)+f(-x)$ and $f(x)-f(-x)$ for $x \in \mathbb{R}$.
 }
 \end{chapex}
 
 \begin{chapex}
+\label{cqNaturalTransformationFromIdToId}
 Let $\{ \theta_n : [n] \to [n] \mid n \in \mathbb{N} \}$ be a family of functions such that $f \circ \theta_m = \theta_n \circ f$ for all $f : [m] \to [n]$. Prove that $\theta_n = \mathrm{id}_{[n]}$ for all $n \in \mathbb{N}$.
-\hintlabel{cqNaturalTransformationFromIdToId}{%
+\hint{cqNaturalTransformationFromIdToId}{%
 Fix $n \in \mathbb{N}$ and consider how $\theta_n$ interacts with functions $f : [1] \to [n]$.
 }
 \end{chapex}
@@ -98,8 +102,9 @@ $f : \mathbb{N} \to \mathcal{P}(\mathbb{N})$; $f(0) = \varnothing$ and $f(n+1) =
 \end{chapex}
 
 \begin{chapex}
+\label{cqComputeImageEnd}
 $f : \mathbb{R}^{\mathbb{R}} \to \mathbb{R}^{\mathbb{R}}$ (where $\mathbb{R}^{\mathbb{R}}$ is the set of all functions $\mathbb{R} \to \mathbb{R}$); $f(h)(x) = h(|x|)$ for all $h \in \mathbb{R}^{\mathbb{R}}$ and all $x \in \mathbb{R}$; $U = \mathbb{R}^{\mathbb{R}}$.
-\hintlabel{cqComputeImageEnd}{%
+\hint{cqComputeImageEnd}{%
 Begin by observing that each $h \in f[\mathbb{R}^{\mathbb{R}}]$ is an even function, in the sense of \Cref{defEvenOddFunction}.
 }
 \end{chapex}
@@ -133,6 +138,7 @@ Let $f : X \to Y$ be a function. For each of the following statements, either pr
 \end{chapex}
 
 \begin{chapex}
+\label{cqUniversalPropertyOfImage}
 Let $f : X \to Y$ be a function, let $A$ be a set, and let $p : X \to A$ and $i : A \to Y$ be functions such that the following conditions hold:
 \begin{enumerate}[(i)]
 \item $i$ is injective;
@@ -140,7 +146,7 @@ Let $f : X \to Y$ be a function, let $A$ be a set, and let $p : X \to A$ and $i 
 \item If $q : X \to B$ and $j : B \to Y$ are functions such that $j$ is injective and $j \circ q = f$, then there is a unique function $u : A \to B$ such that $j \circ u = i$.
 \end{enumerate}
 Prove that there is a unique bijection $v : A \to f[X]$ such that $i(a)=v(a)$ for all $a \in f[X]$.
-\hintlabel{cqUniversalPropertyOfImage}{%
+\hint{cqUniversalPropertyOfImage}{%
 This problem is very fiddly. First prove that conditions (i)--(iii) are satisfied when $A = f[X]$ and $p$ and $i$ are chosen appropriately. Then condition (iii) in each case (for $A$ and for $f[X]$) defines functions $v : A \to f[X]$ and $w : f[X] \to A$, and gives uniqueness of $v$. You can prove that these functions are mutually inverse using the `uniqueness' part of condition (iii).
 }
 \end{chapex}
@@ -164,10 +170,11 @@ Let $f : X \to Y$ and $g : Y \to Z$ be functions.
 \end{chapex}
 
 \begin{chapex}
+\label{cqGraphOfComposite}
 Let $f : X \to Y$ and $g : Y \to Z$ be functions. Define
 \[ S = \{ (x,y,z) \in X \times Y \times Z \mid y=f(x) \text{ and } z=g(y) \} \]
 and let $p : S \to X \times Z$ be the function defined by $p(x,y,z) = (x,z)$ for all $(x,y,z) \in S$. Prove that $p[S]=\mathrm{Gr}(g \circ f)$.
-\hintlabel{cqGraphOfComposite}{%
+\hint{cqGraphOfComposite}{%
 Prove it by double containment, and carefully unpack the definitions of what it means to be an element of $p[S]$ and what it means to be an element of $\mathrm{Gr}(g \circ f)$.
 }
 \end{chapex}
@@ -175,11 +182,12 @@ Prove it by double containment, and carefully unpack the definitions of what it 
 \subsection*{Injections, surjections and bijections}
 
 \begin{chapex}
+\label{cqCompositeOfFunctionsIsBijection}
 \begin{enumerate}[(a)]
 \item Prove that, for all functions $f : X \to Y$ and $g : Y \to Z$, if $g \circ f$ is bijective, then $f$ is injective and $g$ is surjective.
 \item Find an example of a function $f : X \to Y$ and a function $g : Y \to Z$ such that $g \circ f$ is bijective, $f$ is not surjective and $g$ is not injective.
 \end{enumerate}
-\hintlabel{cqCompositeOfFunctionsIsBijection}{%
+\hint{cqCompositeOfFunctionsIsBijection}{%
 Avoid the temptation to prove either part of this question by contradiction. For (a), a short proof is available directly from the definitions of `injection' and `surjection'. For (b), find as simple a counterexample as you can.
 }
 \end{chapex}
@@ -210,15 +218,17 @@ For each of the following pairs of sets $X$ and $Y$, find (with proof) a bijecti
 \end{chapex}
 
 \begin{chapex}
+\label{cqElementaryBijectionNTimesNToN}
 Prove that the function $f : \mathbb{N} \times \mathbb{N} \to \mathbb{N}$ defined by $f(a,b) = \dbinom{a+b+1}{2} + b$ for all $(a,b) \in \mathbb{N} \times \mathbb{N}$ is a bijection.
-\hintlabel{cqElementaryBijectionNTimesNToN}{%
+\hint{cqElementaryBijectionNTimesNToN}{%
 Start by proving that $\dbinom{m}{2} < \dbinom{m+1}{2}$ for all $m \ge 1$. Deduce that, for all $n \in \mathbb{N}$, there is a unique natural number $k$ such that $\dbinom{k+1}{2} \le n < \dbinom{k+2}{2}$. Can you see what this has to do with the function $f$?
 }
 \end{chapex}
 
 \begin{chapex}
+\label{exSplitIdempotents}
 Let $e : X \to X$ be a function such that $e \circ e = e$. Prove that there exist a set $Y$ and functions $f : X \to Y$ and $g : Y \to X$ such that $g \circ f = e$ and $f \circ g = \mathrm{id}_Y$.
-\hintlabel{exSplitIdempotents}{%
+\hint{exSplitIdempotents}{%
 Consider the set of fixed points of $e$---that is, elements $x \in X$ such that $e(x)=x$.
 }
 \end{chapex}
@@ -307,8 +317,9 @@ Let $f : \{ 1, 2 \} \to \{ 1, 2, 3 \}$ be a function. Then $f$ is surjective.
 \end{chapex}
 
 \begin{chapex} % Always
+\label{cqLinearMapInjectiveIffSurjective}
 Let $a,b,c,d \in \mathbb{R}$ and define $f : \mathbb{R}^2 \to \mathbb{R}^2$ by $f(x,y) = (ax+by,cx+dy)$ for all $(x,y) \in \mathbb{R}^2$. Then $f$ is injective if and only if $f$ is surjective.
-\hintlabel{cqLinearMapInjectiveIffSurjective}{%
+\hint{cqLinearMapInjectiveIffSurjective}{%
 First prove that $f$ is bijective if and only if $ad \ne bc$.
 }
 \end{chapex}

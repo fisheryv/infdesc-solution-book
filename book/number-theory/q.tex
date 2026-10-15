@@ -18,8 +18,9 @@ $24004512$ and $10668672$
 \end{chapex}
 
 \begin{chapex}
+\label{cqSumsOfIntegersAreCoprime}
 Let $a,b,c,d \in \mathbb{Z}$ and suppose that $ad-bc = 1$. Prove that $a+b$ and $c+d$ are coprime.
-\hintlabel{cqSumsOfIntegersAreCoprime}{%
+\hint{cqSumsOfIntegersAreCoprime}{%
 Consider the linear Diophantine equation $(a+b)x+(c+d)y=1$.
 }
 \end{chapex}
@@ -51,25 +52,28 @@ Prove the following modified form of the division theorem (\Cref{thmDivisionTheo
 \subsection*{Prime numbers}
 
 \begin{chapex}
+\label{cqInjectionNToTheKToNViaFTA}
 Prove that, for all $k \in \mathbb{N}$, the function $i : \mathbb{N}^k \to \mathbb{N}$ defined by
 \[ i(n_1,n_2,\dots,n_k) = p_1^{n_1} p_2^{n_2} \cdots p_k^{n_k} \]
 for all $(n_1,n_2,\dots,n_k) \in \mathbb{N}^k$ is an injection, where $p_1, p_2, p_3 \dots$ is an enumeration of the set of positive primes in increasing order. (Thus $p_1=2$, $p_2=3$, $p_3=5$, and so on.)
-\hintlabel{cqInjectionNToTheKToNViaFTA}{%
+\hint{cqInjectionNToTheKToNViaFTA}{%
 Use the `uniqueness' part of the fundamental theorem of arithmetic.
 }
 \end{chapex}
 
 \begin{chapex}
+\label{cqBijectionSeqNToNViaFTA}
 Use the result of \Cref{cqInjectionNToTheKToNViaFTA} to construct a bijection
 \[ \bigcup_{k \in \mathbb{N}} \Big( \mathbb{N}^k \setminus \{ (0,0,\dots,0) \} \Big) \to \{ n \in \mathbb{N} \mid n \ge 2 \} \]
-\hintlabel{cqBijectionSeqNToNViaFTA}{%
+\hint{cqBijectionSeqNToNViaFTA}{%
 Use appropriate restrictions of the functions from \Cref{cqInjectionNToTheKToNViaFTA}. Apply the `existence' and `uniqueness' parts of the fundamental theorem of arithmetic to prove surjectivity and injectivity, respectively.
 }
 \end{chapex}
 
 \begin{chapex}
+\label{cqInjectionZToTheKToNViaFTA}
 Use a method akin to that of \Cref{cqInjectionNToTheKToNViaFTA} to define an injection $\mathbb{Z}^k \to \mathbb{N}$.
-\hintlabel{cqInjectionZToTheKToNViaFTA}{%
+\hint{cqInjectionZToTheKToNViaFTA}{%
 A sequence of $k$ integers $(n_1,n_2,\dots,n_k) \in \mathbb{Z}^k$ can be encoded as a sequence of $2k$ natural numbers $(i_1,|n_1|,i_2,|n_2|,\dots,i_k,|n_k|) \in \mathbb{N}^{2k}$, where for each $j \in [k]$, either $i_j = 0$ or $i_j = 1$ according to the sign of $n_j$. For example we can encode $(10,-32,81) \in \mathbb{Z}^3$ as $(0,10,1,32,0,81) \in \mathbb{N}^6$.
 }
 \end{chapex}
@@ -83,17 +87,19 @@ Find all prime numbers in $\mathbb{Z} \setminus A$.
 \subsection*{Base-$b$ expansions}
 
 \begin{chapex}
+\label{cqTrailingZerosOfFactorialByInduction}
 Let $n \in \mathbb{N}$. Prove that the number of trailing $0$s in the decimal expansion of $n!$ is equal to
 \[ \sum_{k=1}^d \left\lfloor \dfrac{n}{5^k} \right \rfloor \]
 where $d \in \mathbb{N}$ is least such that $5^{d+1}>n$, and where $\lfloor x \rfloor$ \inlatex{lfloor,\textbackslash{}rfloor} denotes the floor of $x$ (see \Cref{defFloorCeiling}).
-\hintlabel{cqTrailingZerosOfFactorialByInduction}{%
+\hint{cqTrailingZerosOfFactorialByInduction}{%
 Start by proving that, for all $n \in \mathbb{N}$ and all $k \in \mathbb{N}$, there are exactly $\left\lfloor n/5^k \right\rfloor$ natural numbers $\le n$ that are divisible by $5^k$. Then consider how many zeros are contributed by each factor of $n!$ to the decimal expansion of $n!$.
 }
 \end{chapex}
 
 \begin{chapex}
+\label{cqTrailingZerosOfFactorialByInductionBaseB}
 Let $b \in \mathbb{N}$ with $b \ge 2$. Find an expression in terms of $n \in \mathbb{N}$ for the number of trailing $0$s in the base-$b$ expansion of $n!$.
-\hintlabel{cqTrailingZerosOfFactorialByInductionBaseB}{%
+\hint{cqTrailingZerosOfFactorialByInductionBaseB}{%
 This will be similar to \Cref{cqTrailingZerosOfFactorialByInduction} in the end; to get started, consider the greatest prime factor of $b$.
 }
 \end{chapex}

@@ -64,10 +64,12 @@ The \textbf{symmetric difference} of sets $X$ and $Y$ is the set $X \symmdiff Y$
 
 \begin{chapex}
 \label{cqSymmetricDifferenceBegin}
+\label{cqSymmetricDifferenceInTermsOfOtherSetOperations}
 Prove that $X \symmdiff Y = (X \setminus Y) \cup (Y \setminus X) = (X \cup Y) \setminus (X \cap Y)$ for all sets $X$ and $Y$.
 \end{chapex}
 
 \begin{chapex}
+\label{cqSymmetricDifferenceOfSetWithItselfAndEmptySet}
 Let $X$ be a set. Prove that $X \symmdiff X = \varnothing$ and $X \symmdiff \varnothing = X$.
 \end{chapex}
 
@@ -80,16 +82,18 @@ Prove that sets $X$ and $Y$ are disjoint if and only if $X \symmdiff Y = X \cup 
 \end{chapex}
 
 \begin{chapex}
+\label{cqSymmetricDifferenceAssociative}
 Prove that $X \symmdiff (Y \symmdiff Z) = (X \symmdiff Y) \symmdiff Z$ for all sets $X$, $Y$ and $Z$.
-\hintlabel{cqSymmetricDifferenceAssociative}{%
+\hint{cqSymmetricDifferenceAssociative}{%
 The temptation is to write a long string of equations, but it is far less painful to prove this by double containment, splitting into cases where needed. An even less painful approach is to make a cunning use of truth tables.
 }
 \end{chapex}
 
 \begin{chapex}
+\label{cqIntersectionDistributesOverSymmetricDifference}
 \label{cqSymmetricDifferenceEnd}
 Prove that $X \cap (Y \symmdiff Z) = (X \cap Y) \symmdiff (X \cap Z)$ for all sets $X$, $Y$ and $Z$.
-\hintlabel{cqIntersectionDistributesOverSymmetricDifference}{%
+\hint{cqIntersectionDistributesOverSymmetricDifference}{%
 The hint for \Cref{cqSymmetricDifferenceAssociative} applies here too.
 }
 \end{chapex}

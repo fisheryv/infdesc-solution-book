@@ -135,19 +135,6 @@
 \setlength{\parskip}{10pt}
 \setlist{topsep=0pt,leftmargin=*}
 
-% Source: http://tex.stackexchange.com/questions/22119/
-\makeatletter
-\def\thm@space@setup{%
-  \thm@preskip=\parskip
-  \thm@postskip=0pt
-}
-\makeatother
-
-% Better paragraph and list spacing inside theorem environments
-% If theorem boxes look strange (e.g. too much whitespace, title overlaps with border), swap the commenting of the two lines below
-\newcommand{\fixthmbox}{\setlist[itemize,enumerate]{topsep={5pt},leftmargin=*}\setlength{\parskip}{7pt}}
-%\newcommand{\fixthmbox}{\setlist[itemize,enumerate]{topsep={5pt},leftmargin=*}\setlength{\parskip}{7pt}\vspace{-7pt}}
-
 % Better spacing when a theorem environment begins or ends with a list
 \newcommand{\fixlistskip}{~ \vspace{-20pt}}
 
@@ -157,6 +144,7 @@
 
 % Reduce hyphenation.
 % Source: https://ctan.org/tex-archive/info/l2tabu/english/
+% Licensed under GNU GPL (see above URI for more details)
 \tolerance 1414
 \hbadness 1414
 \emergencystretch 1.5em
@@ -202,6 +190,7 @@
 
 % For theorem environments
 
+
 % Solution
 \definecolor{solcol}{HTML}{003300}
 \definecolor{solcolac}{HTML}{99FF99}
@@ -221,21 +210,22 @@
 \definecolor{defbgcol}{HTML}{FFF7FC}
 \definecolor{defqedcol}{HTML}{820028}
 
-% Examples
+% Examples and excerpts
 \definecolor{excol}{HTML}{006644}
 \definecolor{excolac}{HTML}{66CCCC}
-\definecolor{exbdcol}{HTML}{888888}
+\definecolor{exbdcol}{HTML}{66CCCC}
 \definecolor{exbgcol}{HTML}{FCFCFC}
 \definecolor{exqedcol}{HTML}{666666}
 
 % Exercises
 \definecolor{prcol}{HTML}{884400}
-\definecolor{prbdcol}{HTML}{CCCC66}
+\definecolor{prbdcol}{HTML}{CC9966}
 \definecolor{prbgcol}{HTML}{FCFCFC}
 \definecolor{prqedcol}{HTML}{666666}
 
 % Proofs
 \definecolor{pfcol}{HTML}{555555}
+\definecolor{pfbdcol}{HTML}{AAAAAA}
 
 % Tips
 \definecolor{tipcol}{HTML}{550055}
@@ -248,7 +238,6 @@
 \definecolor{optmarkcol}{HTML}{770077}
 
 % Other colours
-
 \definecolor{notecol}{HTML}{2266AA}
 \definecolor{citecol}{HTML}{883388}
 \definecolor{refcol}{HTML}{115588}

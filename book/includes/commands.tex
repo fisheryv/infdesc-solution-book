@@ -7,8 +7,8 @@
 % Text mode
 
 % Contact and website information
-\newcommand{\authoremail}{clive.newstead@infinitedescent.xyz}
-\newcommand{\bookurl}{https://infinitedescent.xyz}
+\newcommand{\authoremail}{cnewstead@infinitedescent.org}
+\newcommand{\bookurl}{https://infinitedescent.org}
 
 % Symbols for optional content
 \newcommand{\optmarksymbol}{$\star$}
@@ -29,32 +29,26 @@
 \newcommand{\defintrosymbol}{\ding{70}\hspace{4pt}} % Star
 \newlength{\defsymbolwidth}
 \setlength{\defsymbolwidth}{\widthof{\defintrosymbol}}
-% \addtolength{\defsymbolwidth}{1pt}
 
 \newcommand{\thmintrosymbol}{\ding{67}\hspace{4pt}} % Plus
 \newlength{\thmsymbolwidth}
 \setlength{\thmsymbolwidth}{\widthof{\thmintrosymbol}}
-% \addtolength{\thmsymbolwidth}{1pt}
 
 \newcommand{\exintrosymbol}{\ding{48}\hspace{4pt}} % Pen up
 \newlength{\exsymbolwidth}
 \setlength{\exsymbolwidth}{\widthof{\exintrosymbol}}
-% \addtolength{\exsymbolwidth}{1pt}
 
 \newcommand{\printrosymbol}{\ding{46}\hspace{4pt}} % Pen down
 \newlength{\prsymbolwidth}
 \setlength{\prsymbolwidth}{\widthof{\printrosymbol}}
-% \addtolength{\prsymbolwidth}{1pt}
 
 \newcommand{\tipintrosymbol}{\ding{118}\hspace{4pt}} % Four diamonds
 \newlength{\tipsymbolwidth}
 \setlength{\tipsymbolwidth}{\widthof{\tipintrosymbol}}
-% \addtolength{\tipsymbolwidth}{1pt}
 
 \newcommand{\quoteintrosymbol}{\ding{125}\hspace{4pt}} % Open quotation mark
 \newlength{\quotesymbolwidth}
 \setlength{\quotesymbolwidth}{\widthof{\quoteintrosymbol}}
-% \addtolength{\quotesymbolwidth}{1pt}
 
 % For scaling figures that might overflow with small page sizes
 \newcommand{\fitwidth}[1]{\resizebox{\textwidth}{!}{#1}}
@@ -63,10 +57,11 @@
 \newcommand{\fitheightc}[2]{\resizebox{#1\textheight}{!}{#2}}
 
 % To-do remarks
-\newcommand{\todo}[1]{{\color{magenta} \textbf{Note:} #1}}
+\newcommand{\todo}[1]{{\color{magenta} \textbf{CN note to self:} #1}}
 
 % Custom table alignments
-% Source: http://tex.stackexchange.com/questions/12703/
+% Source: LaTeX Stack Exchange
+% http://tex.stackexchange.com/questions/12703/ (lockstep)
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -76,7 +71,6 @@
 \newcommand{\FF}{${\color{falsecol}\times}$}
 
 % Emphasis in extracts
-% \newcommand{\xtremph}[1]{\!\fcolorbox{black}{indbasecol}{\!#1\!}}
 \newcommand{\xtremph}[1]{\!\colorbox{indbasecol}{\!#1\!}}
 
 % Source for extracts
@@ -115,6 +109,10 @@ In \Crefrange{#1}{#2}, determine (with proof) whether the statement is true or f
 \newcommand{\asnquestiontext}[2]{%
 In \Crefrange{#1}{#2}, determine (with proof) whether the conclusion is always, sometimes or never true under the given hypotheses.
 }
+
+% Like \Cref but forces the plural form
+% Used for 'assumptions' and 'axioms' theorem environments
+\newcommand{\Crefs}[1]{\hyperref[#1]{\nameCrefs{#1}~\ref*{#1}}}
 
 
 
