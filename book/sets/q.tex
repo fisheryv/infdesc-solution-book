@@ -11,17 +11,63 @@ Express the following sets in the indicated form of notation.
 \end{enumerate}
 \end{chapex}
 
+\begin{mysolution}
+    \begin{enumerate}[(a)]
+    \item $\{-4, -3, -2, -1, 0, 1, 2, 3, 4\}$;
+    \item $\{ 3, 7, 11, 15, \dots \}$;
+    \item $\{6 \cdot (2k+1) \mid k \in \mathbb{Z}\}$;
+    \item $\{ n^2+1 \mid n \in \mathbb{N} \}$.
+    \end{enumerate}
+\end{mysolution}
+
 \begin{chapex}
 Find sets $X_n$ for each $n \in \mathbb{N}$ such that $X_{n+1} \subsetneqq X_n$ for all $n \in \mathbb{N}$. Can any of the sets $X_n$ be empty?
 \end{chapex}
+
+\begin{mysolution}
+    Let $n \in \mathbb{N}$, define $X_n = \{k \in \mathbb{N} \mid k \leq n\}$. Then
+    \[X_{n+1} = \{n+1, n+2, \dots\} \subsetneqq \{n, n+1, n+2, \dots\} = X_n\]
+    Thus $X_{n+1} \subsetneqq X_n$ for every $n \in \mathbb{N}$.
+
+    Can any of the sets $X_n$ be empty? \textbf{NO}! 
+
+    Assume $X_m$ is empty for some $m$, then we have
+    \[X_{m+1} \subsetneqq X_m = \varnothing\]
+    but $\varnothing$ has no proper subset. Therefore there is no sets $X_n$ is empty.
+\end{mysolution}
 
 \begin{chapex}
 Express the set $\mathcal{P}(\{ \varnothing, \{ \varnothing, \{ \varnothing \} \} \})$ in list notation.
 \end{chapex}
 
+\begin{mysolution}
+    The set $\{ \varnothing, \{ \varnothing, \{ \varnothing \} \} \}$ has two elements, which are $\varnothing$ and $\{ \varnothing, \{ \varnothing \} \}$, so the power set is
+    \[
+    \mathcal P\left(\{\varnothing,\{\varnothing,\{\varnothing\}\}\}\right)
+    =
+    \left\{
+    \varnothing,
+    \{\varnothing\},
+    \{\{\varnothing,\{\varnothing\}\}\},
+    \{\varnothing,\{\varnothing,\{\varnothing\}\}\}
+    \right\}
+    \]
+\end{mysolution}
+
 \begin{chapex}
 Let $X$ be a set and let $U, V \subseteq X$. Prove that $U$ and $V$ are disjoint if and only if $U \subseteq X \setminus V$.
 \end{chapex}
+
+\begin{myproof}
+    Let $X$ be a set and let $U, V \subseteq X$. We want to prove
+    \[U \cap V = \varnothing \iff U \subseteq X \setminus V\]
+    \begin{itemize}
+    \item ($\implies$) If $U \cap V = \varnothing$, then for any $x \in U$, we have $x \notin V$. Since $U \subseteq X$, we have $x \in X$. Since $x \in X$ and $x \notin V$, we get $x \in X \setminus V$. Since this holds for every $x \in U$, therefore $U \subseteq X \setminus V$.
+
+    \item ($\impliedby$) If $U \subseteq X \setminus V$, then for any $x \in U$, we have $x \in X \setminus V$, thus $x \notin V$. Therefore $U \cap V = \varnothing$.
+    \end{itemize}
+    In conclusion, $U \cap V = \varnothing \iff U \subseteq X \setminus V$.
+\end{myproof}
 
 \begin{chapex}
 For each of the following statements, determine whether or not it is true for all sets $A$ and $X$, and prove your claim.
@@ -35,22 +81,81 @@ For each of the following statements, determine whether or not it is true for al
 \end{multicols}
 \end{chapex}
 
+\begin{mysolution}
+    \begin{enumerate}[(a)]
+    \item \textbf{False}.\\
+    Here is a counterexample: let $X = \{1\}$ and $A = \{1, 2\}$. Then $X \setminus A = \varnothing$, but $X \ne A$.
+    \item \textbf{False}.\\
+    Here is a counterexample: let $X = \{1\}$ and $A = \{2\}$. Then $X \setminus A = \{1\} = X$, but $X \ne \varnothing$.
+    \item \textbf{True}.\\
+    Assume $A \ne \varnothing$. Then $A$ has at least one element $a \in A$. Since $A = X \setminus A$, we have $a \in X \setminus A$. Thus $a \notin A$, contradicting $a \in A$. Therefore $A$ must be empty.
+    \item \textbf{False}.\\
+    Here is a counterexample: let $X = \{1\}$ and $A = \{2\}$. Then $X \setminus A = \{1\}$, $X \setminus (X \setminus A) = \varnothing$, but $A \ne \varnothing$.
+    \end{enumerate}
+\end{mysolution}
+
 \begin{chapex}
 \label{cqPowerSetRespectSetOperations}
 For each of the following statements, determine whether it is true for all sets $X,Y$, false for all sets $X,Y$, or true for some choices of $X$ and $Y$ and false for others.
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
-\item $\mathcal{P}(X \cup Y) = \mathcal{P}(X) \cup \mathcal{P}(Y)$
-\item $\mathcal{P}(X \cap Y) = \mathcal{P}(X) \cap \mathcal{P}(Y)$
-\item $\mathcal{P}(X \times Y) = \mathcal{P}(X) \times \mathcal{P}(Y)$
-\item $\mathcal{P}(X \setminus Y) = \mathcal{P}(X) \setminus \mathcal{P}(Y)$
+    \item $\mathcal{P}(X \cup Y) = \mathcal{P}(X) \cup \mathcal{P}(Y)$
+    \item $\mathcal{P}(X \cap Y) = \mathcal{P}(X) \cap \mathcal{P}(Y)$
+    \item $\mathcal{P}(X \times Y) = \mathcal{P}(X) \times \mathcal{P}(Y)$
+    \item $\mathcal{P}(X \setminus Y) = \mathcal{P}(X) \setminus \mathcal{P}(Y)$
 \end{enumerate}
 \end{multicols}
 \end{chapex}
 
+\begin{mysolution}
+    \begin{enumerate}[(a)]
+    \item \textbf{Not true for all sets, but true for some choices.}\\
+    Here is a counterexample: Let $X=\{1\}, Y=\{2\}$, then $X \cup Y = \{1,2\} \in \mathcal{P}(X \cup Y)$.
+    
+    But $\mathcal{P}(X) \cup \mathcal{P}(Y) = \{\varnothing, \{1\}, \{2\}\}$ and $\{1,2\} \notin \mathcal{P}(X) \cup \mathcal{P}(Y)$. 
+    
+    Therefore, $\mathcal{P}(X \cup Y) \ne \mathcal{P}(X) \cup \mathcal{P}(Y)$ for all sets $X, Y$.
+
+    However, if $X \subseteq Y$, then $X \cup Y = Y$. Thus 
+    $\mathcal{P}(X \cup Y) = \mathcal{P}(Y) = \mathcal{P}(X) \cup \mathcal{P}(Y)$.
+    \item \textbf{True for all sets.}\\
+    Assume set $S \in \mathcal{P}(X \cap Y)$, then $S \subseteq X \cap Y$. Thus $S \subseteq X$ and $S \subseteq Y$. Hence $S \in \mathcal{P}(X)$ and $S \in \mathcal{P}(Y)$. Hence $S \in \mathcal{P}(X) \cap \mathcal{P}(Y)$. 
+    
+    Therefore,
+    \[\mathcal{P}(X \cap Y) = \mathcal{P}(X) \cap \mathcal{P}(Y)\]
+    for all sets $X, Y$.
+    \item \textbf{False for all sets.}\\
+    For any sets $X,Y$, since the empty set is a subset of every set, we have $\varnothing \in \mathcal{P}(X \times Y)$. 
+    
+    But every element of $\mathcal{P}(X) \times \mathcal{P}(Y)$ is an ordered pair $(A,B)$. Hence $\varnothing \notin \mathcal{P}(X) \times \mathcal{P}(Y)$. 
+    
+    Therefore, 
+    \[\mathcal{P}(X \times Y) \ne \mathcal{P}(X) \times \mathcal{P}(Y)\]
+    for all sets $X, Y$.
+    \item \textbf{False for all sets.}\\
+    For any sets $X,Y$, since the empty set is a subset of every set, we have $\varnothing \in \mathcal{P}(X \setminus Y)$.
+
+    we also have $\varnothing \in \mathcal{P}(X)$ and $\varnothing \in \mathcal{P}(Y)$. Hence $\varnothing \notin \mathcal{P}(X) \setminus \mathcal{P}(Y)$.
+    
+    Therefore, 
+    \[\mathcal{P}(X \setminus Y) \ne \mathcal{P}(X) \setminus \mathcal{P}(Y)\]
+    for all sets $X, Y$.
+    \end{enumerate}
+\end{mysolution}
+
 \begin{chapex}
 Let $F$ be a set whose elements are all sets. Prove that if $\forall A \in F,~ \forall x \in A,~ x \in F$, then $F \subseteq \mathcal{P}(F)$.
 \end{chapex}
+
+\begin{myproof}
+Take any set $A \in F$. By the hypothesis, for every $x \in A$, we have $x \in F$. By definition of the subset,
+\[A \subseteq F\]
+By definition of power set,
+\[A \in \mathcal P(F)\]
+Since $A \in F$ is arbitrary, every element of $F$ is an element of $\mathcal P(F)$. Hence
+\[F \subseteq \mathcal P(F)\]
+This proves the claim.
+\end{myproof}
 
 \Crefrange{cqSymmetricDifferenceBegin}{cqSymmetricDifferenceEnd} concern the \textit{symmetric difference} of sets, defined below.
 
@@ -68,35 +173,145 @@ The \textbf{symmetric difference} of sets $X$ and $Y$ is the set $X \symmdiff Y$
 Prove that $X \symmdiff Y = (X \setminus Y) \cup (Y \setminus X) = (X \cup Y) \setminus (X \cap Y)$ for all sets $X$ and $Y$.
 \end{chapex}
 
+\begin{myproof}
+    First, we prove that $X \symmdiff Y = (X \setminus Y) \cup (Y \setminus X)$ by double containment.
+    \begin{itemize}
+        \item ($\subseteq$) By the definition of \textbf{symmetric difference}, if $a \in X \symmdiff Y$, then there are two cases:
+        \begin{itemize}
+        \item If $a \in X$, then $a \notin Y$, thus $a \in X \setminus Y$.
+        \item If $a \in Y$, then $a \notin X$, thus $a \in Y \setminus X$.
+        \end{itemize}
+        Hence $a \in (X \setminus Y) \cup (Y \setminus X)$.
+
+        Since element $a$ is arbitrary, we shown that for any $a \in X \symmdiff Y$, $a \in (X \setminus Y) \cup (Y \setminus X)$. 
+        
+        Therefore,
+        \[X \symmdiff Y \subseteq (X \setminus Y) \cup (Y \setminus X)\]
+        \item ($\supseteq$) If $a \in (X \setminus Y) \cup (Y \setminus X)$, then there are two cases:
+        \begin{itemize}
+        \item If $a \in X \setminus Y$, then $a \in X$ and $a \notin Y$. By the definition, we have $a \in X \symmdiff Y$.
+        \item If $a \in Y \setminus X$, then $a \in Y$ and $a \notin X$. By the definition, we have $a \in X \symmdiff Y$.
+        \end{itemize}
+        Hence $a \in X \symmdiff Y$.
+
+        Since element $a$ is arbitrary, we shown that for any $a \in (X \setminus Y) \cup (Y \setminus X)$, $a \in X \symmdiff Y$. 
+        
+        Therefore,
+        \[X \symmdiff Y \supseteq (X \setminus Y) \cup (Y \setminus X)\]
+    \end{itemize}
+    By double containment, we show that
+    \[X \symmdiff Y = (X \setminus Y) \cup (Y \setminus X)\]
+    
+    Next, we prove that $X \symmdiff Y = (X \cup Y) \setminus (X \cap Y)$ by logical equivalence.
+
+    We can rewrite the definition of \textbf{symmetric difference} formally as
+    \[X \symmdiff Y = \{a \mid (a \in X \lor a \in Y) \land \neg(a \in X \cap Y)\}\]
+    Then
+    \begin{align*}
+        a \in X \symmdiff Y &\iff (a \in X \lor a \in Y) \land \neg(a \in X \cap Y) \\
+        &\iff (a \in X \cup Y) \land \neg(a \in X \cap Y) \\
+        &\iff a \in (X \cup Y) \setminus (X \cap Y)
+    \end{align*}
+    Therefore, $X \symmdiff Y = (X \cup Y) \setminus (X \cap Y)$.
+
+    In conclusion,
+    \[X \symmdiff Y = (X \setminus Y) \cup (Y \setminus X) = (X \cup Y) \setminus (X \cap Y)\]
+    for all sets $X$ and $Y$.
+\end{myproof}
+
 \begin{chapex}
 \label{cqSymmetricDifferenceOfSetWithItselfAndEmptySet}
 Let $X$ be a set. Prove that $X \symmdiff X = \varnothing$ and $X \symmdiff \varnothing = X$.
 \end{chapex}
 
+\begin{myproof}
+    According to the conclusion of \Cref{cqSymmetricDifferenceInTermsOfOtherSetOperations}, we have
+    $$
+    X \symmdiff X = (X \setminus X) \cup (X \setminus X) = \varnothing \cup \varnothing = \varnothing
+    $$
+    and
+    $$
+    X \symmdiff \varnothing = (X \setminus \varnothing) \cup (\varnothing \setminus X) = X \cup \varnothing = X
+    $$
+\end{myproof}
+
 \begin{chapex}
 Let $X$ and $Y$ be sets. Prove that $X = Y$ if and only if $X \symmdiff Y = \varnothing$.
 \end{chapex}
+
+\begin{myproof}
+    We want to prove $X = Y \iff X \symmdiff Y = \varnothing$.
+    \begin{itemize}
+    \item ($\implies$) If $X = Y$, according to the conclusion of \Cref{cqSymmetricDifferenceOfSetWithItselfAndEmptySet}, it's clear that $X \symmdiff Y = \varnothing$.
+    \item ($\impliedby$) If $X \symmdiff Y = \varnothing$, by \Cref{cqSymmetricDifferenceInTermsOfOtherSetOperations}, we have $(X \setminus Y) \cup (Y \setminus X) = \varnothing$. Thus $X \setminus Y = \varnothing$ and $Y \setminus X = \varnothing$. Hence $X = Y$.
+    \end{itemize}
+    In conclusion, $X = Y$ if and only if $X \symmdiff Y = \varnothing$.
+\end{myproof}
 
 \begin{chapex}
 Prove that sets $X$ and $Y$ are disjoint if and only if $X \symmdiff Y = X \cup Y$.
 \end{chapex}
 
+\begin{myproof}
+    We want to prove $X \cap Y = \varnothing \iff X \symmdiff Y = X \cup Y$.
+    \begin{itemize}
+    \item ($\implies$) If $X \cap Y = \varnothing$, then By \Cref{cqSymmetricDifferenceInTermsOfOtherSetOperations}, we have
+    \[X \symmdiff Y = (X \cup Y) \setminus (X \cap Y) = (X \cup Y) \setminus \varnothing = X \cup Y\]
+    \item ($\impliedby$) If $X \symmdiff Y = X \cup Y$, then By \Cref{cqSymmetricDifferenceInTermsOfOtherSetOperations}, we have
+    \[X \symmdiff Y = (X \cup Y) \setminus (X \cap Y) = X \cup Y\]
+    Hence $X \cap Y = \varnothing$.
+    \end{itemize}
+    In conclusion, sets $X$ and $Y$ are disjoint if and only if $X \symmdiff Y = X \cup Y$.
+\end{myproof}
+
 \begin{chapex}
 \label{cqSymmetricDifferenceAssociative}
 Prove that $X \symmdiff (Y \symmdiff Z) = (X \symmdiff Y) \symmdiff Z$ for all sets $X$, $Y$ and $Z$.
-\hint{cqSymmetricDifferenceAssociative}{%
-The temptation is to write a long string of equations, but it is far less painful to prove this by double containment, splitting into cases where needed. An even less painful approach is to make a cunning use of truth tables.
-}
 \end{chapex}
+
+\begin{myproof}
+    We will prove this proposition by truth tables.
+    \begin{center}
+    \begin{tabular}{ccc|c|c||c|c}
+    $a \in X$ & $a \in Y$ & $a \in Z$ & $a \in (X \symmdiff Y)$ & $a \in (Y \symmdiff Z)$ & $a \in X \symmdiff (Y \symmdiff Z)$ & $a \in (X \symmdiff Y) \symmdiff Z$ \\ \hline
+    \TT & \TT & \TT & \FF & \FF & \TT & \TT\\
+    \TT & \TT & \FF & \FF & \TT & \FF & \FF\\
+    \TT & \FF & \TT & \TT & \TT & \FF & \FF\\
+    \TT & \FF & \FF & \TT & \FF & \TT & \TT\\
+    \FF & \TT & \TT & \TT & \FF & \FF & \FF\\
+    \FF & \TT & \FF & \TT & \TT & \TT & \TT\\
+    \FF & \FF & \TT & \FF & \TT & \TT & \TT\\
+    \FF & \FF & \FF & \FF & \FF & \FF & \FF\\
+    \end{tabular}
+    \end{center}
+    According to the truth table above, we can find that for any $a$, $a \in X \symmdiff (Y \symmdiff Z)$ and $a \in (X \symmdiff Y) \symmdiff Z$ have the same truth value. Therefore, $X \symmdiff (Y \symmdiff Z) = (X \symmdiff Y) \symmdiff Z$ for all sets $X$, $Y$ and $Z$.
+\end{myproof}
 
 \begin{chapex}
 \label{cqIntersectionDistributesOverSymmetricDifference}
 \label{cqSymmetricDifferenceEnd}
 Prove that $X \cap (Y \symmdiff Z) = (X \cap Y) \symmdiff (X \cap Z)$ for all sets $X$, $Y$ and $Z$.
-\hint{cqIntersectionDistributesOverSymmetricDifference}{%
-The hint for \Cref{cqSymmetricDifferenceAssociative} applies here too.
-}
 \end{chapex}
+
+\begin{myproof}
+    We will prove this proposition by truth tables.
+
+    Let set $P = X \cap (Y \symmdiff Z)$ and set $Q=(X \cap Y) \symmdiff (X \cap Z)$.
+    \begin{center}
+    \begin{tabular}{ccc|c|c|c||c|c}
+    $a \in X$ & $a \in Y$ & $a \in Z$ & $a \in (Y \symmdiff Z)$ & $a \in (X \cap Y)$ & $a \in (X \cap Z)$ & $a \in P$ & $a \in Q$ \\ \hline
+    \TT & \TT & \TT & \FF & \TT & \TT & \FF & \FF\\
+    \TT & \TT & \FF & \TT & \TT & \FF & \TT & \TT\\
+    \TT & \FF & \TT & \TT & \FF & \TT & \TT & \TT\\
+    \TT & \FF & \FF & \FF & \FF & \FF & \FF & \FF\\
+    \FF & \TT & \TT & \FF & \FF & \FF & \FF & \FF\\
+    \FF & \TT & \FF & \TT & \FF & \FF & \FF & \FF\\
+    \FF & \FF & \TT & \TT & \FF & \FF & \FF & \FF\\
+    \FF & \FF & \FF & \FF & \FF & \FF & \FF & \FF\\
+    \end{tabular}
+    \end{center}
+    According to the truth table above, we can find that for any $a$, $a \in X \cap (Y \symmdiff Z)$ and $a \in (X \cap Y) \symmdiff (X \cap Z)$ have the same truth value. Therefore, $X \cap (Y \symmdiff Z) = (X \cap Y) \symmdiff (X \cap Z)$ for all sets $X$, $Y$ and $Z$.
+\end{myproof}
 
 \begin{definition}
 \label{defOpenSubsetOfR}
@@ -121,9 +336,90 @@ For each of the following subsets of $\mathbb{R}$, determine (with proof) whethe
 \end{multicols}
 \end{chapex}
 
+\begin{mysolution}
+    \begin{enumerate}[(a)]
+    \item $\varnothing$ is open.\\
+    This conclusion may be somewhat counterintuitive. According to the definition of open set, we need to check whether every element in the set $U$ satisfies the condition, 
+    \[\forall a \in U, \exists \delta > 0, (a-\delta, a+\delta) \subseteq U\]
+    But the empty set has no elements at all! How should we examine it?
+
+    We can consider the maximally negated form of the definition:
+    \[\neg\left(\forall a \in U, \exists \delta > 0, (a-\delta, a+\delta) \subseteq U \right) \iff \exists a \in U, \forall \delta>0, \neg\left((a-\delta, a+\delta) \subseteq U\right)\]
+    Since the empty set contains no elements, it clearly does not satisfy the negated definition of open set. By the law of excluded middle and double negation, the empty set must be open.
+    \item $(0,1)$ is open.\\
+    Let $a \in (0,1)$ be arbitrary. Choose
+    \[\delta = \min(1-a, a)>0\]
+    Since $\delta \le 1-a$, then 
+    \[a+\delta \le a+(1-a)=1\]
+    Since $\delta \le a$, then 
+    \[a-\delta \ge a-a = 0\]
+    Hence, 
+    \[(a-\delta, a+\delta) \subseteq (0, 1)\]
+    Therefore, $(0,1)$ is open.
+    \item $(0,1]$ is not open.\\
+    Consider the $a=1 \in (0,1]$. For any $\delta > 0$, we have $1+\delta > 1$, thus
+    \[(1-\delta, 1+\delta) \nsubseteq (0,1]\]
+    Therefore, $(0,1]$ is not open.
+    \item $\mathbb{Z}$ is not open.\\
+    Let $a \in \mathbb{Z}$. For any $\delta > 0$, there always exists $\epsilon = \min\left(\dfrac{\delta}{2}, \dfrac{1}{2}\right)$, such that
+    \[a+\epsilon \in (a-\delta, a+\delta)\]
+    Since $0 < \epsilon < 1$, so $a+\epsilon \notin \mathbb{Z}$. Hence
+    \[(a-\delta, a+\delta) \nsubseteq \mathbb{Z}\]
+    Therefore, $\mathbb{Z}$ is not open.
+    \item $\mathbb{R} \setminus \mathbb{Z}$ is open.\\
+    $\mathbb{R}\setminus\mathbb{Z}$ means removing all integers from real numbers. It partitions the real number set into many open intervals defined by consecutive integers. 
+    \[\mathbb{R}\setminus\mathbb{Z} = \bigcup_{p \in \mathbb{Z}} (p, p+1)\]
+    For any $a \in \mathbb{R}\setminus\mathbb{Z}$, $a$ lies strictly between some consecutive integers,
+    \[p < a < p+1, \quad \text{where}\ p=\floor{a}\]
+    Choose 
+    \[\delta=\min(a-p, p+1-a) > 0\]
+    Since $\delta \le p+1-a$, then 
+    \[a+\delta \le a+(p+1-a) = p+1\]
+    Since $\delta \le a-p$, then 
+    \[a-\delta \ge a-(a-p) = p\]
+    Hence,
+    \[(a-\delta, a+\delta) \subseteq (p, p+1) \subseteq \mathbb{R} \setminus \mathbb{Z}\]
+    Therefore, $\mathbb{R} \setminus \mathbb{Z}$ is open.
+    \item $\mathbb{Q}$ is not open.\\
+    Let $a \in \mathbb{Q}$. For any $\delta>0$, choose an integer $N$ large enough such that $\dfrac{\sqrt{2}}{N} < \delta$. Then
+    \[a+\dfrac{\sqrt{2}}{N} \in (a, a+\delta) \subset (a-\delta, a+\delta) \]
+    Since $a \in \mathbb{Q}$ but $\dfrac{\sqrt{2}}{N} \notin \mathbb{Q}$, we have $a+\dfrac{\sqrt{2}}{N} \notin \mathbb{Q}$. Hence
+    \[(a-\delta, a+\delta) \nsubseteq \mathbb{Q}\]
+    Therefore, $\mathbb{Q}$ is not open.
+    \end{enumerate}
+\end{mysolution}
+
 \begin{chapex}
 Prove that a subset $U \subseteq \mathbb{R}$ is open if and only if, for all $a \in U$, there exist $u,v \in \mathbb{R}$ such that $u<a<v$ and $(u,v) \subseteq U$.
 \end{chapex}
+
+\begin{myproof}
+    We want to prove
+    $$
+    U \subseteq \mathbb{R}\ \text{is open} \iff \forall a \in U, \exists u,v \in \mathbb{R}, (u<a<v) \land \left((u,v) \subseteq U\right)
+    $$
+    \begin{itemize}
+        \item ($\implies$) This is very close to the definition of open set.
+        
+        Suppose $U \subseteq \mathbb{R}$ is open. Let $a \in U$. By the definition of open set, there exists $\delta>0$ such that
+        \[(a-\delta,a+\delta) \subseteq U\]
+        Let
+        \[u=a-\delta, \quad v=a+\delta\]
+        Then $u<a<v$, and $(u,v) = (a-\delta,a+\delta) \subseteq U$.
+        So the desired condition holds.
+        \item ($\impliedby$) Suppose that for every $a \in U \subseteq \mathbb{R}$, there exist $u,v \in \mathbb{R}$ such that
+        \[u<a<v \quad \text{and} \quad (u,v) \subseteq U\]
+        Define
+        \[\delta = \min(a-u, v-a)>0\]
+        Since $\delta \le v-a$, then 
+        \[a+\delta \le a+(v-a)=v\]
+        Since $\delta \le a-u$, then
+        \[a-\delta \ge a-(a-u)=u\]
+        Therore,
+        \[(a-\delta,a+\delta) \subseteq (u,v) \subseteq U\]
+        Thus for every $a \in U \subseteq \mathbb{R}$, there exists $\delta > 0$ such that $(a-\delta, a+\delta) \subseteq U$. Hence, $U$ is open.
+    \end{itemize}
+\end{myproof}
 
 \begin{chapex}
 In this question you will prove that the intersection of finitely many open sets is open, but the intersection of infinitely many open sets might not be open.
@@ -133,10 +429,81 @@ In this question you will prove that the intersection of finitely many open sets
 \end{enumerate}
 \end{chapex}
 
+\begin{mysolution}
+    \begin{enumerate}[(a)]
+    \item Suppose $U_1, U_2, \dots, U_n \in \mathbb{R}$ be open.
+    \begin{itemize}
+        \item If $U_1 \cap U_2 \cap \cdots \cap U_n = \varnothing$. By the conclusion of \Cref{cqOpenSubsetsOfRBegin} part (a), $\varnothing$ is open.
+        \item If $U_1 \cap U_2 \cap \cdots \cap U_n \ne \varnothing$. Let
+        \[a \in U_1 \cap U_2 \cap \cdots \cap U_n\]
+        Since for every $1 \le i \le n$, each $U_i$ is open and $x \in U_i$, there exists $\delta_i>0$ such that
+        \[(a-\delta_i, a+\delta_i) \subseteq U_i\]
+        Define
+        \[\delta = \min(\delta_1, \delta_2, \dots, \delta_n)\]
+        Because this is a minimum of finitely many positive numbers, we have $\delta>0$. Then for every $1 \le i \le n$,
+        \[(a-\delta, a+\delta) \subseteq (a-\delta_i, a+\delta_i) \subseteq U_i\]
+        Thus
+        \[(a-\delta, a+\delta) \subseteq U_1 \cap U_2 \cap \cdots \cap U_n\]
+        By \Cref{defOpenSubsetOfR}, $U_1 \cap U_2 \cap \cdots \cap U_n$ is open.
+    \end{itemize}
+    In conclusion, $U_1 \cap U_2 \cap \cdots \cap U_n$ is open.
+    \item First, we prove $(0,1+\frac{1}{n})$ is open for all $n \ge 1$. 
+    
+    Let $a \in (0, 1+\frac{1}{n})$ be arbitrary, then $0<a<1+\frac{1}{n}$. Choose
+    \[\delta = \min\left(a, 1+\frac{1}{n}-a\right) > 0\]
+    Since $\delta \le a$, then 
+    \[a-\delta \ge a-a\ = 0\]
+    Since $\delta \le 1+\frac{1}{n}-a$, then 
+    \[a+\delta \le a+(1+\frac{1}{n}-a) = 1+\frac{1}{n}\]
+    Hence,
+    \[(a-\delta,a+\delta) \subseteq (0, 1+\frac{1}{n})\]
+    Therefore, $(0, 1+\frac{1}{n})$ is open.
+
+    Next, we prove $\bigcap_{n \ge 1} (0, 1+\frac{1}{n})$ is not open.
+
+    Since $(1+\frac{1}{n})$ decreases monotonically with the increase of $n$, and 
+    \[\lim_{n \to \infty} \left(1+\frac{1}{n}\right) = 1\] 
+    Therefore
+    \[\bigcap_{n \ge 1} \left(0, 1+\frac{1}{n}\right) = (0,1]\]
+    By the conclusion of \Cref{cqOpenSubsetsOfRBegin} part (c), $(0,1]$ is not open.
+    \end{enumerate}
+\end{mysolution}
+
 \begin{chapex}
 \label{cqOpenSubsetsOfREnd}
 Prove that a subset $U \subseteq \mathbb{R}$ is open if and only if it can be expressed as a union of open intervals---more precisely, $U \subseteq \mathbb{R}$ is open if and only if, for some indexing set $I$, there exist real numbers $a_i, b_i$ for each $i \in I$, such that $U = \bigcup_{i \in I} (a_i, b_i)$.
 \end{chapex}
+
+\begin{myproof}
+    We want to prove
+    \[
+    U \subseteq \mathbb{R}\ \text{is open} \iff  \exists I, \forall i \in I, \exists a_i, b_i \in \mathbb{R}, U = \bigcup_{i \in I}(a_i, b_i)
+    \]
+    \begin{itemize}
+        \item ($\implies$) Suppose $U \in \mathbb{R}$ is open. For each $x \in U$, by \Cref{defOpenSubsetOfR} there exists $\delta>0$ such that
+        \[(x-\delta_x, x+\delta_x) \subseteq U\]
+        Let index set $I=U$. For each $x \in I$, let $a_x=x-\delta$ and $b_x=x+\delta$. Obviously, $a_x, b_x \in \mathbb{R}$. Now we have
+        \[x \in (a_x, b_x) \subset U\]
+        Consider the union set
+        \[V = \bigcup_{x \in I}(a_x, b_x)\]
+        We prove $V=U$ by double containment:
+        \begin{itemize}
+            \item ($V \subseteq U$) Because for each $x \in I$, $x \in (a_x, b_x) \subseteq U$, thus the union of these subset is subset of $U$. Hence $V \subseteq U$.
+            \item ($U \subseteq V$) Let $y \in U$ be arbitrary, then $y \in (y-\delta_y, y+\delta_y) \subseteq \bigcup_{y \in I}(a_y, b_y)$. Hence $U \subseteq V$ 
+        \end{itemize}
+        Therefore, $U=\bigcup_{i \in I}(a_i, b_i)$
+        \item ($\impliedby$) Suppose $U=\bigcup_{i \in I}(a_i, b_i)$. Let $x \in U$ be arbitrary. By the definition of union set, there must exists $i \in I$ such that $x \in (a_i, b_i)$. Let
+        \[\delta=\min(x-a_i, b_i-x)>0\]
+        \begin{itemize}
+            \item Since $\delta \le x-a_i$, then $x-\delta \ge a_i$;
+            \item Since $\delta \le b_i-x$, then $x+\delta \le b_i$.
+        \end{itemize}
+        Therefore, $(x-\delta, x+\delta) \subseteq (a_i, b_i)$. Since $(a_i, b_i) \subseteq \bigcup_{i \in I}(a_i, b_i) = U$, thus $(x-\delta, x+\delta) \subset U$.
+        
+        By \Cref{defOpenSubsetOfR}, $U$ is open.
+    \end{itemize}
+    In conclusion, a subset $U \subseteq \mathbb{R}$ is open if and only if it can be expressed as a union of open intervals.
+\end{myproof}
 
 \begin{chapex}
 Let $\{ A_i \mid i \in \mathbb{N} \}$ and $\{ B_j \mid j \in \mathbb{N} \}$ be families of sets such that:
@@ -147,35 +514,91 @@ Let $\{ A_i \mid i \in \mathbb{N} \}$ and $\{ B_j \mid j \in \mathbb{N} \}$ be f
 Prove that $\bigcap_{i \in \mathbb{N}} A_i = \bigcap_{j \in \mathbb{N}} B_j$.
 \end{chapex}
 
+\begin{myproof}
+    We prove $\bigcap_{i \in \mathbb{N}} A_i = \bigcap_{j \in \mathbb{N}} B_j$ by double containment:
+    \begin{itemize}
+        \item ($\subseteq$) Let $x \in \bigcap_{i \in \mathbb{N}} A_i$ be arbitrary. By the definition of the intersection, this means that $x \in A_i$ for all $i \in \mathbb{N}$.
+        
+        Let $j \in \mathbb{N}$ be given. By condition (ii), there exists some integer $i \ge j$ such that:
+        \[A_i \subseteq B_j\]
+        Since $x$ is an element of every set in the family $\{A_i\}$, so $x \in B_j$.
+
+        Since $j \in \mathbb{N}$ is arbitrary, so $x \in B_j$ holds for all $j \in \mathbb{N}$. Therefore:
+        \[x \in \bigcap_{j \in \mathbb{N}} B_j\]
+        This prove that $\bigcap_{i \in \mathbb{N}} A_i \subseteq \bigcap_{j \in \mathbb{N}} B_j$
+        \item ($\supseteq$) The proof is entirely symmetric. We can exchange $A$ and $B$, using the same argument as above, to prove that
+        $\bigcap_{j \in \mathbb{N}} B_j \subseteq \bigcap_{i \in \mathbb{N}} A_i$
+    \end{itemize}
+    By double containment, we have $\bigcap_{i \in \mathbb{N}} A_i = \bigcap_{j \in \mathbb{N}} B_j$.
+\end{myproof}
+
 \subsection*{True--False questions}
 
 \tfquestiontext{cqSetsTFBegin}{cqSetsTFEnd}
 
 \begin{chapex}
 \label{cqSetsTFBegin}
-If $E$ is a set and $\neg \forall x,\, x \in E$, then $E = \varnothing$.
+If $E$ is a set and $\neg \forall x,\, x \in E$, then $E = \varnothing$. 
 \end{chapex}
+
+\begin{mysolution}
+    \textbf{False}
+
+    $\neg \forall x,\, x \in E$ means not every $x$ belongs to $E$, i.e. there is at least one object not in $E$. That does not imply $E$ has no elements. 
+    
+    For example, let $E=\{\varnothing\}$, then $E \ne \varnothing$. However, not every set $x$ is an element if $E$, i.g. $x=\mathbb{N} \notin E$.
+\end{mysolution}
 
 \begin{chapex}
 If $E$ is a set and $\forall x,\, \neg x \in E$, then $E = \varnothing$.
 \end{chapex}
 
+\begin{mysolution}
+    \textbf{True}
+
+    $\forall x,\, \neg x \in E$ means all of $x$ does not in $E$, i.e. $E$ has no elements at all. By the defination of empty set, $E=\varnothing$.
+\end{mysolution}
+
 \begin{chapex}
 $\{ 1, 2, 3 \} = \{ 1, 2, 1, 3, 2, 1 \}$
 \end{chapex}
+
+\begin{mysolution}
+    \textbf{True}
+
+    Sets ignore repetition and order, so $\{ 1, 2, 3 \}$ and $\{ 1, 2, 1, 3, 2, 1 \}$ have the same elements, which are $1, 2, 3$.
+\end{mysolution}
 
 \begin{chapex}
 $\varnothing \in \varnothing$
 \end{chapex}
 
+\begin{mysolution}
+    \textbf{False}
+
+    By the defination of empty set, there is no element in the empty set.
+\end{mysolution}
+
 \begin{chapex}
 $\varnothing \in \{ \varnothing \}$
 \end{chapex}
+
+\begin{mysolution}
+    \textbf{True}
+
+    Set $\{ \varnothing \}$ has exactly one element, which is $\varnothing$.
+\end{mysolution}
 
 \begin{chapex}
 \label{cqSetsTFEnd}
 $\varnothing \in \{ \{ \varnothing \} \}$.
 \end{chapex}
+
+\begin{mysolution}
+    \textbf{False}
+
+    Set $\{ \{ \varnothing \} \}$ has exactly one element, which is $\{ \varnothing \}$. But $\{ \varnothing \} \ne \varnothing$.
+\end{mysolution}
 
 \subsection*{Always--Sometimes--Never questions}
 
@@ -186,63 +609,214 @@ $\varnothing \in \{ \{ \varnothing \} \}$.
 Let $a$ and $b$ be arbitrary objects. Then $\{ a, b \} = \{ b, a \}$.
 \end{chapex}
 
+\begin{mysolution}
+    \textbf{Always}
+
+    Sets ignore repetition and order, so $\{ a, b \} = \{ b, a \}$.
+\end{mysolution}
+
 \begin{chapex} % Sometimes
 Let $a$, $b$ and $c$ be arbitrary objects. Then $\{ a, b \} = \{ a, c \}$.
 \end{chapex}
+
+\begin{mysolution}
+    \textbf{Sometimes}
+
+    If $b = c$, then $\{ a, b \} = \{ a, c \}$.
+
+    If $b \ne c$, then $\{ a, b \} \ne \{ a, c \}$.
+\end{mysolution}
 
 \begin{chapex} % Sometimes
 Let $X$ and $Y$ be sets and suppose there is some $a$ such that $a \in X \Leftrightarrow a \in Y$. Then $X = Y$.
 \end{chapex}
 
+\begin{mysolution}
+    \textbf{Sometimes}
+
+    There is some $a$ such that $a \in X \Leftrightarrow a \in Y$ is not enough to deduce that $X=Y$. Set equality requires for every $a$
+    \[X=Y \iff \forall a, a \in X \Leftrightarrow a \in Y \]
+    For example, let $X=\{1\}, Y=\{1, 2\}$, and let $a=1$. Then $1 \in X \Leftrightarrow 1 \in Y$, but $X \ne Y$.
+\end{mysolution}
+
 \begin{chapex} % Never
 Let $X$ and $Y$ be sets and suppose there is some $a$ such that $a \in X$ but $a \not\in Y$. Then $X = Y$.
 \end{chapex}
+
+\begin{mysolution}
+    \textbf{Never}
+
+    $a \in X$ but $a \not\in Y$ means $X \nsubseteq Y$, double containment argument cannot hold. Therefore, $X$ cannot be equal to $Y$.
+\end{mysolution}
 
 \begin{chapex} % Sometimes
 Let $X$ and $Y$ be sets with $X \ne Y$. Then $\forall a,\, a \in X \Rightarrow a \not\in Y$.
 \end{chapex}
 
+\begin{mysolution}
+    \textbf{Sometimes}
+
+    If $X \cap Y = \varnothing$, this proposition is true.
+
+    If $X \cap Y$ is inhabited, this means there exists at least one element $e$ such that $e \in X$ and $e \in Y$.
+\end{mysolution}
+
 \begin{chapex} % Always
 Let $X$ and $Y$ be sets with $X \cap Y = \varnothing$. Then $\forall a,\, a \in X \Rightarrow a \not\in Y$.
 \end{chapex}
+
+\begin{mysolution}
+    \textbf{Always}
+
+    If $X \cap Y = \varnothing$, this means for all elements in $X$, they are not in $Y$. i.e. $\forall a \in X, x \notin Y$. Therefore,
+    \[X \cap Y = \varnothing \implies \forall a,\, a \in X \Rightarrow a \not\in Y\]
+\end{mysolution}
 
 \begin{chapex} % Always
 Let $X$ and $Y$ be sets with $X \ne Y$. Then $\exists a,\, a \in X \wedge a \not\in Y$.
 \end{chapex}
 
+\begin{mysolution}
+    \textbf{Sometimes}
+
+    From $X \ne Y$ we have three cases: 
+    \[X \nsubseteq Y \quad\text{or}\quad Y \nsubseteq X \quad\text{or} \quad \text{both}\]
+    If It happens to be the case
+    \[(X \subseteq Y) \land (Y \nsubseteq X) \implies X \ne Y\]
+    Then we have $X \subseteq Y \implies \forall a \in X,\, a \in Y$, i.e. $\not\exists a,\, a \in X \wedge a \not\in Y$.
+
+    In the other two cases, the conclusion is true
+\end{mysolution}
+
 \begin{chapex} % Sometimes
+\label{2.E.34}
 Let $X$ and $Y$ be sets of sets and suppose that $X \in Y$. Then $X \subseteq Y$.
 \end{chapex}
+
+\begin{mysolution}
+    \textbf{Sometimes}
+
+    If $X = \varnothing$ and $Y=\{\varnothing\}$, then $X \in Y$. Since $\varnothing$ is a subset for all sets, then $X \subseteq Y$. The proposition is true.
+
+    If $X = \{\varnothing\}$ and $Y=\{\{\varnothing\}\}$, then $X \in Y$. But $X \nsubseteq Y$. The proposition is false.
+\end{mysolution}    
 
 \begin{chapex} % Always
 Let $X$ be a set. Then $\varnothing \in \mathcal{P}(X)$.
 \end{chapex}
 
+\begin{mysolution}
+    \textbf{Always}
+
+    Since $\varnothing$ is a subset for all sets, it is necessarily an element of power set $\mathcal{P}(X)$. So $\varnothing \in \mathcal{P}(X)$ always be true.
+\end{mysolution}  
+
 \begin{chapex} % Sometimes
 Let $X$ be a set. Then $\{ \varnothing \} \in \mathcal{P}(X)$.
 \end{chapex}
+
+\begin{mysolution}
+    \textbf{Sometimes}
+
+    If $\varnothing \in X$, then $\{ \varnothing \} \in \mathcal{P}(X)$.
+
+    If $\varnothing \notin X$, then $\{ \varnothing \} \notin \mathcal{P}(X)$.
+\end{mysolution}  
 
 \begin{chapex} % Always
 Let $X$ be a set. Then $\{ \varnothing, X \} \subseteq \mathcal{P}(X)$.
 \end{chapex}
 
+\begin{mysolution}
+    \textbf{Always}
+
+    Since $\varnothing$ is a subset of all sets, so $\varnothing \subset X$.
+    Since any set is a subset of itself, so $X \subseteq X$.
+
+    Thus $\varnothing$ and $X$ are two elements of $\mathcal{P}(X)$. Therefore $\{ \varnothing, X \} \subseteq \mathcal{P}(X)$.
+\end{mysolution}  
+
 \begin{chapex} % Always
 Let $X$ and $Y$ be sets such that $\mathcal{P}(X) = \mathcal{P}(Y)$. Then $X = Y$.
 \end{chapex}
+
+\begin{mysolution}
+    \textbf{Always}
+
+    Suppose $\mathcal{P}(X) = \mathcal{P}(Y)$. Since any set is a subset of itself, so $X \in \mathcal{P}(X)$. Thus $X \in \mathcal{P}(Y)$. By definition of power set, we have
+    \[X \subseteq Y\]
+    Similarly, $Y \in \mathcal{P}(Y) = \mathcal{P}(X)$, we have
+    \[Y \subseteq X\]
+    By double containment, we have $X = Y$.
+\end{mysolution}  
 
 \begin{chapex} % Sometimes
 Let $X$ and $Y$ be sets such that $X \setminus Y = \varnothing$. Then $X = Y$.
 \end{chapex}
 
+\begin{mysolution}
+    \textbf{Sometimes}
+
+    $X \setminus Y = \varnothing$ means there is no element that is in $X$ but not in $Y$, i.e. $X \subseteq Y$. However, it does not imply $Y \subseteq X$.
+    For example, let $X=\{1\}$ and $Y=\{1, 2\}$, then $X \setminus Y = \varnothing$, but $X \ne Y$.
+
+    This proposition is true only if $Y \subseteq X$ holds additionally. then.
+\end{mysolution}
+
 \begin{chapex} % Always
 Let $X$, $Y$ and $Z$ be sets such that $X \setminus Y = Z$ and $Y \subseteq Z$. Then $X = Y \cup Z$.
 \end{chapex}
+
+\begin{mysolution}
+    \textbf{Always}
+
+    Since $X \setminus Y = Z$, this means every element of $Z$ is not in $Y$, i.e. $Z \cap Y=\varnothing$.
+
+    But we are given $Y \subseteq Z$, this forces $Y$ must be $\varnothing$.Then
+    \[Z=X\setminus \varnothing=X\]
+    Thus
+    \[Y \cup Z=\varnothing \cup X=X\]
+    Therefore, $X=Y \cup Z$.
+\end{mysolution}
 
 \begin{chapex} % Sometimes
 Let $X$ and $Y$ be sets. Then $X \cup Y = X \cap Y$.
 \end{chapex}
 
+\begin{mysolution}
+    \textbf{Sometimes}
+
+    \begin{itemize}  
+    \item If $X=Y$, then $X \cup Y = X \cap Y$.
+        \begin{itemize}
+        \item ($\subseteq$) If $a \in X \cup Y$, this means $a \in X$ or $a \in Y$. Since $X=Y$, we have $a \in X$ and $a \in Y$, thus $a \in X \cap Y$. So $X \cup Y \subseteq X \cap Y$.
+
+        \item ($\supseteq$) If $a \in X \cap Y$, then $a \in X$ and $a \in Y$, thus $a \in X \cup Y$. So $X \cap Y \subseteq X \cup Y$.
+        \end{itemize}
+        By double containment, we have $X=Y \implies X \cup Y = X \cap Y$.
+
+
+    \item If $X \ne Y$, then $X \cup Y \ne X \cap Y$. 
+     
+        Since $X \ne Y$, there exists at least one element $a \in X$ but $a \notin Y$ or vice versa. According to the definition of intersection and union, $a \in X \cup Y$ but $a \notin X \cap Y$. Therefore, $X \cup Y \ne X \cap Y$.
+
+        For example, let $X=\{1\}$ and $Y=\{1, 2\}$, then
+        \[X \cup Y = \{1, 2\} \quad\text{and}\quad X \cap Y = \{1\}\]
+        Clearly $X \cup Y \ne X \cap Y$.
+    \end{itemize}
+\end{mysolution}
+
 \begin{chapex} % Sometimes
 \label{cqSetsASNEnd}
 Let $X$ be a set and let $A \subseteq X$. Then $A \in X$.
 \end{chapex}
+
+\begin{mysolution}
+    \textbf{Sometimes}
+
+    This question is similar to \Cref{2.E.34}.
+
+    If $X = \varnothing$ and $Y=\{\varnothing\}$, the proposition is true. Since $\varnothing$ is a subset for all sets, then $X \subseteq Y$. $\varnothing$ is clearly an element of $\{\varnothing\}$, so $X \in Y$.
+
+    If $X = \{1\}$ and $Y=\{1,2\}$, then $X \subseteq Y$. But $X \notin Y$. The proposition is false.
+\end{mysolution}
