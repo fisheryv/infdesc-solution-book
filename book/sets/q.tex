@@ -267,6 +267,9 @@ Prove that sets $X$ and $Y$ are disjoint if and only if $X \symmdiff Y = X \cup 
 \begin{chapex}
 \label{cqSymmetricDifferenceAssociative}
 Prove that $X \symmdiff (Y \symmdiff Z) = (X \symmdiff Y) \symmdiff Z$ for all sets $X$, $Y$ and $Z$.
+\hint{cqSymmetricDifferenceAssociative}{%
+The temptation is to write a long string of equations, but it is far less painful to prove this by double containment, splitting into cases where needed. An even less painful approach is to make a cunning use of truth tables.
+}
 \end{chapex}
 
 \begin{myproof}
@@ -291,6 +294,9 @@ Prove that $X \symmdiff (Y \symmdiff Z) = (X \symmdiff Y) \symmdiff Z$ for all s
 \label{cqIntersectionDistributesOverSymmetricDifference}
 \label{cqSymmetricDifferenceEnd}
 Prove that $X \cap (Y \symmdiff Z) = (X \cap Y) \symmdiff (X \cap Z)$ for all sets $X$, $Y$ and $Z$.
+\hint{cqIntersectionDistributesOverSymmetricDifference}{%
+The hint for \Cref{cqSymmetricDifferenceAssociative} applies here too.
+}
 \end{chapex}
 
 \begin{myproof}
@@ -678,14 +684,12 @@ Let $X$ and $Y$ be sets with $X \ne Y$. Then $\exists a,\, a \in X \wedge a \not
 
 \begin{mysolution}
     \textbf{Sometimes}
+    
+    $X \ne Y$ means
+    \[\exists a, (a \in X \land a \notin Y) \lor (a \in Y \land a \notin X) \]
+    The statement in the question only covers the first case, but does not cover the second case. So it is not complete.
 
-    From $X \ne Y$ we have three cases: 
-    \[X \nsubseteq Y \quad\text{or}\quad Y \nsubseteq X \quad\text{or} \quad \text{both}\]
-    If It happens to be the case
-    \[(X \subseteq Y) \land (Y \nsubseteq X) \implies X \ne Y\]
-    Then we have $X \subseteq Y \implies \forall a \in X,\, a \in Y$, i.e. $\not\exists a,\, a \in X \wedge a \not\in Y$.
-
-    In the other two cases, the conclusion is true
+    Consider $X \subset Y$. In this case, $X \ne Y$, but by the defination of subset, we have $\forall a \in X, a \in Y$.
 \end{mysolution}
 
 \begin{chapex} % Sometimes

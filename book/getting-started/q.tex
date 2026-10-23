@@ -44,6 +44,9 @@ This string is actually a natural number expressed in base-64, where the charact
 \begin{chapex}
 \label{cqProductInZSqrtTwoEqualsInteger}
 Let $a, b, c, d \in \mathbb{Z}$. Under what conditions is $(a+b\sqrt{2})(c+d\sqrt{2})$ an integer?
+\hint{cqProductInZSqrtTwoEqualsInteger}{%
+Begin by expressing the product in the form $p+q\sqrt{2}$, where $p,q \in \Int$ are expressed in terms of $a,b,c,d$. This should help you figure out what the answer is. In your proof, you will most likely need to figure out for which integers $k$ the number $k\sqrt{2}$ is an integer; the fact that $\sqrt{2}$ is irrational (\Cref{asnSqrt2Irrational}) should help with that.
+}
 \end{chapex}
 
 \begin{mysolution}
@@ -57,6 +60,9 @@ Let $a, b, c, d \in \mathbb{Z}$. Under what conditions is $(a+b\sqrt{2})(c+d\sqr
 \begin{chapex}
 \label{cqSumOfRemaindersModulo3}
 Suppose an integer $m$ leaves a remainder of $i$ when divided by $3$, and an integer $n$ leaves a remainder of $j$ when divided by $3$, where $0 \le i,j < 3$. Prove that $m+n$ and $i+j$ leave the same remainder when divided by $3$.
+\hint{cqSumOfRemaindersModulo3}{%
+Let $r$ be the remainder of $i+j$ upon division by $3$. Find equations relating $m$ and $i$, $n$ and $j$, and $i+j$ and $r$. Piece these equations together as needed to show that $m+n$ has remainder $r$ upon division by $3$.
+}
 \end{chapex}
 
 \begin{myproof}
@@ -72,6 +78,9 @@ Suppose an integer $m$ leaves a remainder of $i$ when divided by $3$, and an int
 \begin{chapex}
 \label{cqRemaindersOfNSquared}
 What are the possible remainders of $n^2$ when divided by $3$, where $n \in \mathbb{Z}$?
+\hint{cqRemaindersOfNSquared}{%
+By the division theorem (\Cref{thmDivisionPreliminary}), we must have either $n=3q$, $n=3q+1$ or $n=3q+2$ for some integer $q$. Find the remainder of $n^2$ upon division by $3$ in each case.
+}
 \end{chapex}
 
 \begin{myproof}
@@ -307,6 +316,11 @@ Note that the modulus and argument exist and are unique by \Cref{cqModulusArgume
 Let $z_1,z_2 \in \Cplx$, and for $k=1,2$ define $r_k = |z_k|$ and $\theta_k = \mathrm{arg}(z_k)$.
 
 Prove that $z_1z_2 = r_1r_2\cos(\theta_1+\theta_2) + r_1r_2\sin(\theta_1+\theta_2)i$, and therefore express $|z_1z_2|$ and $\mathrm{arg}(z_1z_2)$ in terms of $r_1,r_2,\theta_1,\theta_2$.
+\hint{cqModulusArgumentOfProduct}{%
+Express $z_i$ in terms of $r_i$ and $\theta_i$ using \Cref{defModulusArgument}. You will need to use the angle addition identities for sine and cosine:
+\[ \cos(\alpha+\beta) = \cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta) \text{ and } \sin(\alpha+\beta) = \sin(\alpha)\cos(\beta)-\cos(\alpha)\sin(\beta) \]
+When finding the modulus and argument, be careful: it is possible that $\theta_1+\theta_2 \not\in (-\pi,\pi]$!
+}
 \end{chapex}
 
 \begin{myproof}
@@ -324,6 +338,9 @@ Prove that $z_1z_2 = r_1r_2\cos(\theta_1+\theta_2) + r_1r_2\sin(\theta_1+\theta_
 \label{cqModulusArgumentOfQuotient}
 \label{cqModulusArgumentEnd}
 Repeat \Cref{cqModulusArgumentOfProduct}, but for $\dfrac{z_1}{z_2}$ instead of $z_1z_2$.
+\hint{cqModulusArgumentOfQuotient}{%
+This can be done directly by following essentially the same method as in \Cref{cqModulusArgumentOfProduct}, or it can be done indirectly using the result of \Cref{cqModulusArgumentOfProduct} and noting that $\dfrac{z_1}{z_2} z_2 = z_1$.
+}
 \end{chapex}
 
 \begin{myproof}
@@ -342,6 +359,9 @@ Repeat \Cref{cqModulusArgumentOfProduct}, but for $\dfrac{z_1}{z_2}$ instead of 
 \begin{chapex}
 \label{cqQuadraticFormulaOverC}
 Prove a general version of the quadratic formula for quadratic polynomials over $\Cplx$.
+\hint{cqQuadraticFormulaOverC}{%
+Adapt the proof of \Cref{thmQuadraticFormula}; the challenge is defining a suitable complex number to play the role of $\sqrt{\Delta}$, but \Cref{cqModulusArgumentOfProduct} is helpful for that.
+}
 \end{chapex}
 
 \begin{myproof}
